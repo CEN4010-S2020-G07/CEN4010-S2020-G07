@@ -38,7 +38,7 @@ Community Message Board
 
 *** Games Placard ***
 
-- Filler
+- Game Placards are now grouped by category and will be embedded into the hub page.
 
 
 *** Wellspace Page ***
