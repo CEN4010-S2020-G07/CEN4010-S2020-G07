@@ -1,0 +1,40 @@
+.box-headline{
+float:left;
+margin-top:none;
+padding-top:none;
+}
+
+div.mouse{
+margin-left:none;
+}
+
+h5 {
+float:left;
+margin-left: 2%;
+}
+
+.box-menu-text{
+float:right;
+padding-top:16px;
+padding-right:16px;
+font-size:18px !important;
+font-weight:bold;
+color:black;
+}
+
+#navlink:active{
+color:#484a42;    
+}
+
+#navlink:visited{
+color:#484a42;
+}
+
+#navlink:hover{
+text-decoration-line:none;
+color:darkseagreen;
+}
+
+#arrow {
+color:#ffbf00;
+}
