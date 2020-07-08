@@ -220,14 +220,15 @@
                                 <div class="col-md-8">
                                     <form id="loginForm" method="post" action="account.php">
                                         <div class="form-group">
-                                            <label for="username">username</label>
-                                            <input type="text" class="form-control" name="username" id="username">
+                                            <label for="username">Username</label>
+                                            <input type="text" class="form-control" name="username" id="username" placeholder="Username">
                                         </div>
                                         <div class="form-group">
-                                            <label for="password">password</label>
-                                            <input type="password" class="form-control" name="password" id="password">
+                                            <label for="password">Password</label>
+                                            <input type="password" class="form-control" name="password" id="password" placeholder="Password (Case-Sensitive)">
                                         </div>
-                                        <button type="submit" class="btn log logger">Login</button>
+                                        <button type="submit" class="btn btn-info">Login</button>
+                                        <a href="signup.php" class="btn btn-success" role="button">Create An Account</a>
                                     </form>
                                 
                                 </div>

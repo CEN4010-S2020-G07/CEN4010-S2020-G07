@@ -149,7 +149,7 @@
                                 <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name">
                             </div>                                       
                             <div class="form-group col-sm-6">
-                                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Password (Case-Sensitive)">
                             </div>
                         </div>
                         
