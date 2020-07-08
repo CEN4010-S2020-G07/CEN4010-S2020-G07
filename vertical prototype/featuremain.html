@@ -62,21 +62,74 @@
         </div>
     </div>
     
-    <div class="container" id="welcome">
-        Section for Welcome Message and Signup/Login Buttons
-    </div>
+    <div class="container-fluid text-center section" id="welcome">
+        <p id="greeting" class="text-left">We may be miles apart in real life, or maybe just six feet...but online we are side by side. We gather together over fascinating books or the latest podcasts. We talk about the news that matters most to us or play games (no matter how old we are!). All of our content is free, and the communities we form are priceless. </p>
+        <p class="text-left">Welcome to Gather Plus.</p>
 
-    <div class="container" id="cat_tiles">
-        Category Tiles
+        <div class="btn-group" role="group">
+            <a class="btn" href="signup.html" role="button" id="sign">Sign Up</a>
+            <button type="button" class="btn log" data-toggle="modal" data-target="#modal1" >Login</button>   
+        </div>
     </div>
     
-    <div class="container" id="weeklynews">News Article of the Week(What API?)</div>
+    <div class="container col-md-8" id="cat_hubs">
+       <h6 class="text-center">Select a Category, Join A Community!</h6>
+        <div class="card-group">
+            <div class="card category"><a href="bookhub.html"><img src="images/book.png" alt="books" class="img-fluid"><span class="text-nowrap">Books</span></a></div>
+            <div class="card category"><a href="audiohub.html"><img src="images/sing.png" alt="" class="img-fluid"><span class="text-nowrap">Podcasts</span></a></div>
+        </div>
+        <div class="card-group">
+            <div class="card category"><a href="newshub.html"><img src="images/newspaper.png" alt="news" class="img-fluid"><span class="text-nowrap">Articles</span></a></div>
+            <div class="card category"><a href="gamehub.html"><img src="images/puzzle.png" alt="games" class="img-fluid"><span class="text-nowrap">Games</span></a></div>
+        </div>
+
+    </div>
+    <div class="container-fluid text-center section" id="weeklynews">News Article of the Week(What API?)</div>
     
-    <div class="container" id="learnmore"> Gather+ Backstory and Information about FunkyTech (site link) </div>
+    <div class="container-fluid section" id="learnmore"> Gather+ Backstory and Information about FunkyTech (site link) </div>
 
     <footer class="footer">
         <div class="container"> &copy; 2020 FunkyTech</div>
     </footer>
+    <!--Modal-->
+    <div class="modal" id="modal1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5>Gather+</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4 text-center" id="mod"></div>
+                            <div class="col-md-8">
+                                <form action="#">
+                                    <div class="form-group">
+                                        <label for="username">Username</label>
+                                        <input type="text" class="form-control" id="enter_uname">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input type="password" class="form-control" id="enter_pword">
+                                    </div>
+                                    <div class="form-check">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                        <label class="form-check-label" for="exampleCheck1"><small>I am at least 16 years of age.</small></label>
+                                    </div>
+                                    <button type="submit" class="btn log logger">Login</button>
+                                </form>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                
+                </div>     
+            </div>
+        </div>  
+    </div>
     
 
 

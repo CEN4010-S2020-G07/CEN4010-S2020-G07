@@ -15,6 +15,14 @@ background-color:#f5f5f5;
 padding:20px;
 }
 
+a{
+color:black;
+}
+
+a:hover{
+text-decoration-line:none;
+}
+
 h3{
 text-align:center;
 }
@@ -31,3 +39,70 @@ text-align:center;
     text-indent: -999px;
     background-color: dimgray;    
 }
+
+h6{
+padding:10px;
+}
+
+#cat_hubs{
+width:100%;
+padding:50px;
+margin: 50px auto;
+background-color:#ebf5f7;
+}
+
+
+.btn-group{
+width:30%;
+float:center;
+}
+
+#sign{
+background-color: darkseagreen;
+}
+
+.log{
+background-color: lightblue;
+}
+
+.logger{
+margin-top:20px;
+padding:8px;
+width:25%;
+}
+
+#mod{
+background-color:gainsboro;
+}
+
+.category{
+width:25%;
+height:100px;
+text-align:center;
+padding:20%;
+padding-bottom:25%;
+border-radius:5%;
+}
+
+.category img {
+float:center;
+padding-bottom:8px;
+}
+
+.category a{
+color:black;
+}
+
+.category a:hover{
+color:goldenrod;
+}
+
+.section{
+background-color:#f7f9fa;
+padding:5%;
+}
+
+#learnmore{
+background-color:gainsboro;
+}
+
