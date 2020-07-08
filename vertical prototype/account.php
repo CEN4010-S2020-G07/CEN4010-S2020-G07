@@ -108,6 +108,7 @@
                             $email = $row["email"];
                             $firstname = $row["firstname"];
                             $lastname = $row["lastname"];
+                            $books = $row["books"];
                         
                             // Welcome Message
                             echo "<h4 class=\"alert alert-success\">Welcome $username</h4>";
@@ -161,7 +162,6 @@
                         
                         <div class="card-body">
                             <?php
-                            
                                 $username = $_POST["username"];
                             
                                 if ($username != "")
@@ -193,11 +193,17 @@
                         </div>
                         
                         <div class="card-body">
-                            <ul>
-                                <li>Games</li>
-                                <li>Books</li>
-                                <li>Podcasts</li>
-                            </ul>
+                            <?php
+                                if ($books != 0)
+                                {
+                                    echo "<ul><li>Books</li></ul>";
+                                }
+                            
+                                else
+                                {
+                                    echo "<ul><li>No Communities Joined Yet</li></ul>";
+                                }
+                            ?>
                         </div>
                     </div>
                 </div>
