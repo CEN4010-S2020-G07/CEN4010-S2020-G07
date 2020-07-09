@@ -89,6 +89,9 @@
                     else if ($result->num_rows == 0) 
                     {
                         echo "<h4 class=\"alert alert-danger\">Incorrect username or password</h4>";
+                        
+                        $username = "";
+                        $password = "";
                     }
                 
                     // Runs if username is Found in Database
@@ -109,6 +112,9 @@
                             $firstname = $row["firstname"];
                             $lastname = $row["lastname"];
                             $books = $row["books"];
+                            
+                            // Sets session cookie for user if they selected to make the zip code the default zip       
+                            $_SESSION["username"] = $username;
                         
                             // Welcome Message
                             echo "<h4 class=\"alert alert-success\">Welcome $username</h4>";
@@ -123,6 +129,27 @@
                             
                     }
                 }
+            
+                // Runs if user signed in earlier
+                else if(isset($_SESSION["username"]))
+                {
+                    $username = $_SESSION["username"];
+                    
+                    // Connects to MySQL Database
+                    $database = new mysqli("localhost", "cen4010s2020_g07", "faueng2020", "cen4010s2020_g07");
+                    
+                    // Retrieves All User's Information from Database
+                    $sql = "SELECT * FROM user_accounts WHERE username='$username'";
+                    $result = $database->query($sql);
+                    $row = $result->fetch_assoc();
+                        
+                    $email = $row["email"];
+                    $firstname = $row["firstname"];
+                    $lastname = $row["lastname"];
+                    $books = $row["books"];
+                    
+                    echo "<h4 class=\"alert alert-success\">Welcome $username</h4>";
+                }
 
             ?>
             
@@ -136,7 +163,8 @@
                         <img class="card-img-top" src="images/blank.png" alt="Card image">
                         <div class="card-body">
                             <?php
-                                if ($username == "Arthur")
+                            
+                                if ($username != "")
                                 {
                                     echo "<h4 class=\"card-title text-center\">$username</h4>";
                                 }
@@ -145,6 +173,7 @@
                                 {
                                     echo "<h4 class=\"card-title text-center\">Username</h4>";
                                 }
+                            
                             ?>
                         </div>
                     </div>
@@ -162,7 +191,6 @@
                         
                         <div class="card-body">
                             <?php
-                                $username = $_POST["username"];
                             
                                 if ($username != "")
                                 {
@@ -173,6 +201,7 @@
                                 {
                                     echo "<ul><li>Name: </li><li>E-mail: </li></ul>";
                                 }
+                            
                             ?>
                             
                         </div>
