@@ -80,6 +80,7 @@
                 $email = $_POST["email"];
                 $firstname = $_POST["firstname"];
                 $lastname = $_POST["lastname"];
+                $books = 0;
                 
                 // Checks if Any Usernames in Database Matches Username Entered
                 $sql = "SELECT username FROM user_accounts WHERE username='$username'";
@@ -104,7 +105,7 @@
                     $password = password_hash($_POST["password"], PASSWORD_BCRYPT);     
                     
                     // Inserts Values into SQL Database
-                    $sql = "INSERT INTO user_accounts VALUES ('$username', '$password', '$email', '$firstname', '$lastname')";
+                    $sql = "INSERT INTO user_accounts (username, password, email, firstname, lastname, books) VALUES ('$username', '$password', '$email', '$firstname', '$lastname', '$books')";
                     
                     // Message if Account Successfully Created
                     if ($database->query($sql)) 
