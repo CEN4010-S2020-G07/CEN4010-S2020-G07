@@ -176,6 +176,9 @@
                             
                             ?>
                         </div>
+                        <div class ="card-footer text-center">
+                            <a class="btn btn-info" href="editProfile.php" role="button">Edit Profile</a> 
+                        </div>
                     </div>
                 </div>
                 

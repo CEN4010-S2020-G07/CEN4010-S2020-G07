@@ -140,7 +140,7 @@
                         </div>
                         
                     <div class="card-footer text-center">
-                        <input type="submit" class="btn btn-success center-block" value="Edit Account">
+                        <input type="submit" class="btn btn-info center-block" value="Commit Changes">
                     </div>
                     </div>
                         
@@ -197,17 +197,13 @@
                         </div>
                         
                         <div class="card-body">
-                            <?php
-                                if ($books != 0)
-                                {
-                                    echo "<ul><li>Books: <input type=\"text\" class=\"form-control\" placeholder=\"$books\" name=\"newBooks\"></li></ul>";
-                                }
                             
-                                else
-                                {
-                                    echo "<ul><li>No Communities Joined Yet</li></ul>";
-                                }
+                            <?php
+                            
+                                echo "<ul><li>Books: <input type=\"text\" class=\"form-control\" placeholder=\"$books\" name=\"newBooks\"></li></ul>";
+                            
                             ?>
+                            
                         </div>
                     </div>
                 </div>
