@@ -300,3 +300,18 @@ background-color:gainsboro;
   
 }
 
+/* Code For Chat */
+
+textarea 
+{ 
+    border-radius: 2%; 
+} 
+
+#thread 
+{ 
+    border: 1px #d3d3d3 solid; 
+    height: 350px; 
+    width: 350px; 
+    overflow: scroll; 
+}
+
