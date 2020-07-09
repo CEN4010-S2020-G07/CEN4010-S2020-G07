@@ -111,6 +111,8 @@
                     if ($database->query($sql)) 
                     {
                         echo "<h4 class=\"alert alert-success text-center\">Your Account has Been Created</h4>";
+                        
+                        $_SESSION["username"] = $username;
                     }
                     
                     // Error Message if Account Not Created
