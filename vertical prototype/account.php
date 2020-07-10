@@ -242,6 +242,8 @@
                 
             </div>
         </div>
+        <br>
+        <br>
         
         <!--Modal-->
         <div class="modal" id="modal1" role="dialog">

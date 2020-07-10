@@ -103,7 +103,7 @@
     <div class="container col-md-8" id="cat_hubs">
        <h6 class="text-center">Select a Category, Join A Community!</h6>
         <div class="card-group">
-            <div class="card category"><a href="bookhub.html"><img src="images/book.png" alt="books" class="img-fluid"><span class="text-nowrap">Books</span></a></div>
+            <div class="card category"><a href="bookplacard.php"><img src="images/book.png" alt="books" class="img-fluid"><span class="text-nowrap">Books</span></a></div>
             <div class="card category"><a href="audiohub.html"><img src="images/sing.png" alt="" class="img-fluid"><span class="text-nowrap">Podcasts</span></a></div>
         </div>
         <div class="card-group">

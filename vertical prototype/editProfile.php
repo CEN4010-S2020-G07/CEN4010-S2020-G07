@@ -83,7 +83,7 @@
                     // Retrieves All User's Information from Database
                     $sql = "UPDATE user_accounts SET username='$username', email = '$email', firstname = '$firstname', lastname = '$lastname', books = '$books' WHERE userID = '$userID'";
                     
- index.php
+                    if ($database->query($sql))
                     {
                         echo "<h4 class=\"alert alert-success\">Success</h4>";
                         
@@ -211,6 +211,8 @@
             </div>
             </form>
         </div>
+        <br>
+        <br>
         
         <!--Modal-->
         <div class="modal" id="modal1" role="dialog">
