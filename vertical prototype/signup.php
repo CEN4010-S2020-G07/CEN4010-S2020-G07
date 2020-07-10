@@ -130,7 +130,7 @@
             
                 <!-- Back Home Button -->
                 <div class="card-header">
-                    <form id="Back" method="post" class="text-center" action="featuremain.html">
+                    <form id="Back" method="post" class="text-center" action="featuremain.php">
                         <input type="submit" class="btn btn-info" value="Back to Home">
                     </form>
                 </div>

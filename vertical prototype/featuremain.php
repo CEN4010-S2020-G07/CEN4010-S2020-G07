@@ -128,28 +128,25 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5>Gather+</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                    <h5>Gather+</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
                 </div>
-                <div class="modal-body">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-4 text-center" id="mod"></div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-4 text-center" id="mod"></div>
                             <div class="col-md-8">
                                 <form id="loginForm" method="post" action="account.php">
                                     <div class="form-group">
                                         <label for="username">Username</label>
-                                        <input type="text" class="form-control" name="username" id="enter_uname">
+                                        <input type="text" class="form-control" name="username" id="username" placeholder="Username">
                                     </div>
                                     <div class="form-group">
                                         <label for="password">Password</label>
-                                        <input type="password" class="form-control" name="password" id="enter_pword">
+                                        <input type="password" class="form-control" name="password" id="password" placeholder="Password (Case-Sensitive)">
                                     </div>
-                                    <div class="form-check">
-                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                        <label class="form-check-label" for="exampleCheck1"><small>I am at least 16 years of age.</small></label>
-                                    </div>
-                                    <button type="submit" class="btn log logger">Login</button>
+                                    <button type="submit" class="btn btn-info">Login</button>
+                                    <a href="signup.php" class="btn btn-success" role="button">Create An Account</a>
                                 </form>
                                 
                             </div>
@@ -157,7 +154,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                
+                    
                 </div>     
             </div>
         </div>  
