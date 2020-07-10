@@ -27,7 +27,7 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav text-uppercase">
-                    <li class="nav-item active"><a class="nav-link" href="featuremain.html">Main Page</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="featuremain.php">Main Page</a></li>
                     <li class="nav-item"><a class="nav-link" href="bookhub.html">Book Hub</a></li>
                     <li class="nav-item"><a class="nav-link" href="wellspace.html">Wellspace</a></li>
                     <li class=""><a class="nav-link" href="account.php">My Profile</a></li>
@@ -128,7 +128,7 @@
                             
                                 if ($username != "")
                                 {
-                                    echo "<input type=\"text\" class=\"form-control\" placeholder=\"$username\" name=\"newUsername\">";
+                                    echo "<input type=\"text\" class=\"form-control\" value=\"$username\" name=\"newUsername\">";
                                 }
                             
                                 else
@@ -163,11 +163,11 @@
                                 {
                                     echo "<ul>";
                                     
-                                    echo "<li>First Name: <input type=\"text\" class=\"form-control\" placeholder=\"$firstname\" name=\"newFirstname\"></li>";
+                                    echo "<li>First Name: <input type=\"text\" class=\"form-control\" value=\"$firstname\" name=\"newFirstname\"></li>";
                                     
-                                    echo "<li>Last Name: <input type=\"text\" class=\"form-control\" placeholder=\"$lastname\" name=\"newLastname\"></li>";
+                                    echo "<li>Last Name: <input type=\"text\" class=\"form-control\" value=\"$lastname\" name=\"newLastname\"></li>";
                                     
-                                    echo "<li>E-mail: <input type=\"text\" class=\"form-control\" placeholder=\"$email\" name=\"newEmail\"></li>";
+                                    echo "<li>E-mail: <input type=\"text\" class=\"form-control\" value=\"$email\" name=\"newEmail\"></li>";
                                     
                                     echo "</ul>";
                                 }
@@ -200,7 +200,7 @@
                             
                             <?php
                             
-                                echo "<ul><li>Books: <input type=\"text\" class=\"form-control\" placeholder=\"$books\" name=\"newBooks\"></li></ul>";
+                                echo "<ul><li>Books: <input type=\"text\" class=\"form-control\" value=\"$books\" name=\"newBooks\"></li></ul>";
                             
                             ?>
                             
