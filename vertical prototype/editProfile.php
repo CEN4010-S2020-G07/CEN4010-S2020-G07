@@ -27,7 +27,7 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav text-uppercase">
-                    <li class="nav-item active"><a class="nav-link" href="featuremain.php">Main Page</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="index.php">Main Page</a></li>
                     <li class="nav-item"><a class="nav-link" href="bookplacard.php">Book Hub</a></li>
                     <li class="nav-item"><a class="nav-link" href="wellspace.html">Wellspace</a></li>
                     <li class=""><a class="nav-link" href="account.php">My Profile</a></li>
@@ -83,7 +83,7 @@
                     // Retrieves All User's Information from Database
                     $sql = "UPDATE user_accounts SET username='$username', email = '$email', firstname = '$firstname', lastname = '$lastname', books = '$books' WHERE userID = '$userID'";
                     
-                    if ($database->query($sql))
+ index.php
                     {
                         echo "<h4 class=\"alert alert-success\">Success</h4>";
                         

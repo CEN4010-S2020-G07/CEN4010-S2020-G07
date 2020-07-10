@@ -28,7 +28,7 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
                 <ul class="navbar-nav text-uppercase">
-                    <li class="nav-item active"><a class="nav-link" href="featuremain.php">Main Page</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="index.php">Main Page</a></li>
                     <li class="nav-item"><a class="nav-link" href="bookplacard.php">Book Hub</a></li>
                     <li class="nav-item"><a class="nav-link" href="wellspace.html">Wellspace</a></li>
                     <li class=""><a class="nav-link" href="account.php">My Profile</a></li>
@@ -130,7 +130,7 @@
             
                 <!-- Back Home Button -->
                 <div class="card-header">
-                    <form id="Back" method="post" class="text-center" action="featuremain.php">
+                    <form id="Back" method="post" class="text-center" action="index.php">
                         <input type="submit" class="btn btn-info" value="Back to Home">
                     </form>
                 </div>
