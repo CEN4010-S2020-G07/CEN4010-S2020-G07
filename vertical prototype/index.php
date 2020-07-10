@@ -104,11 +104,11 @@
        <h6 class="text-center">Select a Category, Join A Community!</h6>
         <div class="card-group">
             <div class="card category"><a href="bookplacard.php"><img src="images/book.png" alt="books" class="img-fluid"><span class="text-nowrap">Books</span></a></div>
-            <div class="card category"><a href="audiohub.html"><img src="images/sing.png" alt="" class="img-fluid"><span class="text-nowrap">Podcasts</span></a></div>
+            <div class="card category"><a href=""><img src="images/sing.png" alt="" class="img-fluid"><span class="text-nowrap">Podcasts</span></a></div>
         </div>
         <div class="card-group">
-            <div class="card category"><a href="newshub.html"><img src="images/newspaper.png" alt="news" class="img-fluid"><span class="text-nowrap">Articles</span></a></div>
-            <div class="card category"><a href="gamehub.html"><img src="images/puzzle.png" alt="games" class="img-fluid"><span class="text-nowrap">Games</span></a></div>
+            <div class="card category"><a href=""><img src="images/newspaper.png" alt="news" class="img-fluid"><span class="text-nowrap">Articles</span></a></div>
+            <div class="card category"><a href=""><img src="images/puzzle.png" alt="games" class="img-fluid"><span class="text-nowrap">Games</span></a></div>
         </div>
 
     </div>
