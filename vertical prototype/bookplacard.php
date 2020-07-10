@@ -54,6 +54,30 @@
                 $username = $_SESSION["username"];
             
                 echo "<h4 class=\"alert alert-success\">Welcome $username</h4>";
+                
+            }
+        
+            if (isset($_POST["join"]))
+            {
+                // Getting these lousy messages
+                $database = new mysqli("localhost", "cen4010s2020_g07", "faueng2020", "cen4010s2020_g07");
+                
+                // Retrieves All User's Information from Database
+                $sql = "SELECT * FROM user_accounts WHERE username='$username'";
+                $result = $database->query($sql);
+                $row = $result->fetch_assoc();
+                
+                $userID = $row["userID"];
+                
+                $books = $_POST["join"];
+                
+                // Retrieves All User's Information from Database
+                $sql = "UPDATE user_accounts SET books = '$books' WHERE userID = '$userID'";
+                
+                if ($database->query($sql))
+                {
+                    echo "<h4 class=\"alert alert-success\">Successfully Joined Community</h4>";
+                }
             }
     
         ?>
@@ -76,16 +100,23 @@
                             <img src="images/newspaper.png" class="col-sm-12" alt="...">
                         </div>
                         <div class="col-sm-8">
-                            <p class="text-justify">
-                                From the 31 December 2019 to the 21 March 2020, WHO collected the numbers of confirmed COVID-19 cases and deaths through official communications under the International Health Regulations (IHR, 2005), complemented by monitoring the official ministries of health websites and social media accounts. Since 22 March 2020, global data are compiled through WHO region-specific dashboards (see links below), and/or aggregate count data reported to WHO headquarters daily.
-                            </p>
+                            <p class="text-justify">This panel will contain a thumbnail and some information on the book/topic that is being discussed in the placard.</p>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Footer -->
                 <div class="card-footer text-center">
-                    <a href="https://covid19.who.int/" target="_blank" class="btn btn-info" role="button">Link To Article</a>
+                    <form method="post" action="bookplacard.php" id="chatForm">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="checkbox" name="join" class="form-check-input" value="1">Join The Books Community Discussion
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Join</button>
+                        
+		              </form>
                 </div>
                 
             </div>
@@ -102,7 +133,14 @@
                 
                 <!-- Body -->
                 <div class="card-body">
-                    <img src="images/newspaper.png" class="mx-auto d-block" alt="...">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <img src="images/newspaper.png" class="col-sm-12" alt="...">
+                        </div>
+                        <div class="col-sm-8">
+                            <p class="text-justify">This panel will contain an e-reader that will allow a user to read a section of the book if it is avaliable on the site</p>
+                        </div>
+                    </div>
                 </div>
                 
                 <!-- Footer -->
@@ -124,6 +162,7 @@
                 
                 <!-- Body -->
                 <div class="card-body">
+                    <p class="text-justify">This panel will the "Community message board where users will be free to discuss the topic of the Placard</p>
                     
                     <?php
         
@@ -136,7 +175,7 @@
                         }
                     
                         // Getting these lousy messages
-                        $db = new mysqli("localhost", "cen4010s2020_g07", "faueng2020", "cen4010s2020_g07");
+                        $database = new mysqli("localhost", "cen4010s2020_g07", "faueng2020", "cen4010s2020_g07");
         
                         if ($_POST["text"] == "")
                         {
@@ -150,22 +189,41 @@
         
                         else
                         {
-            
-                            $firstname = $_SESSION["username"];
-                            $message = $_POST["text"];
-            
-                            $sql = "INSERT INTO Messageboard (Firstname, Message) VALUES ('$firstname', '$message')";
-            
-                            if($db->query($sql))
+                            // Retrieves All User's Information from Database
+                            $sql = "SELECT * FROM user_accounts WHERE username='$username'";
+                            $result = $database->query($sql);
+                            $row = $result->fetch_assoc();
+                
+                            $books = $row["books"];
+                            
+                            if ($books != 1)
                             {
-                                echo "<h4 class=\"alert alert-success text-center\">Success</h4>";
+                                echo "<h4 class=\"alert alert-warning text-center\">Join the Community before Submitting</h4>";
+                            }
+                            
+                            else
+                            {
+                                $firstname = $_SESSION["username"];
+                                $message = $_POST["text"];
+            
+                                $sql = "INSERT INTO Messageboard (Firstname, Message) VALUES ('$firstname', '$message')";
+            
+                                if($database->query($sql))
+                                {
+                                    echo "<h4 class=\"alert alert-success text-center\">Success</h4>";
+                                }
+                                
+                                else
+                                {
+                                    echo "<h4 class=\"alert alert-danger text-center\">Could Not Submit Comment</h4>";
+                                }
                             }
                             
                         }
             
                         //Get messages
                         $sql = "SELECT * FROM Messageboard";
-                        $result = $db->query($sql);
+                        $result = $database->query($sql);
         
                         // Error Message if Site is Unable to Retrieve Information
                         if (!$result)
@@ -192,7 +250,7 @@
                 <!-- Footer -->
                 <div class="card-footer text-center">
                     <div class="chatBottom">
-		              <form method = "post" action="bookplacard.php" id="chatForm">
+		              <form method="post" action="bookplacard.php" id="chatForm">
                           <input type="text" name="text" id="text" class="form-control" placeholder="type your message" />
                           <br>
                           <input type="submit" class="btn btn-success center-block" value="Send">
