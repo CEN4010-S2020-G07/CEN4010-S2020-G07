@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,13 +32,31 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav text-uppercase">
                     <li class="nav-item active"><a class="nav-link" href="featuremain.php">Main Page</a></li>
-                    <li class="nav-item"><a class="nav-link" href="bookhub.html">Book Hub</a></li>
+                    <li class="nav-item"><a class="nav-link" href="bookplacard.php">Book Hub</a></li>
                     <li class="nav-item"><a class="nav-link" href="wellspace.html">Wellspace</a></li>
                     <li class=""><a class="nav-link" href="account.php">My Profile</a></li>
                 </ul>
             </div>
             
-        </nav>  
+            <div class="nav navbar-nav navbar-right" id="navbarSupportedContent">
+                <ul class="navbar-nav text-uppercase">
+                    <li class="nav-item active"><button type="button" class="btn log bg-success" data-toggle="modal" data-target="#modal1">Login</button></li>
+                </ul>
+            </div>
+            
+        </nav>
+        
+        <!-- PHP for Displaying Weather Information And/Or Login Confirmation -->
+        <?php
+
+            if (isset($_SESSION["username"]))
+            {
+                $username = $_SESSION["username"];
+            
+                echo "<h4 class=\"alert alert-success\">Welcome $username</h4>";
+            }
+    
+        ?>
         
         <h3 class="mt-5">Book Placard Demo</h3>
         
@@ -51,7 +73,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-sm-4">
-                            <img src="images/server.jpg" class="col-sm-12" alt="...">
+                            <img src="images/newspaper.png" class="col-sm-12" alt="...">
                         </div>
                         <div class="col-sm-8">
                             <p class="text-justify">
@@ -80,7 +102,7 @@
                 
                 <!-- Body -->
                 <div class="card-body">
-                    <img src="images/newspaper.jpg" class="mx-auto d-block" alt="...">
+                    <img src="images/newspaper.png" class="mx-auto d-block" alt="...">
                 </div>
                 
                 <!-- Footer -->
@@ -92,51 +114,134 @@
             <br>
             <br>
             
+            <!-- Message Board -->
             <div class="card card-default">
             
                 <!-- Header -->
                 <div class="card-header text-center">
-                    <span><strong>Community Board</strong></span>
+                    <span><strong>Message Board</strong></span>
                 </div>
                 
                 <!-- Body -->
                 <div class="card-body">
                     
-                    
-                    
                     <?php
+        
+                        // Error Handler
+                        set_error_handler("errorHandler");
+        
+                        function errorHandler()
+                        {
+                            echo " ";
+                        }
                     
-                        require_once('db.php'); 
+                        // Getting these lousy messages
+                        $db = new mysqli("localhost", "cen4010s2020_g07", "faueng2020", "cen4010s2020_g07");
+        
+                        if ($_POST["text"] == "")
+                        {
+                            
+                        }
                     
-                        if(isset($_POST['submit'])) 
-                        { 
-                            $time = date("g:i:s A"); 
-                            $date = date("n/j/Y"); 
-                            $msg = $_POST['message']; 
-                            $result = ""; 
-                        
-                            if(!empty($msg)) 
-                            { 
-                                // name time date message 
-                                $query = "INSERT INTO comments ("; 
-                                $query .= " name, time, date, comment"; 
-                                $query .= ") VALUES ("; 
-                                $query .= " '{$name}', '{$time}', '{$date}', '{$msg}' "; $query .= ")"; 
-                                $result = mysqli_query($connect, $query); 
-                            } 
-                        } 
-                    
+                        else if (!isset($_SESSION["username"]))
+                        {   
+                            echo "<h4 class=\"alert alert-danger text-center\">please Sign-in To Use Board</h4>";
+                        }
+        
+                        else
+                        {
+            
+                            $firstname = $_SESSION["username"];
+                            $message = $_POST["text"];
+            
+                            $sql = "INSERT INTO Messageboard (Firstname, Message) VALUES ('$firstname', '$message')";
+            
+                            if($db->query($sql))
+                            {
+                                echo "<h4 class=\"alert alert-success text-center\">Success</h4>";
+                            }
+                            
+                        }
+            
+                        //Get messages
+                        $sql = "SELECT * FROM Messageboard";
+                        $result = $db->query($sql);
+        
+                        // Error Message if Site is Unable to Retrieve Information
+                        if (!$result)
+                        {
+                            die("Error: Unable to Connect to Database");
+                        }
+        
+                        else
+                        {   
+                            // Creates array of message Info
+                            while ($row = $result->fetch_assoc())
+                            {
+                                $name = $row['Firstname'];
+                                $message = $row['Message'];
+                
+                                echo "<li class='cm'><b>".ucwords($name)."</b> - ".$message."</li>";
+                            }
+            
+                        }
                     ?>
                     
                 </div>
                 
                 <!-- Footer -->
                 <div class="card-footer text-center">
-                    <a href="https://covid19.who.int/" target="_blank" class="btn btn-info" role="button">Link To Article</a>
+                    <div class="chatBottom">
+		              <form method = "post" action="bookplacard.php" id="chatForm">
+                          <input type="text" name="text" id="text" class="form-control" placeholder="type your message" />
+                          <br>
+                          <input type="submit" class="btn btn-success center-block" value="Send">
+		              </form>
+	               </div>
                 </div>
+                <br>
+                <br>
                 
             </div>
+    
         </section>
+        
+        <!--Modal-->
+        <div class="modal" id="modal1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5>Gather+</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                    </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4 text-center" id="mod"></div>
+                                <div class="col-md-8">
+                                    <form id="loginForm" method="post" action="account.php">
+                                        <div class="form-group">
+                                            <label for="username">Username</label>
+                                            <input type="text" class="form-control" name="username" id="username" placeholder="Username">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password">Password</label>
+                                            <input type="password" class="form-control" name="password" id="password" placeholder="Password (Case-Sensitive)">
+                                        </div>
+                                        <button type="submit" class="btn btn-info">Login</button>
+                                        <a href="signup.php" class="btn btn-success" role="button">Create An Account</a>
+                                    </form>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                    
+                    </div>     
+                </div>
+            </div>  
+        </div>
         
         <footer class="footer text-center"> <div class="container">(c)2020 FunkyTech</div></footer>
     

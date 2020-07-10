@@ -26,11 +26,10 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                
+            <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
                 <ul class="navbar-nav text-uppercase">
                     <li class="nav-item active"><a class="nav-link" href="featuremain.php">Main Page</a></li>
-                    <li class="nav-item"><a class="nav-link" href="bookhub.html">Book Hub</a></li>
+                    <li class="nav-item"><a class="nav-link" href="bookplacard.php">Book Hub</a></li>
                     <li class="nav-item"><a class="nav-link" href="wellspace.html">Wellspace</a></li>
                     <li class=""><a class="nav-link" href="account.php">My Profile</a></li>
                 </ul>
