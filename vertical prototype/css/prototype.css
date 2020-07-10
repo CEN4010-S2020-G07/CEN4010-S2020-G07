@@ -300,18 +300,21 @@ background-color:gainsboro;
   
 }
 
-/* Code For Chat */
+/*WELLSPACE PAGE*/
+.carapic{
+max-height:600px !important;
+}
 
-textarea 
-{ 
-    border-radius: 2%; 
-} 
+.every_other{
+background-color:#f0f2f2;
+}
 
-#thread 
-{ 
-    border: 1px #d3d3d3 solid; 
-    height: 350px; 
-    width: 350px; 
-    overflow: scroll; 
+.card_para{
+margin-top:35px;
+margin-bottom:35px;
+}
+
+.anchor_list{
+margin-bottom:20px;
 }
 
