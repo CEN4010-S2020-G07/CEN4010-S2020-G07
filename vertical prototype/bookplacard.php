@@ -105,7 +105,7 @@
                             <form method="post" action="bookplacard.php" id="chatForm">
                                 <div class="form-check">
                                     <input type="hidden" name="join" value="1">
-                                    <button type="submit" class="btn btn-secondary comm_button">Join the Community!</button>
+                                    <button type="submit" class="btn btn-secondary comm_button" ONCLICK="ShowAndHide()">Join the Community!</button>
                                 </div>                        
                             </form>
                         </div>
@@ -113,13 +113,13 @@
                 </div>
             </div>
         
-            <div class="container col-sm-12 col-md-8 e_reader" id="eReader" style="display:none">
+            <div class="container col-sm-12 col-md-8 seeDiv" id="eReader" style="display:none">
                 <div class="card">
                     <div class="card-body text-center"><iframe id="viewerPro" style="width:600px; height: 500px;" src="books/TheNatureFix.pdf"></iframe></div>
                 </div>
             </div>
         
-            <div class="container col-sm-12 col-md-8 book_board">
+            <div class="container col-sm-12 col-md-8 book_board seeDiv" style="display:none">
                 
                 <!-- Message Board -->
                 <div class="card card-default">
@@ -274,7 +274,7 @@
     <!--button script-->
     <script>
         function ShowAndHide() {
-        var x = document.getElementById('eReader');
+        var x = document.getElementByClassName('seeDiv');
         if (x.style.display == 'none') {
             x.style.display = 'block';
         } else {
