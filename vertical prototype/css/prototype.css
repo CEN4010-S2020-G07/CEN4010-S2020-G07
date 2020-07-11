@@ -1,39 +1,46 @@
 /*SITE_WIDE*/
 
 html {
-  position: relative;
-  min-height: 100%;
+
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px; /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    font-family: "Palatino Linotype", "Book Antiqua", "Palatino", serif;
 }
 
-table{
-  margin: auto;
-  width: 70%;
+
+
+table {
+
+    margin: auto;
+    width: 70%;
 
 }
 
 .footer {
-   position:absolute;
-   bottom:0;
-   height:60px;
-   width:100%;
-   background-color:#f5f5f5;  
-   padding:20px; 
+
+    position: absolute;
+    bottom: 0;
+    height: 60px;
+    width: 100%;
+    background-color: #f5f5f5;
+    padding: 20px;
 }
 
-a{
-color:black;
+a {
+    color: black;
 }
 
-a:hover{
-text-decoration-line:none;
+a:hover {
+    text-decoration-line: none;
 }
 
-h3{
-text-align:center;
+h3 {
+    text-align: center;
 }
 
 .carousel-indicators li {
@@ -46,106 +53,112 @@ text-align:center;
     margin-right: 3px;
     margin-left: 3px;
     text-indent: -999px;
-    background-color: dimgray;    
+    background-color: dimgray;
 }
 
 /*MAIN PAGE*/
 
-h6{
-padding:10px;
+h6 {
+    padding: 10px;
 }
 
-#cat_hubs{
-width:100%;
-padding:50px;
-margin: 50px auto;
-background-color:#ebf5f7;
+.btn-group {
+    width: 30%;
+    float: center;
 }
 
-.btn-group{
-width:30%;
-float:center;
+#sign {
+    background-color: darkseagreen;
 }
 
-#sign{
-background-color: darkseagreen;
+.log {
+    background-color: lightblue;
 }
 
-.log{
-background-color: lightblue;
+.logger {
+    
+    margin-top: 20px;
+    padding: 8px;
+    width: 25%;
 }
 
-.logger{
-margin-top:20px;
-padding:8px;
-width:25%;
+#mod {
+    
+    background-color: gainsboro;
 }
 
-#mod{
-background-color:gainsboro;
+
+#cat_hubs {
+    
+    width: 100%;
+    padding: 50px;
+    margin: 50px auto;
+    background-color: #ebf5f7;
 }
 
-.category{
-width:25%;
-height:100px;
-text-align:center;
-padding:20%;
-padding-bottom:25%;
-border-radius:5%;
+.category{ 
+    
+    margin: 0px!important;
+    max-width:20em;
+    min-height:200px;
+    text-align: center;
+    border-radius: 5%;
 }
 
 .category img {
-float:center;
-padding-bottom:8px;
+    float: center;
+    padding-top:30px;
+    padding-bottom: 10px;
+    max-height: 150px;
 }
 
-.category a{
-color:black;
+.category a {
+    color: black;
 }
 
-.category a:hover{
-color:goldenrod;
+.category a:hover {
+    color: goldenrod;
 }
 
-.section{
-background-color:#f7f9fa;
-padding:5%;
+.section {
+    background-color: #f7f9fa;
+    padding: 5%;
 }
 
-#learnmore{
-background-color:gainsboro;
+#learnmore {
+    background-color: gainsboro;
 }
+
 
 /*SIGN UP PAGE*/
-.signUpLeft{   
+
+.signUpLeft {
+
     margin-top: 10px;
     margin-bottom: 1px;
     margin-left: 20%;
     margin-right: 10%;
     width: 70%;
     text-align: center;
-    border-style: solid;
-    border-size: 1px;
+    border-style: 1px solid;
     background-color: #B9B8B5;
 }
 
-.signUpRight{   
+.signUpRight {
+
     margin-top: 10px;
     margin-bottom: 1px;
     margin-left: 10%;
     margin-right: 20%;
     width: 70%;
     text-align: center;
-    border-style: solid;
-    border-size: 1px;
+    border-style: 1px solid;
     background-color: #B9B8B5;
 }
 
+.dataEntryLeft {
 
-.dataEntryLeft{
-
-    border-style: solid;
-    border-size: 1px;
+    border-style: 1px solid;
     width: 70%;
     margin-top: 1px;
     margin-bottom: 10px;
@@ -153,11 +166,9 @@ background-color:gainsboro;
     margin-right: 10%;
 }
 
+.dataEntryRight {
 
-.dataEntryRight{
-
-    border-style: solid;
-    border-size: 1px;
+    border-style: 1px solid;
     width: 70%;
     margin-top: 1px;
     margin-bottom: 10px;
@@ -165,7 +176,7 @@ background-color:gainsboro;
     margin-right: 20%;
 }
 
-.sexSignUp{
+.sexSignUp {
 
     margin-top: 10px;
     margin-bottom: 0px;
@@ -173,25 +184,23 @@ background-color:gainsboro;
     margin-right: 0%;
     width: 53%;
     text-align: center;
-    border-style: solid;
-    border-size: 1px;
+    border-style: 1px solid;
     background-color: #B9B8B5;
-
 }
 
-.DoBSignUp{
+.DoBSignUp {
+
     margin-top: 10px;
     margin-bottom: 1px;
     margin-left: 19%;
     margin-right: -70%;
     width: 42%;
     text-align: center;
-    border-style: solid;
-    border-size: 1px;
+    border-style: 1px solid;
     background-color: #B9B8B5;
 }
 
-.passwordSignUp{
+.passwordSignUp {
 
     margin-top: 10px;
     margin-bottom: 1px;
@@ -199,13 +208,11 @@ background-color:gainsboro;
     margin-right: 50%;
     width: 98%;
     text-align: center;
-    border-style: solid;
-    border-size: 1px;
+    border-style: 1px solid;
     background-color: #B9B8B5;
-
 }
 
-.passwordSignUp2{
+.passwordSignUp2 {
 
     margin-top: 10px;
     margin-bottom: 1px;
@@ -213,38 +220,31 @@ background-color:gainsboro;
     margin-right: -30%;
     width: 24.5%;
     text-align: center;
-    border-style: solid;
-    border-size: 1px;
+    border-style: 1px solid;
     background-color: #B9B8B5;
-
 }
 
-.sexEntry{
+.sexEntry {
 
     margin-top: 0px;
     margin-bottom: 1px;
     margin-left: 52%;
     margin-right: 0%;
     width: 43%;
-    border-style: solid;
-    border-size: 1px;
-    
-
+    border-style: 1px solid;
 }
 
-.DoBEntry{
+.DoBEntry {
 
     margin-top: 0px;
     margin-bottom: 1px;
     margin-left: 21%;
     margin-right: 70%;
     width: 64%;
-    border-style: solid;
-    border-size: 1px;
+    border-style: 1px solid;
 }
 
-.passwordEntry{
-
+.passwordEntry {
 
     margin-top: 10px;
     margin-bottom: 1px;
@@ -252,11 +252,10 @@ background-color:gainsboro;
     margin-right: 50%;
     width: 71%;
     text-align: center;
-    border-style: solid;
-    border-size: 1px;
+    border-style: 1px solid;
 }
 
-.passwordEntry2{
+.passwordEntry2 {
 
     margin-top: 10px;
     margin-bottom: 1px;
@@ -264,114 +263,179 @@ background-color:gainsboro;
     margin-right: -30%;
     width: 24.5%;
     text-align: center;
-    border-style: solid;
-    border-size: 1px;
-
+    border-style: 1px solid;
 }
 
-.thumbnail{
+.thumbnail {
 
     margin-left: 19%;
     border-style: solid;
     border-width: 0.5px;
 }
 
-.imgButton1{
-	
+.imgButton1 {
+
     margin-top: -10px;
     margin-left: -100%;
     width: 71%;
-    
+
 }
 
-.imgButton2{
-   margin-left: -115%;
-   margin-top: 10px;
-   margin-right: 0px;
-   width: 84%
-   
+.imgButton2 {
+    margin-left: -115%;
+    margin-top: 10px;
+    margin-right: 0px;
+    width: 84%
 }
 
-.imgButton3{
+.imgButton3 {
 
-   margin-top: 10px;
-   margin-left: 0px;
-   width: 84%
-  
+    margin-top: 10px;
+    margin-left: 0px;
+    width: 84%
 }
+
 
 /*WELLSPACE PAGE*/
-.carapic{
-max-height:600px !important;
+
+.carapic {
+    max-height: 600px !important;
 }
 
-.every_other{
-background-color:#f0f2f2;
+.every_other {
+    background-color: #f0f2f2;
 }
 
-.card_para{
-margin-top:35px;
-margin-bottom:35px;
+.card_para {
+    margin-top: 35px;
+    margin-bottom: 35px;
 }
 
-.anchor_list{
-margin-bottom:20px;
+.anchor_list {
+    margin-bottom: 20px;
 }
 
 * {
-	font-family: 'Open Sans';
-	box-sizing: border-box;
+    font-family: 'Open Sans';
+    box-sizing: border-box;
 }
 
+/*BOOK HUB PAGE*/
+#book_carousel{
+margin:0px auto;
+}
+
+.card{
+margin-top:30px;
+margin-bottom:20px;
+padding:20px;
+
+}
+.card-img-top{
+height:100px;
+width:100px;
+margin-left:36%;
+}
+
+.btn_R{
+background-color:darkseagreen;
+}
+
+/*BOOK PLACARD DEMONSTRATION PAGE*/
+
+h3{
+margin-bottom:40px;
+}
+
+.full_feature{
+background-color:#f5f5f5;
+height:437px;
+margin-bottom:20px;
+}
+
+.full_thing{
+padding:20px;
+border: 1px solid lightgray;
+}
+
+.full_describe{
+padding:30px;
+}
+
+.button_row{
+margin-left:5px;
+}
+
+.view_button{
+background-color:darkseagreen;
+}
+
+.comm_button{
+background-color:#ffd54d;
+}
+
+.view_button:hover, .comm_button:hover{
+background-color:lightblue;
+}
+
+.e_reader,.book_board{
+margin-top:40px;
+margin-bottom:40px;
+padding:10px;
+align-content:center;
+}
+
+
+/*MESSAGE BOARD*/
+
 .chatContainer {
-	width: 400px;
-	height: 500px;
-	border: 2px solid #ddd;
+    width: 400px;
+    height: 500px;
+    border: 2px solid #ddd;
 }
 
 .chatContainer > .chatHeader {
-	width: 100%;
-	background: white;
-	padding: 5px;
-	border-bottom: 1px solid #ddd;
+    width: 100%;
+    background: white;
+    padding: 5px;
+    border-bottom: 1px solid #ddd;
 
 }
 
-.chatContainer > .chatHeader h3{
-	margin: 0;
-	padding:0;
-	font-weight: 400;
-	color: #333;
+.chatContainer > .chatHeader h3 {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    color: #333;
 }
 
-.chatContainer > .chatMessages{
-	height: 420px;
-	border-bottom: 1px solid #dddd;
-	overflow-y: scroll;
+.chatContainer > .chatMessages {
+    height: 420px;
+    border-bottom: 1px solid #dddd;
+    overflow-y: scroll;
 }
 
-.chatContainer > .chatBottom form input[type="submit"]{
-	padding: 6px;
-	background: white;
-	border: 1px solid #ddd;
-	cursor: pointer;
+.chatContainer > .chatBottom form input[type="submit"] {
+    padding: 6px;
+    background: white;
+    border: 1px solid #ddd;
+    cursor: pointer;
 
 }
 
-.chatContainer > .chatBottom form input[type="text"]{
-	width: 85%;
-	padding: 3px;
-	padding-left: 10px;
-	border: 1px solid #ddd;
+.chatContainer > .chatBottom form input[type="text"] {
+
+    width: 85%;
+    padding: 3px;
+    padding-left: 10px;
+    border: 1px solid #ddd;
     border-radius: 5px;
     margin: 5px;
     height: 30px;
 }
 
 .cm {
-	list-style: none;
-	border-bottom: 1px solid #ddd;
-	padding: 5px;
+    list-style: none;
+    border-bottom: 1px solid #ddd;
+    padding: 5px;
 }
-
-
