@@ -4,7 +4,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
+    
     <head>
         <meta charset="UTF-8">
 
@@ -15,11 +15,13 @@
 
         <!--BOOTSTRAP CSS-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="css/prototype.css">      
+
+        <link rel="stylesheet" type="text/css" href="css/prototype.css">
+        <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
 
     <body>
-        
+ 
         <!--NAVIGATION-->
         <nav id="navigate" class="navbar navbar-expand-xl navbar-fixed-top navbar-light bg-light">
 
@@ -32,7 +34,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav text-uppercase">
                     <li class="nav-item active"><a class="nav-link" href="index.php">Main Page</a></li>
-                    <li class="nav-item"><a class="nav-link" href="bookplacard.php">Book Hub</a></li>
+                    <li class="nav-item"><a class="nav-link" href="bookhub.html">Book Hub</a></li>
                     <li class="nav-item"><a class="nav-link" href="wellspace.html">Wellspace</a></li>
                     <li class=""><a class="nav-link" href="account.php">My Profile</a></li>
                 </ul>
@@ -55,114 +57,80 @@
             
                 echo "<h4 class=\"alert alert-success\">Welcome $username</h4>";
                 
+                if (isset($_POST["join"]))
+                {
+                    // Getting these lousy messages
+                    $database = new mysqli("localhost", "cen4010s2020_g07", "faueng2020", "cen4010s2020_g07");
+                
+                    // Retrieves All User's Information from Database
+                    $sql = "SELECT * FROM user_accounts WHERE username='$username'";
+                    $result = $database->query($sql);
+                    $row = $result->fetch_assoc();
+                
+                    $userID = $row["userID"];
+                
+                    $books = $_POST["join"];
+                
+                    // Retrieves All User's Information from Database
+                    $sql = "UPDATE user_accounts SET books = '$books' WHERE userID = '$userID'";
+                
+                    if ($database->query($sql))
+                    {
+                        echo "<h4 class=\"alert alert-success\">Successfully Joined Community</h4>";
+                    }   
+                }
             }
         
-            if (isset($_POST["join"]))
+            else
             {
-                // Getting these lousy messages
-                $database = new mysqli("localhost", "cen4010s2020_g07", "faueng2020", "cen4010s2020_g07");
-                
-                // Retrieves All User's Information from Database
-                $sql = "SELECT * FROM user_accounts WHERE username='$username'";
-                $result = $database->query($sql);
-                $row = $result->fetch_assoc();
-                
-                $userID = $row["userID"];
-                
-                $books = $_POST["join"];
-                
-                // Retrieves All User's Information from Database
-                $sql = "UPDATE user_accounts SET books = '$books' WHERE userID = '$userID'";
-                
-                if ($database->query($sql))
-                {
-                    echo "<h4 class=\"alert alert-success\">Successfully Joined Community</h4>";
-                }
+                echo "<h4 class=\"alert alert-warning\">Please Sign-In To Join The Community</h4>";  
             }
     
         ?>
         
-        <h3 class="mt-5">Book Placard Demo</h3>
+        <h3 class="mt-5">Book Placard Page</h3>
+            <div class="container placard">
+                <div class="row full_thing">
+                    <div class="col-md-4 mt-3 full_plac_image">
+                    <img src="books/covers/NatureFixCover.png" alt="Cover: The Nature Fix" class="img-fluid"> 
+                    </div>
+                    <div class="col-md-8 mt-3 full_feature">
+                        <h3 class="mt-3">The Nature Fix</h3>
+                        <p class="text-left full_describe">An intrepid investigation into nature's restorative benefits by a prize-winning author.
+                        For centuries, poets and philosophers extolled the benefits of a walk in the woods: Beethoven drew inspiration from rocks and trees; Wordsworth composed while tromping over the heath; Nikola Tesla conceived the electric motor while visiting a park. Intrigued by our storied renewal in the natural world, Florence Williams sets out to uncover the science behind nature's positive effects on the brain.
+                        From forest trails in Korea, to islands in Finland, to groves of eucalyptus in California, Williams investigates the science at the confluence of environment, mood, health, and creativity.
+                        </p> 
+                        <div class="d-flex flex-row button_row">
+                            <button type="button" class="btn btn-secondary ml-4 mr-3 view_button" ONCLICK="ShowAndHide()">Click to Read</button>
+                            <form method="post" action="bookplacard.php" id="chatForm">
+                                <div class="form-check">
+                                    <input type="hidden" name="join" value="1">
+                                    <button type="submit" class="btn btn-secondary comm_button">Join the Community!</button>
+                                </div>                        
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         
-        <!-- Placard -->
-        <section class="container container-fluid">
-            <div class="card card-default">
-            
-                <!-- Header -->
-                <div class="card-header text-center">
-                    <span><strong>Book Title</strong></span>
+            <div class="container col-sm-12 col-md-8 e_reader" id="eReader" style="display:none">
+                <div class="card">
+                    <div class="card-body text-center"><iframe id="viewerPro" style="width:600px; height: 500px;" src="books/TheNatureFix.pdf"></iframe></div>
                 </div>
-                
-                <!-- Body -->
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <img src="images/newspaper.png" class="col-sm-12" alt="...">
-                        </div>
-                        <div class="col-sm-8">
-                            <p class="text-justify">This panel will contain a thumbnail and some information on the book/topic that is being discussed in the placard.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Footer -->
-                <div class="card-footer text-center">
-                    <form method="post" action="bookplacard.php" id="chatForm">
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="checkbox" name="join" class="form-check-input" value="1">Join The Books Community Discussion
-                            </label>
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary">Join</button>
-                        
-		              </form>
-                </div>
-                
             </div>
-            <br>
-            <br>
-            
-            <!-- E-Reader -->
-            <div class="card card-default">
-            
-                <!-- Header -->
-                <div class="card-header text-center">
-                    <span><strong>E-Reader</strong></span>
-                </div>
+        
+            <div class="container col-sm-12 col-md-8 book_board">
                 
-                <!-- Body -->
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-4">
-                            <img src="images/newspaper.png" class="col-sm-12" alt="...">
-                        </div>
-                        <div class="col-sm-8">
-                            <p class="text-justify">This panel will contain an e-reader that will allow a user to read a section of the book if it is avaliable on the site</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Footer -->
-                <div class="card-footer text-center">
-                    <a href="https://covid19.who.int/" target="_blank" class="btn btn-info" role="button">Link To Article</a>
-                </div>
-                
-            </div>
-            <br>
-            <br>
+                <!-- Message Board -->
+                <div class="card card-default">
             
-            <!-- Message Board -->
-            <div class="card card-default">
-            
-                <!-- Header -->
+                    <!-- Header -->
                 <div class="card-header text-center">
                     <span><strong>Message Board</strong></span>
                 </div>
                 
                 <!-- Body -->
                 <div class="card-body">
-                    <p class="text-justify">This panel will the "Community message board where users will be free to discuss the topic of the Placard</p>
                     
                     <?php
         
@@ -261,11 +229,10 @@
                 <br>
                 
             </div>
-    
-        </section>
+            </div>
         
-        <!--Modal-->
-        <div class="modal" id="modal1" role="dialog">
+            <!--Modal-->
+            <div class="modal" id="modal1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -301,16 +268,28 @@
             </div>  
         </div>
         
-        <footer class="footer text-center"> <div class="container">(c)2020 FunkyTech</div></footer>
+
+    <footer class="footer text-center"> &copy;2020 FunkyTech</footer>
     
-        <!--BOOTSTRAP SCRIPTS-->
+    <!--button script-->
+    <script>
+        function ShowAndHide() {
+        var x = document.getElementById('eReader');
+        if (x.style.display == 'none') {
+            x.style.display = 'block';
+        } else {
+            x.style.display = 'none';
+        }
+    }</script>
 
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <!--BOOTSTRAP SCRIPTS-->
 
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 
-    </body>
-    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+</body>
+
 </html>
