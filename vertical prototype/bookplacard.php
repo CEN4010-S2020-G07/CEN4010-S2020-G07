@@ -124,7 +124,7 @@
                 <!-- Message Board -->
                 <div class="card card-default">
             
-                    <!-- Header -->
+                <!-- Header -->
                 <div class="card-header text-center">
                     <span><strong>Message Board</strong></span>
                 </div>

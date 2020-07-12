@@ -101,11 +101,11 @@
         </div>
     </div>
     
-    <div class="container col-md-6 " id="cat_hubs">
+    <div class="container col-md-6 text-center" id="cat_hubs">
       
        <h5 class="text-center mb-3">Select a Category, Join A Community!</h5>
        
-        <div class="card-group">
+        <div class="card-group text-center">
             <div class="card category">
                 <a href="bookhub.html">
                     <img src="images/book.png" alt="books" class="img-fluid">
@@ -119,7 +119,7 @@
                 </a>
             </div>
         </div>
-        <div class="card-group">
+        <div class="card-group text-center">
             <div class="card category">
                 <a href="index.php">
                     <img src="images/newspaper.png" alt="news" class="img-fluid">
