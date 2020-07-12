@@ -119,7 +119,7 @@
                 </div>
             </div>
         
-            <div class="container col-sm-12 col-md-8 book_board">
+            <div class="container col-sm-12 col-md-8 book_board" style="display:none">
                 
                 <!-- Message Board -->
                 <div class="card card-default">
