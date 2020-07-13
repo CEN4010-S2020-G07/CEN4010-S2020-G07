@@ -5,10 +5,49 @@ Group Number: 7
 Group Name: FunkyTech
 Project Name: Gather+
 
-README Version: 2.0 (6/30/20)
+README Version: 2.0 (7/14/20)
 ========================================================================================================= 
 
-====================== UPDATES (Milestone 2 : 6/30/20) ==================================================
+====================== UPDATES (Milestone 3 : Version 2.0 [7/14/20]) ==================================================
+
+*** Main Page ***
+
+- Page Converted from HTML to PHP to allow for dynamic updates regarding signed-in users. 
+
+- Incorporated RSS functionality to source a "featured" article from a news source on the Main Page.
+
+- Login modal/button added to allow for user login on Main Page. 
+
+
+
+*** Placard Template Page ***
+
+- Page Converted from HTML to PHP to allow users to join communities through php-embedded SQL scripts within the page. 
+
+
+
+*** Login Screen ***
+
+- Login modal now includes "Create An Account" link that directs users to "Sign-Up" page.
+
+- Successful logins now direct user to their "My Profile" page.
+
+
+
+*** My Profile Page ***
+
+- "Edit Profile" button added that directs users to "Edit Profile" page
+
+
+*** Edit Profile Page ***
+
+- Edit Profile page now added
+
+- Edit Profile page will allow users to make changes to the information stored within their account, which presently includes their username, first and last name,
+e-mail address and communities they have joined.
+
+
+====================== UPDATES (Milestone 2 : Version 1.0 [6/30/20]) ==================================================
 
 *** Feature/Main Page ***
 
@@ -67,7 +106,7 @@ a user's profile.
 - Added a "My Communities" container that lists the "Communities" a user has joined.
 
 
-****Account View ***
+*** Account View ***
 
 - Account View serves as the page that a user will see when they are viewing their own account. This 
 view will allow users to edit aspects of their profile on the site.
@@ -76,6 +115,6 @@ view will allow users to edit aspects of their profile on the site.
 from the Account View Page.
 
 
-========================================================================================================= 
+=========================================================================================================
 
 
