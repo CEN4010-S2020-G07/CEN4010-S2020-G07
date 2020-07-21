@@ -55,7 +55,24 @@
                 <!-- Card 1 -->
                 <div class="col-sm-4">
                     <div class="card" style="width:400px">
-                        <img class="card-img-top" src="images/blank.png" alt="Card image">
+                        <?php 
+ 
+                            // Retrieves All User's Information from Database
+                            $sql = "SELECT userImage FROM user_accounts WHERE userID='$userID'";
+                            $result = $database->query($sql);
+                        
+                            if($result->num_rows != 0)
+                            { 
+                                echo "Hello";
+                                
+                                $row = $result->fetch_assoc();
+                                $userImage = $row["userImage"];
+                                $userImage = base64_encode($userImage);
+                                    
+                                echo "<img src=\"data:image/jpg;charset=utf8; base64, $userImage \" width=\"500\" height=\"600\" />";
+                            }
+                        ?>
+                        
                         <div class="card-body">
                             <?php
                             
@@ -72,7 +89,14 @@
                             ?>
                         </div>
                         <div class ="card-footer text-center">
-                            <a class="btn btn-info" href="editProfile.php" role="button">Edit Profile</a> 
+                            <a class="btn btn-info" href="editProfile.php" role="button">Edit Profile</a>
+                            
+                            <form action="account.php" method="post" enctype="multipart/form-data">
+                                <label>Select Image File:</label>
+                                <input type="file" name="image">
+                                <input type="submit" name="submitImage" value="Upload">
+                            </form>
+                            
                         </div>
                     </div>
                 </div>
@@ -87,19 +111,9 @@
                             <span><strong>About Me</strong></span>
                         </div>
                         
-                        <div class="card-body">
+                        <div class="card-body text-center">
                             <?php
-                            
-                                if ($username != "")
-                                {
-                                    echo "<ul><li>Name: $firstname $lastname </li><li>E-mail: $email </li></ul>";
-                                }
-                            
-                                else
-                                {
-                                    echo "<ul><li>Name: </li><li>E-mail: </li></ul>";
-                                }
-                            
+                                echo "$blurb";
                             ?>
                             
                         </div>

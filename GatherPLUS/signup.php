@@ -55,6 +55,7 @@
                     
                 <form id="input" method="post" action="signup.php">
                     <div class="card-body text-center padded">
+                        
                         <div class="row">
                             <div class="form-group col-sm-6">
                                 <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name">
@@ -79,6 +80,12 @@
                             </div> 
                             <div class="form-group col-sm-6">
                                 <input type="password" class="form-control" id="password2" name="password2" placeholder="Confirm Password">
+                            </div> 
+                        </div>
+                        
+                        <div class="row">
+                            <div class="form-group col-sm-12">
+                                <textarea type="textarea" class="form-control" id="blurb" name="blurb" placeholder="Biography"></textarea>
                             </div> 
                         </div>
                         
