@@ -18,16 +18,53 @@
                 
                     $userID = $row["userID"];
                 
-                    $books = $_POST["join"];
-                
+                    $newCommunity = $_POST["join"];
+                    
                     // Retrieves All User's Information from Database
-                    $sql = "UPDATE user_accounts SET books = '$books' WHERE userID = '$userID'";
-                
-                    if ($database->query($sql))
+                    $sql = "SELECT Messageboard FROM communityMembers WHERE userID='$userID'";
+                    
+                    $result = $database->query($sql);
+                    
+                    // Error Message if username Not Found in Database
+                    if ($result->num_rows == 0) 
                     {
-                        echo "<h4 class=\"alert alert-success\">Successfully Joined Community</h4>";
-                    }   
+                        // Retrieves All User's Information from Database
+                        $sql = "INSERT INTO communityMembers (userID, Messageboard) VALUES ('$userID', '$newCommunity')";
+                
+                        if ($database->query($sql))
+                        {
+                            echo "<h4 class=\"alert alert-success\">Successfully Joined Community</h4>";
+                        }
+                        
+                        else
+                        {
+                            echo "<h4 class=\"alert alert-success\">Uh OH</h4>";
+                        }
+                    }
+                    
+                    else
+                    {
+                        $row = $result->fetch_array(MYSQLI_NUM);
+                    
+                        foreach ($row as $community) 
+                        {
+                            if($community == $newCommunity)
+                            {
+                                echo "<h4 class=\"alert alert-warning\">You are already a member of this community</h4>";
+                                exit("");
+                            }
+                        }
+                    
+                        // Retrieves All User's Information from Database
+                        $sql = "INSERT INTO communityMembers (userID, Messageboard) VALUES ('$userID', '$newCommunity)";
+                
+                        if ($database->query($sql))
+                        {
+                            echo "<h4 class=\"alert alert-success\">Successfully Joined Community</h4>";
+                        }   
+                    }
                 }
+                    
             }
         
             else

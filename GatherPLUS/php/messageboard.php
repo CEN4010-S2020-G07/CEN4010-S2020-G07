@@ -24,16 +24,22 @@
                         else
                         {
                             // Retrieves All User's Information from Database
-                            $sql = "SELECT * FROM user_accounts WHERE username='$username'";
+                            $sql = "SELECT userID FROM user_accounts WHERE username='$username'";
                             $result = $database->query($sql);
                             $row = $result->fetch_assoc();
-                
-                            $books = $row["books"];
                             
-                            if ($books != 1)
+                            $userID = $row["userID"];
+                            
+                            // Retrieves All User's Information from Database
+                            $sql = "SELECT Messageboard FROM communityMembers WHERE userID='$userID' AND Messageboard='books'";
+                            $result = $database->query($sql);
+                            
+                            // Error Message if username Not Found in Database
+                            if ($result->num_rows == 0) 
                             {
-                                echo "<h4 class=\"alert alert-warning text-center\">Join the Community before Submitting</h4>";
+                                echo "<h4 class=\"alert alert-warning text-center\">Please Join Community Before Posting</h4>";
                             }
+                            
                             
                             else
                             {

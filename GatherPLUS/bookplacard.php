@@ -67,7 +67,7 @@
                             <button type="button" class="btn btn-secondary ml-4 mr-3 view_button" ONCLICK="ShowAndHide()">Click to Read</button>
                             <form method="post" action="bookplacard.php" id="chatForm">
                                 <div class="form-check">
-                                    <input type="hidden" name="join" value="1">
+                                    <input type="hidden" name="join" value="books">
                                     <button type="submit" class="btn btn-secondary comm_button" ONCLICK="ShowAndHide()">Join the Community!</button>
                                 </div>                        
                             </form>
@@ -82,7 +82,7 @@
                 </div>
             </div>
         
-            <div class="container col-sm-12 col-md-8 book_board seeDiv" style="display:none">
+            <div class="container col-sm-12 col-md-8 book_board seeDiv">
                 
                 <!-- Message Board -->
                 <div class="card card-default">
