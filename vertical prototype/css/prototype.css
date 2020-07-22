@@ -328,13 +328,13 @@ margin:0px auto;
 .card{
 margin-top:30px;
 margin-bottom:20px;
-padding:20px;
 
 }
-.card-img-top{
+#books{
 height:100px;
 width:100px;
 margin-left:36%;
+    
 }
 
 .btn_R{
