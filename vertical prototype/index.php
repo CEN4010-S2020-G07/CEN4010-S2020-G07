@@ -72,20 +72,21 @@
         <div id="well_carousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#well_carousel" data-slide-to="0" class="active"></li>
-                <li data-target="#well_carousel" data-slide-to="1"></li>
-                <li data-target="#well_carousel" data-slide-to="2"></li>
+                <!--<li data-target="#well_carousel" data-slide-to="1"></li>
+                <li data-target="#well_carousel" data-slide-to="2"></li>-->
             </ol>
 
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="images/scenic.jpg" class="d-block w-100" alt="...">
                 </div>
-                <div class="carousel-item">
+                
+              <!--  <div class="carousel-item">
                     <img src="images/scenic.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item">
                     <img src="images/scenic.jpg" class="d-block w-100" alt="...">
-                </div>
+                </div>-->
             </div>
         </div>
         <br>
@@ -100,17 +101,38 @@
         </div>
     </div>
     
-    <div class="container col-md-8" id="cat_hubs">
-       <h6 class="text-center">Select a Category, Join A Community!</h6>
-        <div class="card-group">
-            <div class="card category"><a href="bookplacard.php"><img src="images/book.png" alt="books" class="img-fluid"><span class="text-nowrap">Books</span></a></div>
-            <div class="card category"><a href=""><img src="images/sing.png" alt="" class="img-fluid"><span class="text-nowrap">Podcasts</span></a></div>
+    <div class="container col-md-6 text-center" id="cat_hubs">
+      
+       <h5 class="text-center mb-3">Select a Category, Join A Community!</h5>
+       
+        <div class="card-group text-center">
+            <div class="card category">
+                <a href="bookhub.html">
+                    <img src="images/book.png" alt="books" class="img-fluid">
+                    <div class="text-nowrap">Books</div>
+                </a>
+            </div>
+            <div class="card category">
+                <a href="index.php">
+                    <img src="images/sing.png" alt="" class="img-fluid">
+                    <div class="text-nowrap">Podcasts</div>
+                </a>
+            </div>
         </div>
-        <div class="card-group">
-            <div class="card category"><a href=""><img src="images/newspaper.png" alt="news" class="img-fluid"><span class="text-nowrap">Articles</span></a></div>
-            <div class="card category"><a href=""><img src="images/puzzle.png" alt="games" class="img-fluid"><span class="text-nowrap">Games</span></a></div>
+        <div class="card-group text-center">
+            <div class="card category">
+                <a href="index.php">
+                    <img src="images/newspaper.png" alt="news" class="img-fluid">
+                    <div class="text-nowrap">Articles</div>
+                </a>
+            </div>
+            <div class="card category">
+                <a href="index.php">
+                    <img src="images/puzzle.png" alt="games" class="img-fluid">
+                    <div class="text-nowrap">Games</div>
+                </a>
+            </div>
         </div>
-
     </div>
     <div class="container-fluid text-center section" id="weeklynews">    
         <!-- RSS Feed -->
