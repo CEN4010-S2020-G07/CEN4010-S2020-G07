@@ -118,13 +118,14 @@
                     <div class="card-body text-center"><iframe id="viewerPro" style="width:600px; height: 500px;" src="books/TheNatureFix.pdf"></iframe></div>
                 </div>
             </div>
-        
+
             <div class="container col-sm-12 col-md-8 book_board seeDiv" style="display:none">
+
                 
                 <!-- Message Board -->
                 <div class="card card-default">
             
-                    <!-- Header -->
+                <!-- Header -->
                 <div class="card-header text-center">
                     <span><strong>Message Board</strong></span>
                 </div>
