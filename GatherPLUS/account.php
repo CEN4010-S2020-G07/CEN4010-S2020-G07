@@ -45,7 +45,7 @@
         <div id="about" class="container-fluid">
             <br>
             
-            <!-- PHP for Displaying Weather Information And/Or Login Confirmation -->
+            <!-- PHP for -->
             <?php include 'php/login.php'; ?>
             
             <!-- News Articles -->
@@ -54,26 +54,39 @@
                 
                 <!-- Card 1 -->
                 <div class="col-sm-4">
-                    <div class="card" style="width:400px">
-                        <?php 
- 
-                            // Retrieves All User's Information from Database
-                            $sql = "SELECT userImage FROM user_accounts WHERE userID='$userID'";
-                            $result = $database->query($sql);
+                    <div class="card text-center" style="width:400px">
+                        <?php
+                            
+                            if (isset($_SESSION["username"]))
+                            {
+                                // Retrieves All User's Information from Database
+                                $sql = "SELECT userImage FROM user_accounts WHERE userID='$userID'";
+                                $result = $database->query($sql);
                         
-                            if($result->num_rows != 0)
-                            { 
-                                echo "Hello";
-                                
-                                $row = $result->fetch_assoc();
-                                $userImage = $row["userImage"];
-                                $userImage = base64_encode($userImage);
+                                if($result->num_rows != 0)
+                                {                                 
+                                    $row = $result->fetch_assoc();
+                                    $userImage = $row["userImage"];
+                                    $userImage = base64_encode($userImage);
                                     
-                                echo "<img src=\"data:image/jpg;charset=utf8; base64, $userImage \" width=\"500\" height=\"600\" />";
+                                    echo "<img src=\"data:image/jpg;charset=utf8; base64, $userImage \" width=\"400\" height=\"250\" />";
+                                }
+                                
+                                else
+                                {
+                                    echo "<img class=\"card-img-top\" src=\"images/blank.png\" alt=\"Card image\">";
+                                }
+                            }
+                        
+                            else
+                            {
+                                echo "<img class=\"card-img-top\" src=\"images/blank.png\" alt=\"Card image\">";
                             }
                         ?>
-                        
                         <div class="card-body">
+                        </div>
+                        
+                        <div class ="card-footer text-center">
                             <?php
                             
                                 if ($username != "")
@@ -88,16 +101,6 @@
                             
                             ?>
                         </div>
-                        <div class ="card-footer text-center">
-                            <a class="btn btn-info" href="editProfile.php" role="button">Edit Profile</a>
-                            
-                            <form action="account.php" method="post" enctype="multipart/form-data">
-                                <label>Select Image File:</label>
-                                <input type="file" name="image">
-                                <input type="submit" name="submitImage" value="Upload">
-                            </form>
-                            
-                        </div>
                     </div>
                 </div>
                 
@@ -111,18 +114,15 @@
                             <span><strong>About Me</strong></span>
                         </div>
                         
-                        <div class="card-body text-center">
+                        <div class="card-body text-justify">
                             <?php
                                 echo "$blurb";
-                            ?>
-                            
+                            ?> 
                         </div>
                         
                     </div>
                 </div>
             </div>
-            <br>
-            <br>
             
             <!-- Guidelines List -->
             <div class="row">
@@ -135,14 +135,27 @@
                         
                         <div class="card-body">
                             <?php
-                                if ($books != 0)
+                                
+                                $sql = "SELECT Messageboard FROM communityMembers WHERE userID='$userID'";
+                                $result = $database->query($sql);
+                            
+                                if ($result->num_rows == 0)
                                 {
-                                    echo "<ul><li>Books</li></ul>";
+                                    echo "<ul><li>No Communities Joined Yet</li></ul>";
                                 }
                             
                                 else
                                 {
-                                    echo "<ul><li>No Communities Joined Yet</li></ul>";
+                                    echo "<ul>";
+                                    
+                                    while($row = $result->fetch_assoc())
+                                    {
+                                        $community = $row['Messageboard'];
+                                        
+                                        echo "<li>$community</li>";
+                                    }
+                                    
+                                    echo "</ul>";
                                 }
                             ?>
                         </div>
@@ -150,6 +163,13 @@
                 </div>
                 
             </div>
+            
+            <div class="row">
+                <div class="col-sm-3 text-center">
+                    <a class="btn btn-info" href="editProfile.php" role="button">Edit Profile</a>
+                </div>
+            </div>
+            
         </div>
         <br>
         <br>

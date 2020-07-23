@@ -11,10 +11,39 @@
                 echo " ";
             }
         
+            $currMonth = date('m');
+            $currDay = date('d');
+            $currYear = date('Y');
+
             // Error message if user did not fill in all fields
             if($_POST["username"] == "" || $_POST["password"] == "" || $_POST["email"] == "")
             {
                 echo "<h4 class=\"alert alert-warning text-center\">Please Fill In All Fields to Create Account</h4>";
+                
+                echo "<ul class=\"alert alert-warning text-center\">";
+                echo "<li>Password Must Be At Least 8 Characters in Length</li>";
+                echo "<li>Must Be 16 Years or Older to Sign-Up</li>";
+                echo "</ul>";
+            }
+
+            else if (!(checkdate($_POST["month"], $_POST["day"], $_POST["year"])))
+            {
+                echo "<h4 class=\"alert alert-danger text-center\">Invalid Date of Birth Entered</h4>";
+            }
+
+            else if (($currYear - $_POST["year"]) == 16 && $currMonth <= $_POST["month"] && $currDay < $_POST["day"])
+            {
+                echo "<h4 class=\"alert alert-danger text-center\">Must Be 16 Years or Older to Sign-Up</h4>";
+            }
+
+            else if ($currYear - $_POST["year"] < 16)
+            {
+                echo "<h4 class=\"alert alert-danger text-center\">Must Be 16 Years or Older to Sign-Up</h4>";
+            }
+
+            else if (strlen($_POST["password"]) < 8)
+            {
+                echo "<h4 class=\"alert alert-danger text-center\">Password Must Be At Least 8 Characters in Length</h4>";
             }
         
             // Error message if passwords do not match

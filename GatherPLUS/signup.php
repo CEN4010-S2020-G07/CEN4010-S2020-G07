@@ -84,6 +84,18 @@
                         </div>
                         
                         <div class="row">
+                            <div class="form-group col-sm-4">
+                                <input type="text" class="form-control datepicker" name="month" placeholder="Date of Birth (Month : MM)"/>
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <input type="text" class="form-control datepicker" name="day" placeholder="Date of Birth (Day : DD)"/>
+                            </div> 
+                            <div class="form-group col-sm-4">
+                                <input type="text" class="form-control datepicker" name="year" placeholder="Date of Birth (Year : YYYY)"/>
+                            </div> 
+                        </div>
+                        
+                        <div class="row">
                             <div class="form-group col-sm-12">
                                 <textarea type="textarea" class="form-control" id="blurb" name="blurb" placeholder="Biography"></textarea>
                             </div> 

@@ -51,13 +51,36 @@
             
             <!-- News Articles -->
             <!-- Row 1 -->
-            <form id="input" method="post" action="editProfile.php">
+            <form id="input" method="post" action="editProfile.php" enctype="multipart/form-data">
             <div class="row">
                 
                 <!-- Card 1 -->
                 <div class="col-sm-4">
                     <div class="card" style="width:400px">
-                        <img class="card-img-top" src="images/blank.png" alt="Card image">
+                        <?php
+                        
+                            if (isset($_SESSION["username"]))
+                            {
+                                // Retrieves All User's Information from Database
+                                $sql = "SELECT userImage FROM user_accounts WHERE userID='$userID'";
+                                $result = $database->query($sql);
+                        
+                                if($result->num_rows != 0)
+                                {
+                                    $row = $result->fetch_assoc();
+                                    $userImage = $row["userImage"];
+                                    $userImage = base64_encode($userImage);
+                                    
+                                    echo "<img src=\"data:image/jpg;charset=utf8; base64, $userImage \" width=\"400\" height=\"250\" />";
+                                }
+                            }
+                        
+                            else
+                            {
+                                echo "<img class=\"card-img-top\" src=\"images/blank.png\" alt=\"Card image\">";
+                            }
+                        ?>
+                        
                         <div class="card-body">
                             <?php
                             
@@ -74,9 +97,10 @@
                             ?>
                         </div>
                         
-                    <div class="card-footer text-center">
-                        <input type="submit" class="btn btn-info center-block" value="Commit Changes">
-                    </div>
+                        <div class="card-footer text-center">
+                            <label class="text-center">Select Image File:</label>
+                            <input type="file" name="image">
+                        </div>
                     </div>
                         
                 </div>
@@ -105,6 +129,8 @@
                                     echo "<li>E-mail: <input type=\"text\" class=\"form-control\" value=\"$email\" name=\"newEmail\"></li>";
                                     
                                     echo "</ul>";
+                                    
+                                    echo "<li>Biography: <textarea type=\"textarea\" class=\"form-control\" id=\"blurb\" name=\"blurb\">$blurb</textarea></li>";
                                 }
                             
                                 else
@@ -118,9 +144,7 @@
                         
                     </div>
                 </div>
-                </div>
-            <br>
-            <br>
+            </div>
             
             <!-- Guidelines List -->
             <div class="row">
@@ -135,7 +159,23 @@
                             
                             <?php
                             
-                                echo "<ul><li>Books: <input type=\"text\" class=\"form-control\" value=\"$books\" name=\"newBooks\"></li></ul>";
+                                $sql = "SELECT Messageboard FROM communityMembers WHERE userID='$userID'";
+                                $result = $database->query($sql);
+                            
+                                if ($result->num_rows == 0)
+                                {
+                                    echo "<ul><li>No Communities Joined Yet</li></ul>";
+                                }
+                            
+                                else
+                                {                              
+                                    while($row = $result->fetch_assoc())
+                                    {
+                                        $community = $row['Messageboard'];
+                                        
+                                        echo "<div class=\"checkbox\"><label><input type=\"checkbox\" name=\"communities[]\" value=\"$community\"> $community</label></div>";
+                                    }
+                                }
                             
                             ?>
                             
@@ -144,6 +184,14 @@
                 </div>
                 
             </div>
+                
+            <div class="row">
+                <div class="col-sm-3 text-center">
+                    <input type="submit" class="btn btn-info center-block" value="Commit Changes">
+                </div>            
+            
+            </div>
+        
             </form>
         </div>
         <br>

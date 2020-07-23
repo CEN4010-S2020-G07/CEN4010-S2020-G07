@@ -65,6 +65,11 @@
             echo "<h4 class=\"alert alert-success\">Welcome $username</h4>";
         }
     
+        else
+        {
+            echo "<h4 class=\"alert alert-warning\">Please Sign-In To Join Communities</h4>";
+        }
+    
     ?>
     
     <h3 class="mt-5">Feature/Main</h3>
@@ -102,35 +107,131 @@
     </div>
     
     <div class="container col-md-6 text-center" id="cat_hubs">
-      
-       <h5 class="text-center mb-3">Select a Category, Join A Community!</h5>
-       
+        
+        <?php
+            
+            if (isset($_SESSION["username"]))
+            {
+                echo "<h5 class=\"text-center mb-3\">Select a Category, Join A Community!</h5>";
+            }
+        
+            else
+            {
+                echo "<h5 class=\"text-center mb-3\">Sign-in To Join A Community</h5>";
+            
+            }
+    
+        ?>
+        
         <div class="card-group text-center">
             <div class="card category">
-                <a href="bookhub.html">
-                    <img src="images/book.png" alt="books" class="img-fluid">
-                    <div class="text-nowrap">Books</div>
-                </a>
+                
+                <?php
+            
+                    if (isset($_SESSION["username"]))
+                    {
+                        echo "<a href=\"bookhub.html\">";
+                    }
+        
+                    else
+                    {
+                        echo "<a href=\"index.php\">";
+            
+                    }
+                
+                ?>
+                
+                <img src="images/book.png" alt="books" class="img-fluid">
+                <div class="text-nowrap">Books</div>
+                
+                <?php
+                
+                    echo "</a>";
+                
+                ?>
+                
             </div>
+            
             <div class="card category">
-                <a href="index.php">
-                    <img src="images/sing.png" alt="" class="img-fluid">
-                    <div class="text-nowrap">Podcasts</div>
-                </a>
+                <?php
+            
+                    if (isset($_SESSION["username"]))
+                    {
+                        echo "<a href=\"bookhub.html\">";
+                    }
+        
+                    else
+                    {
+                        echo "<a href=\"index.php\">";
+            
+                    }
+                
+                ?>
+                
+                <img src="images/sing.png" alt="" class="img-fluid">
+                <div class="text-nowrap">Podcasts</div>
+                
+                <?php
+                
+                    echo "</a>";
+                
+                ?>
+                
             </div>
         </div>
+        
         <div class="card-group text-center">
             <div class="card category">
-                <a href="index.php">
+                <?php
+            
+                    if (isset($_SESSION["username"]))
+                    {
+                        echo "<a href=\"bookhub.html\">";
+                    }
+        
+                    else
+                    {
+                        echo "<a href=\"index.php\">";
+            
+                    }
+                
+                ?>
                     <img src="images/newspaper.png" alt="news" class="img-fluid">
                     <div class="text-nowrap">Articles</div>
-                </a>
+                
+                <?php
+                
+                    echo "</a>";
+                
+                ?>
+                
             </div>
             <div class="card category">
-                <a href="index.php">
+                
+                <?php
+            
+                    if (isset($_SESSION["username"]))
+                    {
+                        echo "<a href=\"bookhub.html\">";
+                    }
+        
+                    else
+                    {
+                        echo "<a href=\"index.php\">";
+            
+                    }
+                
+                ?>
+                
                     <img src="images/puzzle.png" alt="games" class="img-fluid">
                     <div class="text-nowrap">Games</div>
-                </a>
+                
+                <?php
+                
+                    echo "</a>";
+                
+                ?>
+                
             </div>
         </div>
     </div>
