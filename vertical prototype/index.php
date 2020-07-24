@@ -8,12 +8,12 @@
     <!--FOLLOWING LINE IMPORTANT TO ADD FOR BOOTSTRAP-->
     <meta name="viewport" content="width-device-width, initial-scale=1.0, shrink-to-fit=no">
 
-    <title>Beta Launch</title>
+    <title>Vertical Prototype Template</title>
 
     <!--BOOTSTRAP CSS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="css/global.css">
+    <link rel="stylesheet" type="text/css" href="css/prototype.css">
 
 </head>
 
@@ -32,17 +32,14 @@
             <ul class="navbar-nav text-uppercase">
                 <li class="nav-item active"><a class="nav-link" href="index.php">Main Page</a></li>
                 <li class="nav-item"><a class="nav-link" href="bookhub.html">Book Hub</a></li>
-                <li class="nav-item"><a class="nav-link" href="audiohub.html">Podcasts </a></li>
-                <li class="nav-item"><a class="nav-link" href="newshub.html">News</a></li>
-                <li class="nav-item"><a class="nav-link" href="arcade.html">Games</a></li>
                 <li class="nav-item"><a class="nav-link" href="wellspace.html">Wellspace</a></li>
-                <li class=""><a class="nav-link" href="profile.php">My Profile</a></li>
+                <li class=""><a class="nav-link" href="account.php">My Profile</a></li>
             </ul>
         </div>
         
         <div class="nav navbar-nav navbar-right" id="navbarSupportedContent">
             <ul class="navbar-nav text-uppercase">
-            <!--    <li class="nav-item active"><button type="button" class="btn log bg-success" data-toggle="modal" data-target="#modal1">Login</button></li>-->
+                <li class="nav-item active"><button type="button" class="btn log bg-success" data-toggle="modal" data-target="#modal1">Login</button></li>
             </ul>
         </div>
         
@@ -69,7 +66,9 @@
         }
     
     ?>
-       
+    
+    <h3 class="mt-5">Feature/Main</h3>
+    
         <div id="well_carousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#well_carousel" data-slide-to="0" class="active"></li>
@@ -114,7 +113,7 @@
                 </a>
             </div>
             <div class="card category">
-                <a href="audiohub.html">
+                <a href="index.php">
                     <img src="images/sing.png" alt="" class="img-fluid">
                     <div class="text-nowrap">Podcasts</div>
                 </a>
@@ -122,13 +121,13 @@
         </div>
         <div class="card-group text-center">
             <div class="card category">
-                <a href="newshub.html">
+                <a href="index.php">
                     <img src="images/newspaper.png" alt="news" class="img-fluid">
                     <div class="text-nowrap">Articles</div>
                 </a>
             </div>
             <div class="card category">
-                <a href="arcade.html">
+                <a href="index.php">
                     <img src="images/puzzle.png" alt="games" class="img-fluid">
                     <div class="text-nowrap">Games</div>
                 </a>
@@ -165,7 +164,7 @@
                                         <input type="text" class="form-control" name="username" id="username" placeholder="Username">
                                     </div>
                                     <div class="form-group">
-                                        <label for="password">Password</label>
+                                        <label for="password">Password <a href="iforgot.php" class="iforgot">(Forgot Password)</a></label>
                                         <input type="password" class="form-control" name="password" id="password" placeholder="Password (Case-Sensitive)">
                                     </div>
                                     <button type="submit" class="btn btn-info">Login</button>
@@ -184,6 +183,8 @@
     </div>
     <br>
     <br>
+
+
 
     <!--BOOTSTRAP SCRIPTS-->
 
