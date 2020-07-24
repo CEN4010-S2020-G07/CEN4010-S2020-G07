@@ -81,9 +81,12 @@
         <div class="card" style="width: 16rem;">
             <div><img class="card-img-top" id = "books" src="images/book.png" alt="Card image cap"></div>
             <div class="card-body text-center">
-                <h5 class="card-title">Book Title</h5>
-                <p class="text-center">Brief Description</p>
-                <a href="#" class="btn btn_R">Read Now</a>
+                <h5 class="card-title">The Guardian</h5>
+                <p class="text-center">Julie Barenson's young husband left her two unexpected gifts before he died - a Great Dane puppy named Singer and the promise that he would always be watching over her. </p>
+                <form method="post" action="bookplacard.php">
+                    <input type="hidden" name="placardName" value="TheGuardian">
+                    <button type="submit" class="btn btn_R">Read Now</button>
+                </form>
             </div>
         </div>
         <div class="card" style="width: 16rem;">
