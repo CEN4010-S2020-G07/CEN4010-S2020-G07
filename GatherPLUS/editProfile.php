@@ -189,7 +189,12 @@
                 <div class="col-sm-3 text-center">
                     <input type="submit" class="btn btn-info center-block" value="Commit Changes">
                 </div>            
-            
+            </div>
+                
+            <div class="row">
+                <div class="col-sm-3 text-center">
+                    <button type="button" class="btn log bg-success" data-toggle="modal" data-target="#modal1">Login</button>
+                </div>            
             </div>
         
             </form>
