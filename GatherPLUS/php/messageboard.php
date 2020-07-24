@@ -29,10 +29,9 @@
                             $row = $result->fetch_assoc();
                             
                             $userID = $row["userID"];
-                            $
                             
                             // Retrieves All User's Information from Database
-                            $sql = "SELECT Messageboard FROM communityMembers WHERE userID='$userID' AND Messageboard='books'";
+                            $sql = "SELECT Messageboard FROM communityMembers WHERE userID='$userID' AND Messageboard='$placardName'";
                             $result = $database->query($sql);
                             
                             // Error Message if username Not Found in Database
@@ -41,13 +40,12 @@
                                 echo "<h4 class=\"alert alert-warning text-center\">Please Join Community Before Posting</h4>";
                             }
                             
-                            
                             else
                             {
-                                $firstname = $_SESSION["username"];
+                                $username = $_SESSION["username"];
                                 $message = $_POST["text"];
             
-                                $sql = "INSERT INTO Messageboard (Firstname, Message) VALUES ('$firstname', '$message')";
+                                $sql = "INSERT INTO $placardName (username, message) VALUES ('$username', '$message')";
             
                                 if($database->query($sql))
                                 {
@@ -63,7 +61,7 @@
                         }
             
                         //Get messages
-                        $sql = "SELECT * FROM Messageboard";
+                        $sql = "SELECT * FROM $placardName";
                         $result = $database->query($sql);
         
                         // Error Message if Site is Unable to Retrieve Information
@@ -77,8 +75,8 @@
                             // Creates array of message Info
                             while ($row = $result->fetch_assoc())
                             {
-                                $name = $row['Firstname'];
-                                $message = $row['Message'];
+                                $name = $row['username'];
+                                $message = $row['message'];
                                 $userImage = "";
                                 
                                 $sql = "SELECT userImage FROM user_accounts WHERE username='$name'";

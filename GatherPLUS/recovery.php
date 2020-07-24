@@ -42,7 +42,67 @@
         <h3 class="mt-5">Signup Page</h3>
         
         <!-- PHP for Sign-up -->
-        <?php include 'php/signup.php'; ?>  
+        <?php
+        
+            session_start();
+        
+            // Error Handler
+            set_error_handler("errorHandler");
+        
+            function errorHandler()
+            {
+                echo " ";
+            }
+            if($_SESSION["check"] == 1){
+            // Error message if user did not fill in all fields
+                if($_POST["password"] != "" && $_POST["email"] != "")
+                {
+                    // Connects to SQL Database
+                    $database = new mysqli("localhost", "cen4010s2020_g07", "faueng2020", "cen4010s2020_g07");
+                    
+                    if ($_POST["password"] == $_POST["password2"])
+                    {
+                        // Hashes Password
+                        $password = password_hash($_POST["password"], PASSWORD_BCRYPT);     
+                        $email = $_POST['email'];
+                        
+                        // Inserts Values into SQL Database
+                        $sql = "SELECT email FROM user_accounts WHERE email='$email'";
+                        
+                        $result = $database->query($sql);
+                        
+                        if ($result->num_rows != 0)
+                        {
+                            // Inserts Values into SQL Database
+                            $sql = "UPDATE user_accounts SET password = '$password' WHERE email = '$email'";
+                            
+                            if ($database->query($sql))
+                            {
+                                echo "<h4 class=\"alert alert-success\">Success</h4>";
+                            }
+                            
+                            else
+                            {
+                                echo "<h4 class=\"alert alert-danger\">Fail</h4>";
+                            } 
+                        }
+                        
+                        else
+                        {
+                            echo "<h4 class=\"alert alert-danger\">Invalid E-mail</h4>";
+                        }
+
+                    }
+                    
+                    else
+                    {
+                        echo "<h4 class=\"alert alert-danger\">Passwords Did Not Match.</h4>";
+                    }      
+                }else{
+                        echo "<h4 class=\"alert alert-warning text-center\">Please Fill In All Fields To Recover Password</h4>";
+                }   
+            }
+        ?>  
         
         
         <!-- Login Form -->
@@ -56,55 +116,25 @@
                     </form>
                 </div>
                     
-                <form id="input" method="post" action="signup.php">
+                <form id="input" method="post" action="recovery.php">
                     <div class="card-body text-center padded">
-                        
                         <div class="row">
-                            <div class="form-group col-sm-6">
-                                <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name">
-                            </div>                                       
-                            <div class="form-group col-sm-6">
-                                <input type="text" class="form-control" id="username" name="username" placeholder="Username">
-                            </div>
+                            <p>Enter email and new password inorder to reset your password.</p>
                         </div>
-                        
-                        <div class="row">
-                            <div class="form-group col-sm-6">
-                                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name">
-                            </div>                                       
-                            <div class="form-group col-sm-6">
-                                <input type="password" class="form-control" id="password" name="password" placeholder="Password (Case-Sensitive)">
-                            </div>
                         </div>
-                        
                         <div class="row">
                             <div class="form-group col-sm-6">
                                 <input type="text" class="form-control" id="email" name="email" placeholder="E-mail Address">
                             </div> 
+                        </div>
+                        <div class="row">
+                                <div class="form-group col-sm-6">
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Password (Case-Sensitive)">
+                            </div>
                             <div class="form-group col-sm-6">
                                 <input type="password" class="form-control" id="password2" name="password2" placeholder="Confirm Password">
                             </div> 
                         </div>
-                        
-                        <div class="row">
-                            <div class="form-group col-sm-4">
-                                <input type="text" class="form-control datepicker" name="month" placeholder="Date of Birth (Month : MM)"/>
-                            </div>
-                            <div class="form-group col-sm-4">
-                                <input type="text" class="form-control datepicker" name="day" placeholder="Date of Birth (Day : DD)"/>
-                            </div> 
-                            <div class="form-group col-sm-4">
-                                <input type="text" class="form-control datepicker" name="year" placeholder="Date of Birth (Year : YYYY)"/>
-                            </div> 
-                        </div>
-                        
-                        <div class="row">
-                            <div class="form-group col-sm-12">
-                                <textarea type="textarea" class="form-control" id="blurb" name="blurb" placeholder="Biography"></textarea>
-                            </div> 
-                        </div>
-                        
-                    </div>
                     
                     <div class="card-footer text-center">
                         <input type="submit" class="btn btn-success center-block" value="Create Account">

@@ -8,19 +8,19 @@
     <!--FOLLOWING LINE IMPORTANT TO ADD FOR BOOTSTRAP-->
     <meta name="viewport" content="width-device-width, initial-scale=1.0, shrink-to-fit=no">
 
-    <title>Vertical Prototype Template</title>
+    <title>Beta Launch</title>
 
     <!--BOOTSTRAP CSS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="css/prototype.css">
+    <link rel="stylesheet" type="text/css" href="css/books.css">
 
 </head>
 
 <body>
-    
-           
-      <!--NAVIGATION-->
+
+
+    <!--NAVIGATION-->
     <nav id="navigate" class="navbar navbar-expand-xl navbar-fixed-top navbar-light bg-light">
 
         <a href="#" class="navbar-brand">Gather+</a>
@@ -33,17 +33,20 @@
             <ul class="navbar-nav text-uppercase">
                 <li class="nav-item active"><a class="nav-link" href="index.php">Main Page</a></li>
                 <li class="nav-item"><a class="nav-link" href="bookhub.html">Book Hub</a></li>
+                <li class="nav-item"><a class="nav-link" href="audiohub.html">Podcasts </a></li>
+                <li class="nav-item"><a class="nav-link" href="newshub.html">News</a></li>
+                <li class="nav-item"><a class="nav-link" href="arcade.html">Games</a></li>
                 <li class="nav-item"><a class="nav-link" href="wellspace.html">Wellspace</a></li>
-                <li class=""><a class="nav-link" href="account.php">My Profile</a></li>
+                <li class=""><a class="nav-link" href="profile.php">My Profile</a></li>
             </ul>
         </div>
-    </nav>  
-     <h3 class="mt-5">Book Hub</h3>
- <div id="book_carousel" class="carousel slide" data-ride="carousel">
+    </nav>
+    <h3 class="mt-5">Book Hub</h3>
+    <div id="book_carousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#book_carousel" data-slide-to="0" class="active"></li>
             <li data-target="#book_carousel" data-slide-to="1"></li>
-           <!-- <li data-target="#book_carousel" data-slide-to="2"></li>-->
+            <!-- <li data-target="#book_carousel" data-slide-to="2"></li>-->
         </ol>
 
         <div class="carousel-inner">
@@ -53,7 +56,7 @@
             <div class="carousel-item">
                 <img src="images/bookshelf.jpg" class="carapic w-100" alt="...">
             </div>
-           <!-- <div class="carousel-item">
+            <!-- <div class="carousel-item">
                 <img src="images/" class="carapic w-100" alt="...">
             </div>-->
         </div>
@@ -66,9 +69,15 @@
                 <div class="card-body text-center">
                     <h5 class="card-title">The Nature Fix</h5>
                     <p class="text-left">Florence Williams sets out to uncover the science behind nature's positive effects on the brain.</p>
-                    <a href="bookplacard.php" class="btn btn_R">Read Now</a>
+                    <form method="post" action="bookplacard.php">
+                        <div class="form-check">
+                            <input type="hidden" name="placardName" value="TheNatureFix">
+                            <button type="submit" class="btn btn_R">Read Now</button>
+                        </div>                        
+                    </form>
                 </div>
             </div>
+
         <div class="card" style="width: 16rem;">
             <div><img class="card-img-top" id = "books" src="images/book.png" alt="Card image cap"></div>
             <div class="card-body text-center">
@@ -85,15 +94,15 @@
                 <a href="#" class="btn btn_R">Read Now</a>
             </div>
         </div>
-        <div class="card" style="width: 16rem;">
+      <!--<div class="card" style="width: 16rem;">
             <div><img class="card-img-top" id = "books" src="images/book.png" alt="Card image cap"></div>
             <div class="card-body text-center">
                 <h5 class="card-title">Book Title</h5>
                 <p class="text-center">Brief Description</p>
                 <a href="#" class="btn btn_R">Read Now</a>
             </div>
+        </div>-->
         </div>
-    </div>
 
     <!--ROW 2-->
     <div class="d-flex justify-content-around">
@@ -121,18 +130,18 @@
                 <a href="#" class="btn btn_R">Read Now</a>
             </div>
         </div>
-        <div class="card" style="width: 16rem;">
+      <!--<div class="card" style="width: 16rem;">
             <div><img class="card-img-top" id = "books" src="images/book.png" alt="Card image cap"></div>
             <div class="card-body text-center">
                 <h5 class="card-title">Book Title</h5>
                 <p class="text-center">Brief Description</p>
                 <a href="#" class="btn btn_R">Read Now</a>
             </div>
+        </div>-->
         </div>
-    </div>
 
-    <!--ROW 3-->
-    <div class="d-flex justify-content-around">
+        <!--ROW 3-->
+        <!--   <div class="d-flex justify-content-around">
         <div class="card" style="width: 16rem;">
             <div class="container"><img class="card-img-top" id = "books" src="images/book.png" alt="Card image cap"></div>
             <div class="card-body text-center">
@@ -165,16 +174,14 @@
                 <a href="#" class="btn btn_R">Read Now</a>
             </div>
         </div>
-    </div>
-  
-</div>
-<br>
-<br>
-    
+    </div>-->
 
+    </div>
+<br>
+<br>
 
     <footer class="footer text-center">&copy;2020 FunkyTech</footer>
-    
+
 
 
     <!--BOOTSTRAP SCRIPTS-->

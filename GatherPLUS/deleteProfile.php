@@ -42,7 +42,28 @@
         <h3 class="mt-5">Signup Page</h3>
         
         <!-- PHP for Sign-up -->
-        <?php include 'php/signup.php'; ?>  
+        <?php
+        
+            session_start();
+        
+            // Error Handler
+            set_error_handler("errorHandler");
+        
+            function errorHandler()
+            {
+                echo " ";
+            }
+            // Connects to SQL Database
+            $database = new mysqli("localhost", "cen4010s2020_g07", "faueng2020", "cen4010s2020_g07");
+            $delete = $_SESSION["username"];
+            // Inserts Values into SQL Database
+            $sql = "DELETE FROM user_accounts WHERE username='$delete'";
+                        
+            $result = $database->query($sql);
+            
+            echo "<h4 class=\"alert alert-success\">Account Deleted Successfully</h4>";  
+            
+        ?>  
         
         
         <!-- Login Form -->
@@ -56,61 +77,13 @@
                     </form>
                 </div>
                     
-                <form id="input" method="post" action="signup.php">
+                <form id="input" method="post" action="recovery.php">
                     <div class="card-body text-center padded">
-                        
                         <div class="row">
-                            <div class="form-group col-sm-6">
-                                <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name">
-                            </div>                                       
-                            <div class="form-group col-sm-6">
-                                <input type="text" class="form-control" id="username" name="username" placeholder="Username">
-                            </div>
+                            <p>Your account has been deleted. Sorry to see you leave. Please consider rejoining when your ready.</p>
                         </div>
-                        
-                        <div class="row">
-                            <div class="form-group col-sm-6">
-                                <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name">
-                            </div>                                       
-                            <div class="form-group col-sm-6">
-                                <input type="password" class="form-control" id="password" name="password" placeholder="Password (Case-Sensitive)">
-                            </div>
-                        </div>
-                        
-                        <div class="row">
-                            <div class="form-group col-sm-6">
-                                <input type="text" class="form-control" id="email" name="email" placeholder="E-mail Address">
-                            </div> 
-                            <div class="form-group col-sm-6">
-                                <input type="password" class="form-control" id="password2" name="password2" placeholder="Confirm Password">
-                            </div> 
-                        </div>
-                        
-                        <div class="row">
-                            <div class="form-group col-sm-4">
-                                <input type="text" class="form-control datepicker" name="month" placeholder="Date of Birth (Month : MM)"/>
-                            </div>
-                            <div class="form-group col-sm-4">
-                                <input type="text" class="form-control datepicker" name="day" placeholder="Date of Birth (Day : DD)"/>
-                            </div> 
-                            <div class="form-group col-sm-4">
-                                <input type="text" class="form-control datepicker" name="year" placeholder="Date of Birth (Year : YYYY)"/>
-                            </div> 
-                        </div>
-                        
-                        <div class="row">
-                            <div class="form-group col-sm-12">
-                                <textarea type="textarea" class="form-control" id="blurb" name="blurb" placeholder="Biography"></textarea>
-                            </div> 
-                        </div>
-                        
-                    </div>
-                    
-                    <div class="card-footer text-center">
-                        <input type="submit" class="btn btn-success center-block" value="Create Account">
                     </div>
                 </form>
-                
             </div>
         </section>
         

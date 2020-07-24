@@ -32,10 +32,6 @@
                     $lastname = $_POST["newLastname"];
                     $blurb = $_POST["blurb"];
                     
-                    
-                    // Retrieves All User's Information from Database
-                    $sql = "UPDATE user_accounts SET username='$username', email = '$email', firstname = '$firstname', lastname = '$lastname', blurb = '$blurb' WHERE userID = '$userID'";
-                    
                     if ($database->query($sql))
                     {
                         echo "<h4 class=\"alert alert-success\">Success</h4>";
@@ -60,8 +56,16 @@
                     $status = $statusMsg = '';
                         
                     $status = 'error'; 
+                    
+                    if (isset($_POST["remove"]))
+                    {
+                        // Retrieves All User's Information from Database
+                        $sql = "UPDATE user_accounts SET userImage='' WHERE userID = '$userID'";
                         
-                    if(!empty($_FILES["image"]["name"])) 
+                        echo "<h4 class=\"alert alert-success\">Loss</h4>";
+                    }
+                        
+                    else if(!empty($_FILES["image"]["name"])) 
                     { 
                         // Get file info 
                         $fileName = basename($_FILES["image"]["name"]); 

@@ -35,8 +35,11 @@
                 <ul class="navbar-nav text-uppercase">
                     <li class="nav-item active"><a class="nav-link" href="index.php">Main Page</a></li>
                     <li class="nav-item"><a class="nav-link" href="bookhub.html">Book Hub</a></li>
+                    <li class="nav-item"><a class="nav-link" href="audiohub.html">Podcasts </a></li>
+                    <li class="nav-item"><a class="nav-link" href="newshub.html">News</a></li>
+                    <li class="nav-item"><a class="nav-link" href="arcade.html">Games</a></li>
                     <li class="nav-item"><a class="nav-link" href="wellspace.html">Wellspace</a></li>
-                    <li class=""><a class="nav-link" href="account.php">My Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="account.php">My Profile</a></li>
                 </ul>
             </div>
             
@@ -55,19 +58,52 @@
             <div class="container placard">
                 <div class="row full_thing">
                     <div class="col-md-4 mt-3 full_plac_image">
-                    <img src="books/covers/NatureFixCover.png" alt="Cover: The Nature Fix" class="img-fluid"> 
+                            <?php
+                                
+                                if (isset($_POST["placardName"]))
+                                {
+                                    $placardName = $_POST["placardName"];
+                                }
+                        
+                                else
+                                {
+                                    $placardName = $_SESSION["placardName"];
+                                }
+                        
+                                $database = new mysqli("localhost", "cen4010s2020_g07", "faueng2020", "cen4010s2020_g07");
+                        
+                                $sql = "SELECT * FROM placards WHERE placardName='$placardName'";
+                                $result = $database->query($sql);
+                                $row = $result->fetch_assoc();
+                        
+                                $placardName = $row["placardName"];
+                                $placardBio = $row["placardBio"];
+                                $placardLink = $row["placardLink"];
+                                $placardImageLink = $row["placardImageLink"];
+                        
+                                $_SESSION["placardName"] = $placardName;
+                        
+                                echo "<img src=\"$placardImageLink\" alt=\"Cover: The Nature Fix\" class=\"img-fluid\">";
+                            
+                            ?>
                     </div>
                     <div class="col-md-8 mt-3 full_feature">
-                        <h3 class="mt-3">The Nature Fix</h3>
-                        <p class="text-left full_describe">An intrepid investigation into nature's restorative benefits by a prize-winning author.
-                        For centuries, poets and philosophers extolled the benefits of a walk in the woods: Beethoven drew inspiration from rocks and trees; Wordsworth composed while tromping over the heath; Nikola Tesla conceived the electric motor while visiting a park. Intrigued by our storied renewal in the natural world, Florence Williams sets out to uncover the science behind nature's positive effects on the brain.
-                        From forest trails in Korea, to islands in Finland, to groves of eucalyptus in California, Williams investigates the science at the confluence of environment, mood, health, and creativity.
-                        </p> 
+                            <?php
+                                
+                                echo "<h3 class=\"mt-3\">$placardName</h3>";
+                                echo "<p class=\"text-left full_describe\">$placardBio</p>";
+                            
+                            ?>
                         <div class="d-flex flex-row button_row">
                             <button type="button" class="btn btn-secondary ml-4 mr-3 view_button" ONCLICK="ShowAndHide()">Click to Read</button>
                             <form method="post" action="bookplacard.php" id="chatForm">
                                 <div class="form-check">
-                                    <input type="hidden" name="join" value="Books">
+                                    <?php
+                              
+                                        echo "<input type=\"hidden\" name=\"placardName\" value=\"$placardName\">";
+                                        echo "<input type=\"hidden\" name=\"join\" value=\"$placardName\">";
+                          
+                                    ?>
                                     <button type="submit" class="btn btn-secondary comm_button" ONCLICK="ShowAndHide()">Join the Community!</button>
                                 </div>                        
                             </form>
@@ -78,7 +114,11 @@
         
             <div class="container col-sm-12 col-md-8 seeDiv" id="eReader" style="display:none">
                 <div class="card">
-                    <div class="card-body text-center"><iframe id="viewerPro" style="width:600px; height: 500px;" src="books/TheNatureFix.pdf"></iframe></div>
+                    <div class="card-body text-center">
+                        <?php       
+                            echo "<iframe id=\"viewerPro\" style=\"width:600px; height: 500px;\" src=\"books/TheNatureFix.pdf\"></iframe>";          
+                        ?>
+                    </div>
                 </div>
             </div>
         
@@ -103,6 +143,12 @@
                 <div class="card-footer text-center">
                     <div class="chatBottom">
 		              <form method="post" action="bookplacard.php" id="chatForm">
+                          <?php
+                              
+                            echo"<input type=\"hidden\" name=\"placardName\" value=\"$placardName\">";
+                          
+                          ?>
+                          
                           <input type="text" name="text" id="text" class="form-control" placeholder="type your message" />
                           <br>
                           <input type="submit" class="btn btn-success center-block" value="Send">

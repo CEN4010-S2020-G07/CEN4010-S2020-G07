@@ -28,8 +28,11 @@
                 <ul class="navbar-nav text-uppercase">
                     <li class="nav-item active"><a class="nav-link" href="index.php">Main Page</a></li>
                     <li class="nav-item"><a class="nav-link" href="bookhub.html">Book Hub</a></li>
+                    <li class="nav-item"><a class="nav-link" href="audiohub.html">Podcasts </a></li>
+                    <li class="nav-item"><a class="nav-link" href="newshub.html">News</a></li>
+                    <li class="nav-item"><a class="nav-link" href="arcade.html">Games</a></li>
                     <li class="nav-item"><a class="nav-link" href="wellspace.html">Wellspace</a></li>
-                    <li class=""><a class="nav-link" href="account.php">My Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="account.php">My Profile</a></li>
                 </ul>
             </div>
             
@@ -62,10 +65,10 @@
                                 // Retrieves All User's Information from Database
                                 $sql = "SELECT userImage FROM user_accounts WHERE userID='$userID'";
                                 $result = $database->query($sql);
+                                $row = $result->fetch_assoc();
                         
-                                if($result->num_rows != 0)
+                                if($row["userImage"] != "")
                                 {                                 
-                                    $row = $result->fetch_assoc();
                                     $userImage = $row["userImage"];
                                     $userImage = base64_encode($userImage);
                                     
@@ -136,26 +139,34 @@
                         <div class="card-body">
                             <?php
                                 
-                                $sql = "SELECT Messageboard FROM communityMembers WHERE userID='$userID'";
-                                $result = $database->query($sql);
-                            
-                                if ($result->num_rows == 0)
+                                if (isset($_SESSION["username"]))
                                 {
-                                    echo "<ul><li>No Communities Joined Yet</li></ul>";
+                                    $sql = "SELECT Messageboard FROM communityMembers WHERE userID='$userID'";
+                                    $result = $database->query($sql);
+                            
+                                    if ($result->num_rows == 0)
+                                    {
+                                        echo "<ul><li>No Communities Joined Yet</li></ul>";
+                                    }
+                            
+                                    else
+                                    {
+                                        echo "<ul>";
+                                    
+                                        while($row = $result->fetch_assoc())
+                                        {
+                                            $community = $row['Messageboard'];
+                                        
+                                            echo "<li>$community</li>";
+                                        }
+                                    
+                                        echo "</ul>";
+                                    }
                                 }
                             
                                 else
                                 {
-                                    echo "<ul>";
-                                    
-                                    while($row = $result->fetch_assoc())
-                                    {
-                                        $community = $row['Messageboard'];
-                                        
-                                        echo "<li>$community</li>";
-                                    }
-                                    
-                                    echo "</ul>";
+                                    echo "<ul><li>No Communities Joined Yet</li></ul>";
                                 }
                             ?>
                         </div>
@@ -182,10 +193,10 @@
                         <h5>Gather+</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
                     </div>
-                <div class="modal-body">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-4 text-center" id="mod"></div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-4 text-center" id="mod"></div>
                                 <div class="col-md-8">
                                     <form id="loginForm" method="post" action="account.php">
                                         <div class="form-group">
@@ -193,7 +204,7 @@
                                             <input type="text" class="form-control" name="username" id="username" placeholder="Username">
                                         </div>
                                         <div class="form-group">
-                                            <label for="password">Password</label>
+                                            <label for="password">Password <a href="iforgot.php" class="iforgot">(Forgot Password)</a></label>
                                             <input type="password" class="form-control" name="password" id="password" placeholder="Password (Case-Sensitive)">
                                         </div>
                                         <button type="submit" class="btn btn-info">Login</button>
@@ -210,6 +221,8 @@
                 </div>
             </div>  
         </div>
+        <br>
+        <br>
         
         <footer class="footer text-center"> <div class="container">(c)2020 FunkyTech</div></footer>
     

@@ -61,7 +61,12 @@
                         if ($database->query($sql))
                         {
                             echo "<h4 class=\"alert alert-success\">Successfully Joined Community</h4>";
-                        }   
+                        } 
+                        
+                        else
+                        {
+                            echo "<h4 class=\"alert alert-warning\">Major Error</h4>";  
+                        }
                     }
                 }
                     

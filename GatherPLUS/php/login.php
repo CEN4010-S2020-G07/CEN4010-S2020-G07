@@ -103,5 +103,6 @@
                     $blurb = $row["blurb"];
                     
                     echo "<h4 class=\"alert alert-success\">Welcome $username</h4>";
+                }
 
             ?>

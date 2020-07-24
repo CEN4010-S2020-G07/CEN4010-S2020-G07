@@ -28,9 +28,12 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav text-uppercase">
                     <li class="nav-item active"><a class="nav-link" href="index.php">Main Page</a></li>
-                    <li class="nav-item"><a class="nav-link" href="bookplacard.php">Book Hub</a></li>
+                    <li class="nav-item"><a class="nav-link" href="bookhub.html">Book Hub</a></li>
+                    <li class="nav-item"><a class="nav-link" href="audiohub.html">Podcasts </a></li>
+                    <li class="nav-item"><a class="nav-link" href="newshub.html">News</a></li>
+                    <li class="nav-item"><a class="nav-link" href="arcade.html">Games</a></li>
                     <li class="nav-item"><a class="nav-link" href="wellspace.html">Wellspace</a></li>
-                    <li class=""><a class="nav-link" href="account.php">My Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="account.php">My Profile</a></li>
                 </ul>
             </div>
             
@@ -64,14 +67,19 @@
                                 // Retrieves All User's Information from Database
                                 $sql = "SELECT userImage FROM user_accounts WHERE userID='$userID'";
                                 $result = $database->query($sql);
+                                $row = $result->fetch_assoc();
                         
-                                if($result->num_rows != 0)
+                                if($row["userImage"] != "")
                                 {
-                                    $row = $result->fetch_assoc();
                                     $userImage = $row["userImage"];
                                     $userImage = base64_encode($userImage);
                                     
                                     echo "<img src=\"data:image/jpg;charset=utf8; base64, $userImage \" width=\"400\" height=\"250\" />";
+                                }
+                                
+                                else
+                                {
+                                    echo "<img class=\"card-img-top\" src=\"images/blank.png\" alt=\"Card image\">";
                                 }
                             }
                         
@@ -100,6 +108,11 @@
                         <div class="card-footer text-center">
                             <label class="text-center">Select Image File:</label>
                             <input type="file" name="image">
+                            <br>
+                            <br>
+                            <div class="checkbox">
+                                <label><input type="checkbox" name="remove"> Just Remove Current Profile Picture</label>
+                            </div>
                         </div>
                     </div>
                         
@@ -188,12 +201,7 @@
             <div class="row">
                 <div class="col-sm-3 text-center">
                     <input type="submit" class="btn btn-info center-block" value="Commit Changes">
-                </div>            
-            </div>
-                
-            <div class="row">
-                <div class="col-sm-3 text-center">
-                    <button type="button" class="btn log bg-success" data-toggle="modal" data-target="#modal1">Login</button>
+                    <button type="button" class="btn log bg-warning" data-toggle="modal" data-target="#modal2">Delete Account</button>
                 </div>            
             </div>
         
@@ -226,6 +234,35 @@
                                         </div>
                                         <button type="submit" class="btn btn-info">Login</button>
                                         <a href="signup.php" class="btn btn-success" role="button">Create An Account</a>
+                                    </form>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                    
+                    </div>     
+                </div>
+            </div>  
+        </div>
+        
+        <!--Modal-->
+        <div class="modal" id="modal2" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5>Gather+</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                    </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4 text-center" id="mod"></div>
+                                <div class="col-md-8">
+                                    <form id="loginForm" method="post" action="account.php">
+                                        <button type="submit" class="btn btn-info">Cancel</button>
+                                        <a class="btn btn-warning" href="deleteProfile.php" role="button">Delete Account</a>
                                     </form>
                                 
                                 </div>

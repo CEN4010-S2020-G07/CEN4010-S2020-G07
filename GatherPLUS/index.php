@@ -30,11 +30,14 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav text-uppercase">
-                <li class="nav-item active"><a class="nav-link" href="index.php">Main Page</a></li>
-                <li class="nav-item"><a class="nav-link" href="bookhub.html">Book Hub</a></li>
-                <li class="nav-item"><a class="nav-link" href="wellspace.html">Wellspace</a></li>
-                <li class=""><a class="nav-link" href="account.php">My Profile</a></li>
-            </ul>
+                    <li class="nav-item active"><a class="nav-link" href="index.php">Main Page</a></li>
+                    <li class="nav-item"><a class="nav-link" href="bookhub.html">Book Hub</a></li>
+                    <li class="nav-item"><a class="nav-link" href="audiohub.html">Podcasts </a></li>
+                    <li class="nav-item"><a class="nav-link" href="newshub.html">News</a></li>
+                    <li class="nav-item"><a class="nav-link" href="arcade.html">Games</a></li>
+                    <li class="nav-item"><a class="nav-link" href="wellspace.html">Wellspace</a></li>
+                    <li class="nav-item"><a class="nav-link" href="account.php">My Profile</a></li>
+                </ul>
         </div>
         
         <div class="nav navbar-nav navbar-right" id="navbarSupportedContent">
@@ -265,7 +268,7 @@
                                         <input type="text" class="form-control" name="username" id="username" placeholder="Username">
                                     </div>
                                     <div class="form-group">
-                                        <label for="password">Password</label>
+                                        <label for="password">Password <a href="iforgot.php" class="iforgot">(Forgot Password)</a></label>
                                         <input type="password" class="form-control" name="password" id="password" placeholder="Password (Case-Sensitive)">
                                     </div>
                                     <button type="submit" class="btn btn-info">Login</button>
