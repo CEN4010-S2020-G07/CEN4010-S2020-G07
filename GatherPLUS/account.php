@@ -20,7 +20,12 @@
         <nav id="navigate" class="navbar navbar-expand-xl navbar-fixed-top navbar-light bg-light">
             <a href="index.php" class="navbar-brand">Gather+</a>
 
+<<<<<<< HEAD
             <!-- TOGGLER -->
+=======
+            <a href="index.php" class="navbar-brand">Gather+</a>
+
+>>>>>>> 01d97928ba78da792e52c802dcb2374ff6241f4f
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -30,9 +35,15 @@
                 <ul class="navbar-nav text-uppercase">
                     <li class="nav-item active"><a class="nav-link" href="index.php">Main Page</a></li>
                     <li class="nav-item"><a class="nav-link" href="bookhub.php">Book Hub</a></li>
+<<<<<<< HEAD
                     <li class="nav-item"><a class="nav-link" href="audiohub.php">Podcasts </a></li>
                     <li class="nav-item"><a class="nav-link" href="newshub.php">News</a></li>
                     <li class="nav-item"><a class="nav-link" href="arcade.php">Games</a></li>
+=======
+                    <li class="nav-item"><a class="nav-link" href="audiohub.html">Podcasts </a></li>
+                    <li class="nav-item"><a class="nav-link" href="newshub.html">News</a></li>
+                    <li class="nav-item"><a class="nav-link" href="arcade.html">Games</a></li>
+>>>>>>> 01d97928ba78da792e52c802dcb2374ff6241f4f
                     <li class="nav-item"><a class="nav-link" href="wellspace.html">Wellspace</a></li>
                     <li class="nav-item"><a class="nav-link" href="account.php">My Profile</a></li>
                 </ul>
@@ -229,7 +240,6 @@
                                         <button type="submit" class="btn btn-info">Login</button>
                                         <a href="signup.php" class="btn btn-success" role="button">Create An Account</a>
                                     </form>
-                                
                                 </div>
                             </div>
                         </div>
