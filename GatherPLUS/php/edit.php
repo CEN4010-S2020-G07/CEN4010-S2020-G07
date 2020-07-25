@@ -34,7 +34,7 @@
                     
                     $sql = "UPDATE user_accounts SET username='$username', email='$email', firstname='$firstname', lastname='$lastname', blurb='$blurb' WHERE userID = '$userID'";
                     
-                    // Displays message if successfully connected to user account
+                    // Displays message if successfully updated user account
                     if ($database->query($sql))
                     {
                         echo "<h4 class=\"alert alert-success\">Success</h4>";
@@ -42,6 +42,7 @@
                         $_SESSION["username"] = $username;
                     }
                     
+                    // Removes user from communities they selected to remove
                     if (isset($_POST["communities"]))
                     {                      
                         foreach ($_POST["communities"] as $community)
@@ -54,15 +55,15 @@
                             }
                         }
                     }
-                    
-                    // If file upload form is submitted 
+                     
                     $status = $statusMsg = '';
                         
                     $status = 'error'; 
                     
+                    // If user opted to delete their profile picture
                     if (isset($_POST["remove"]))
                     {
-                        // Retrieves All User's Information from Database
+                        // Deletes profile picture from user account
                         $sql = "UPDATE user_accounts SET userImage='' WHERE userID = '$userID'";
                         
                         echo "<h4 class=\"alert alert-success\">Loss</h4>";
