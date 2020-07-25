@@ -163,8 +163,6 @@
             </div>
 
             <!--ROW #3-->
-        
-
         </div>
         
         <!--Modal for Login-->
