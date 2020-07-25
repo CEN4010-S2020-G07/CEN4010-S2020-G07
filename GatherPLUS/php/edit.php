@@ -8,7 +8,7 @@
         
     function errorHandler()
     {
-        echo "ERROR";
+        echo "";
     }
             
     // Runs if user signed in earlier

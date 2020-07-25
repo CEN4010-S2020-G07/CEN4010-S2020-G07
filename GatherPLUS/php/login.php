@@ -8,7 +8,7 @@
         
     function errorHandler()
     {
-        echo "ERROR";
+        echo "";
     }
         
     // Runs if user entered login information
@@ -105,4 +105,4 @@
         echo "<h4 class=\"alert alert-success\">Welcome $username</h4>";
     }
 
->
+?>

@@ -6,7 +6,7 @@
         
     function errorHandler()
     {
-        echo "ERROR";
+        echo "";
     }
                     
     // Connects to Gather+ Database

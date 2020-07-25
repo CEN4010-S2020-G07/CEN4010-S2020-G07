@@ -8,7 +8,7 @@
         
     function errorHandler()
     {
-        echo "ERROR";
+        echo "";
     }
         
     $currMonth = date('m');
