@@ -13,7 +13,7 @@
     <!--BOOTSTRAP CSS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="css/books.css">
+    <link rel="stylesheet" type="text/css" href="css/global.css">
 
 </head>
 
@@ -23,7 +23,7 @@
     <!--NAVIGATION-->
     <nav id="navigate" class="navbar navbar-expand-xl navbar-fixed-top navbar-light bg-light">
 
-        <a href="#" class="navbar-brand">Gather+</a>
+        <a href="index.php" class="navbar-brand">Gather+</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -32,7 +32,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav text-uppercase">
                 <li class="nav-item active"><a class="nav-link" href="index.php">Main Page</a></li>
-                <li class="nav-item"><a class="nav-link" href="bookhub.html">Book Hub</a></li>
+                <li class="nav-item"><a class="nav-link" href="bookhub.php">Book Hub</a></li>
                 <li class="nav-item"><a class="nav-link" href="audiohub.html">Podcasts </a></li>
                 <li class="nav-item"><a class="nav-link" href="newshub.html">News</a></li>
                 <li class="nav-item"><a class="nav-link" href="arcade.html">Games</a></li>
@@ -41,7 +41,6 @@
             </ul>
         </div>
     </nav>
-    <h3 class="mt-5">Book Hub</h3>
     <div id="book_carousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#book_carousel" data-slide-to="0" class="active"></li>
@@ -51,10 +50,10 @@
 
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="images/happy_toddler.jpg" class="carapic w-100" alt="...">
+                <img src="images/happy_toddler.jpg" class="carapic" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="images/bookshelf.jpg" class="carapic w-100" alt="...">
+                <img src="images/bookshelf.jpg" class="carapic" alt="...">
             </div>
             <!-- <div class="carousel-item">
                 <img src="images/" class="carapic w-100" alt="...">
@@ -62,124 +61,154 @@
         </div>
     </div>
     <!--ROW 1-->
-    <div class="container" id="bookhub">
+    <div class="container mt-5" id="bookhub">
         <div class="d-flex justify-content-around">
-            <div class="card" style="width: 16rem;">
-                <div><img class="card-img-top" id = "books" src="images/book.png" alt="Card image cap"></div>
-                <div class="card-body text-center">
-                    <h5 class="card-title">The Nature Fix</h5>
-                    <p class="text-left">Florence Williams sets out to uncover the science behind nature's positive effects on the brain.</p>
-                    <form method="post" action="bookplacard.php">
-                        <div class="form-check">
-                            <input type="hidden" name="placardName" value="TheNatureFix">
+            <div class="card h-100" style="width: 16rem;">
+                <img class="card-img-top img-fluid" src="books/covers/TheGuardian2.jpg" alt="The Guardian by Nicholas Sparks">
+                <div class="card-body placardBody">
+                     <form method="post" action="bookplacard.php">
+                        <div class="form-check bForm">
+                            <input type="hidden" name="placardName" value="TheGuardian">
                             <button type="submit" class="btn btn_R">Read Now</button>
-                        </div>                        
+                        </div>
                     </form>
                 </div>
             </div>
 
-        <div class="card" style="width: 16rem;">
-            <div><img class="card-img-top" id = "books" src="images/book.png" alt="Card image cap"></div>
-            <div class="card-body text-center">
-                <h5 class="card-title">Book Title</h5>
-                <p class="text-center">Brief Description</p>
-                <a href="#" class="btn btn_R">Read Now</a>
+            <div class="card h-100" style="width: 16rem;">
+                <img class="card-img-top img-fluid" src="books/covers/JaneAustenComplete2.jpg" alt="The Complete Novels of Jane Austen">
+                <div class="card-body text-center placardBody">
+                    <form method="post" action="bookplacard.php">
+                        <div class="form-check bForm">
+                            <input type="hidden" name="placardName" value="TheCompleteNovelsofJaneAusten">
+                            <button type="submit" class="btn btn_R">Read Now</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
-        <div class="card" style="width: 16rem;">
-            <div><img class="card-img-top" id = "books" src="images/book.png" alt="Card image cap"></div>
-            <div class="card-body text-center">
-                <h5 class="card-title">Book Title</h5>
-                <p class="text-center">Brief Description</p>
-                <a href="#" class="btn btn_R">Read Now</a>
+            <div class="card h-100" style="width: 16rem;">
+                <img class="card-img-top img-fluid" src="books/covers/BornACrime2.jpg" alt="Born A Crime by Trevor Noah">
+                <div class="card-body text-center placardBody">
+                    <form method="post" action="bookplacard.php">
+                        <div class="form-check bForm">
+                            <input type="hidden" name="placardName" value="BornACrime">
+                            <button type="submit" class="btn btn_R">Read Now</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
-      <!--<div class="card" style="width: 16rem;">
-            <div><img class="card-img-top" id = "books" src="images/book.png" alt="Card image cap"></div>
-            <div class="card-body text-center">
-                <h5 class="card-title">Book Title</h5>
-                <p class="text-center">Brief Description</p>
-                <a href="#" class="btn btn_R">Read Now</a>
+            <!--<div class="card h-100" style="width: 16rem;">
+            <img class="card-img-top img-fluid" src="images/book.png" alt="Card image cap">
+            <div class="card-body text-center placardBody">
+                  <form method="post" action="bookplacard.php">
+                        <div class="form-check bForm">
+                            <input type="hidden" name="placardName" value="#title">
+                            <button type="submit" class="btn btn_R">Read Now</button>
+                        </div>                        
+                    </form>
             </div>
         </div>-->
         </div>
 
-    <!--ROW 2-->
-    <div class="d-flex justify-content-around">
-        <div class="card" style="width: 16rem;">
-            <div class="container"><img class="card-img-top" id = "books" src="images/book.png" alt="Card image cap"></div>
-            <div class="card-body text-center">
-                <h5 class="card-title">Book Title</h5>
-                <p class="text-center">Brief Description</p>
-                <a href="bookplacard.html" class="btn btn_R">Read Now</a>
+        <!--ROW 2-->
+        <div class="d-flex justify-content-around">
+            <div class="card h-100" style="width: 16rem;">
+                <img class="card-img-top img-fluid" src="books/covers/JustMercy2.jpg" alt="Just Mercy by Bryan Stevenson">
+                <div class="card-body text-center placardBody">
+                    <form method="post" action="bookplacard.php">
+                        <div class="form-check bForm">
+                            <input type="hidden" name="placardName" value="JustMercy">
+                            <button type="submit" class="btn btn_R ">Read Now</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
-        <div class="card" style="width: 16rem;">
-            <div><img class="card-img-top" id = "books" src="images/book.png" alt="Card image cap"></div>
-            <div class="card-body text-center">
-                <h5 class="card-title">Book Title</h5>
-                <p class="text-center">Brief Description</p>
-                <a href="#" class="btn btn_R">Read Now</a>
+            <div class="card h-100" style="width: 16rem;">
+               <img class="card-img-top img-fluid" src="books/covers/ThePelicanBrief2.jpg" alt="The Pelican Brief by John Grisham">
+                <div class="card-body text-center placardBody">
+                    <form method="post" action="bookplacard.php">
+                        <div class="form-check bForm">
+                            <input type="hidden" name="placardName" value="ThePelicanBrief">
+                            <button type="submit" class="btn btn_R">Read Now</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
-        <div class="card" style="width: 16rem;">
-            <div><img class="card-img-top" id = "books" src="images/book.png" alt="Card image cap"></div>
-            <div class="card-body text-center">
-                <h5 class="card-title">Book Title</h5>
-                <p class="text-center">Brief Description</p>
-                <a href="#" class="btn btn_R">Read Now</a>
+            <div class="card h-100" style="width: 16rem;">
+            <img class="card-img-top img-fluid" src="books/covers/MurderInMesopotamia2.jpg" alt="Murder In Mesopotamia by Agatha Christie">
+                <div class="card-body text-center placardBody">
+                    <form method="post" action="bookplacard.php">
+                        <div class="form-check bForm">
+                            <input type="hidden" name="placardName" value="MurderInMesopotamia">
+                            <button type="submit" class="btn btn_R">Read Now</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
-      <!--<div class="card" style="width: 16rem;">
-            <div><img class="card-img-top" id = "books" src="images/book.png" alt="Card image cap"></div>
-            <div class="card-body text-center">
-                <h5 class="card-title">Book Title</h5>
-                <p class="text-center">Brief Description</p>
-                <a href="#" class="btn btn_R">Read Now</a>
+            <!--<div class="card h-100" style="width: 16rem;">
+          <img class="card-img-top img-fluid" src="images/book.png" alt="Card image cap">
+            <div class="card-body text-center placardBody">
+                 <form method="post" action="bookplacard.php">
+                        <div class="form-check bForm">
+                            <input type="hidden" name="placardName" value="#title">
+                            <button type="submit" class="btn btn_R">Read Now</button>
+                        </div>                        
+                    </form>
             </div>
         </div>-->
         </div>
 
         <!--ROW 3-->
         <!--   <div class="d-flex justify-content-around">
-        <div class="card" style="width: 16rem;">
-            <div class="container"><img class="card-img-top" id = "books" src="images/book.png" alt="Card image cap"></div>
-            <div class="card-body text-center">
-                <h5 class="card-title">Book Title</h5>
-                <p class="text-center">Brief Description</p>
-                <a href="bookplacard.html" class="btn btn_R">Read Now</a>
+        <div class="card h-100" style="width: 16rem;">
+            <img class="card-img-top img-fluid" src="images/book.png" alt="Card image cap">
+            <div class="card-body text-center placardBody">
+                  <form method="post" action="bookplacard.php">
+                        <div class="form-check bForm">
+                            <input type="hidden" name="placardName" value="#title">
+                            <button type="submit" class="btn btn_R">Read Now</button>
+                        </div>                        
+                    </form>
             </div>
         </div>
-        <div class="card" style="width: 16rem;">
-            <div><img class="card-img-top" src="images/book.png" id = "books" alt="Card image cap"></div>
-            <div class="card-body text-center">
-                <h5 class="card-title">Book Title</h5>
-                <p class="text-center">Brief Description</p>
-                <a href="#" class="btn btn_R">Read Now</a>
+        <div class="card h-100" style="width: 16rem;">
+            <img class="card-img-top img-fluid" src="images/book.png" alt="Card image cap">
+            <div class="card-body text-center placardBody">
+                 <form method="post" action="bookplacard.php">
+                        <div class="form-check bForm">
+                            <input type="hidden" name="placardName" value="#title">
+                            <button type="submit" class="btn btn_R">Read Now</button>
+                        </div>                        
+                    </form>
             </div>
         </div>
-        <div class="card" style="width: 16rem;">
-            <div><img class="card-img-top" src="images/book.png" id = "books" alt="Card image cap"></div>
-            <div class="card-body text-center">
-                <h5 class="card-title">Book Title</h5>
-                <p class="text-center">Brief Description</p>
-                <a href="#" class="btn btn_R">Read Now</a>
+        <div class="card h-100" style="width: 16rem;">
+            <img class="card-img-top img-fluid" src="images/book.png" alt="Card image cap">
+            <div class="card-body text-center placardBody">
+                 <form method="post" action="bookplacard.php">
+                        <div class="form-check bForm">
+                            <input type="hidden" name="placardName" value="#title">
+                            <button type="submit" class="btn btn_R">Read Now</button>
+                        </div>                        
+                    </form>
             </div>
         </div>
-        <div class="card" style="width: 16rem;">
-            <div><img class="card-img-top" src="images/book.png" id = "books" alt="Card image cap"></div>
-            <div class="card-body text-center">
-                <h5 class="card-title">Book Title</h5>
-                <p class="text-center">Brief Description</p>
-                <a href="#" class="btn btn_R">Read Now</a>
+        <div class="card h-100" style="width: 16rem;">
+            <img class="card-img-top img-fluid" src="images/book.png" alt="Card image cap">
+            <div class="card-body text-center placardBody">
+                  <form method="post" action="bookplacard.php">
+                        <div class="form-check bForm">
+                            <input type="hidden" name="placardName" value="#title">
+                            <button type="submit" class="btn btn_R">Read Now</button>
+                        </div>                        
+                   </form>
             </div>
         </div>
     </div>-->
 
     </div>
-<br>
-<br>
-
+    <br>
+    <br>
     <footer class="footer text-center">&copy;2020 FunkyTech</footer>
 
 

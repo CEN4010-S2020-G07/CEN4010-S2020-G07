@@ -8,12 +8,12 @@
     <!--FOLLOWING LINE IMPORTANT TO ADD FOR BOOTSTRAP-->
     <meta name="viewport" content="width-device-width, initial-scale=1.0, shrink-to-fit=no">
 
-    <title>Vertical Prototype Template</title>
+    <title>Beta Launch</title>
 
     <!--BOOTSTRAP CSS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="css/prototype.css">
+    <link rel="stylesheet" type="text/css" href="css/global.css">
 
 </head>
 
@@ -22,7 +22,7 @@
     <!--NAVIGATION-->
     <nav id="navigate" class="navbar navbar-expand-xl navbar-fixed-top navbar-light bg-light">
 
-        <a href="#" class="navbar-brand">Gather+</a>
+        <a href="index.php" class="navbar-brand nav-item active">Gather+</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -30,8 +30,7 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav text-uppercase">
-                    <li class="nav-item active"><a class="nav-link" href="index.php">Main Page</a></li>
-                    <li class="nav-item"><a class="nav-link" href="bookhub.html">Book Hub</a></li>
+                    <li class="nav-item"><a class="nav-link" href="bookhub.php">Book Hub</a></li>
                     <li class="nav-item"><a class="nav-link" href="audiohub.html">Podcasts </a></li>
                     <li class="nav-item"><a class="nav-link" href="newshub.html">News</a></li>
                     <li class="nav-item"><a class="nav-link" href="arcade.html">Games</a></li>
@@ -40,11 +39,11 @@
                 </ul>
         </div>
         
-        <div class="nav navbar-nav navbar-right" id="navbarSupportedContent">
+        <!--<div class="nav navbar-nav navbar-right" id="navbarSupportedContent">
             <ul class="navbar-nav text-uppercase">
                 <li class="nav-item active"><button type="button" class="btn log bg-success" data-toggle="modal" data-target="#modal1">Login</button></li>
             </ul>
-        </div>
+        </div>-->
         
     </nav>
     
@@ -65,18 +64,16 @@
         {
             $username = $_SESSION["username"];
             
-            echo "<h4 class=\"alert alert-success\">Welcome $username</h4>";
+            echo "<h5 class=\"alert alert-success\">Welcome $username</h5>";
         }
     
         else
         {
-            echo "<h4 class=\"alert alert-warning\">Please Sign-In To Join Communities</h4>";
+            echo "<h5 class=\"alert alert-warning\">Please Sign-In To Join Communities</h5>";
         }
     
     ?>
-    
-    <h3 class="mt-5">Feature/Main</h3>
-    
+       
         <div id="well_carousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#well_carousel" data-slide-to="0" class="active"></li>
@@ -133,7 +130,7 @@
             
                     if (isset($_SESSION["username"]))
                     {
-                        echo "<a href=\"bookhub.html\">";
+                        echo "<a href=\"bookhub.php\">";
                     }
         
                     else
@@ -160,7 +157,7 @@
             
                     if (isset($_SESSION["username"]))
                     {
-                        echo "<a href=\"bookhub.html\">";
+                        echo "<a href=\"bookhub.php\">";
                     }
         
                     else
@@ -189,7 +186,7 @@
             
                     if (isset($_SESSION["username"]))
                     {
-                        echo "<a href=\"bookhub.html\">";
+                        echo "<a href=\"bookhub.php\">";
                     }
         
                     else
@@ -215,7 +212,7 @@
             
                     if (isset($_SESSION["username"]))
                     {
-                        echo "<a href=\"bookhub.html\">";
+                        echo "<a href=\"bookhub.php\">";
                     }
         
                     else
