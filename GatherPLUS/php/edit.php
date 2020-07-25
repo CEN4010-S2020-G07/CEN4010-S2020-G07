@@ -1,4 +1,4 @@
-            <!-- PHP for Displaying Weather Information And/Or Login Confirmation -->
+            <!-- PHP for Editing User Profiles -->
             <?php
         
                 session_start();
@@ -8,7 +8,7 @@
         
                 function errorHandler()
                 {
-                    echo "";
+                    echo "ERROR";
                 }
             
                 // Runs if user signed in earlier
@@ -32,6 +32,9 @@
                     $lastname = $_POST["newLastname"];
                     $blurb = $_POST["blurb"];
                     
+                    $sql = "UPDATE user_accounts SET username='$username', email='$email', firstname='$firstname', lastname='$lastname', blurb='$blurb' WHERE userID = '$userID'";
+                    
+                    // Displays message if successfully connected to user account
                     if ($database->query($sql))
                     {
                         echo "<h4 class=\"alert alert-success\">Success</h4>";
