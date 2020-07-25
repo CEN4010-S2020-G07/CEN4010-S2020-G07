@@ -79,7 +79,7 @@
 
                 <!-- Book Placard #1 -->
                 <div class="card h-100" style="width: 16rem;">
-                    <img class="card-img-top img-fluid" src="books/covers/TheGuardian2.jpg" alt="The Guardian by Nicholas Sparks">
+                    <img class="card-img-top img-fluid" src="books/covers/TheGuardian.jpg" alt="The Guardian by Nicholas Sparks">
                     <div class="card-body placardBody">
                         <form method="post" action="bookplacard.php">
                             <div class="form-check bForm">
@@ -92,7 +92,7 @@
 
                 <!-- Book Placard #2 -->
                 <div class="card h-100" style="width: 16rem;">
-                    <img class="card-img-top img-fluid" src="books/covers/JaneAustenComplete2.jpg" alt="The Complete Novels of Jane Austen">
+                    <img class="card-img-top img-fluid" src="books/covers/JaneAustenComplete.jpg" alt="The Complete Novels of Jane Austen">
                     <div class="card-body text-center placardBody">
                         <form method="post" action="bookplacard.php">
                             <div class="form-check bForm">
@@ -105,7 +105,7 @@
                 
                 <!-- Book Placard #3 -->
                 <div class="card h-100" style="width: 16rem;">
-                    <img class="card-img-top img-fluid" src="books/covers/BornACrime2.jpg" alt="Born A Crime by Trevor Noah">
+                    <img class="card-img-top img-fluid" src="books/covers/BornACrime.jpg" alt="Born A Crime by Trevor Noah">
                         <div class="card-body text-center placardBody">
                         <form method="post" action="bookplacard.php">
                             <div class="form-check bForm">
@@ -123,7 +123,7 @@
                 
                 <!-- Book Placard #4 -->
                 <div class="card h-100" style="width: 16rem;">
-                    <img class="card-img-top img-fluid" src="books/covers/JustMercy2.jpg" alt="Just Mercy by Bryan Stevenson">
+                    <img class="card-img-top img-fluid" src="books/covers/JustMercy.jpg" alt="Just Mercy by Bryan Stevenson">
                     <div class="card-body text-center placardBody">
                         <form method="post" action="bookplacard.php">
                             <div class="form-check bForm">
@@ -136,7 +136,7 @@
 
                 <!-- Book Placard #5 -->
                 <div class="card h-100" style="width: 16rem;">
-                    <img class="card-img-top img-fluid" src="books/covers/ThePelicanBrief2.jpg" alt="The Pelican Brief by John Grisham">
+                    <img class="card-img-top img-fluid" src="books/covers/ThePelicanBrief.jpg" alt="The Pelican Brief by John Grisham">
                     <div class="card-body text-center placardBody">
                         <form method="post" action="bookplacard.php">
                             <div class="form-check bForm">
@@ -149,7 +149,7 @@
                 
                 <!-- Book Placard #6 -->
                 <div class="card h-100" style="width: 16rem;">
-                    <img class="card-img-top img-fluid" src="books/covers/MurderInMesopotamia2.jpg" alt="Murder In Mesopotamia by Agatha Christie">
+                    <img class="card-img-top img-fluid" src="books/covers/MurderInMesopotamia.jpg" alt="Murder In Mesopotamia by Agatha Christie">
                     <div class="card-body text-center placardBody">
                         <form method="post" action="bookplacard.php">
                             <div class="form-check bForm">
