@@ -1,4 +1,3 @@
-<!-- PHP for Messageboard Functionality
 <?php
         
     // Error Handler
@@ -6,15 +5,15 @@
         
     function errorHandler()
     {
-        echo "";
+        echo " ";
     }
                     
-    // Connects to Gather+ Database
+    // Connects to Gather+ SQL Database
     $database = new mysqli("localhost", "cen4010s2020_g07", "faueng2020", "cen4010s2020_g07");
         
     if ($_POST["text"] == "")
     {
-            
+                            
     }
                     
     else if (!isset($_SESSION["username"]))
@@ -24,14 +23,14 @@
         
     else
     {
-        // Retrieves userID from user_accounts table
+        // Retrieves userID from user_accounts
         $sql = "SELECT userID FROM user_accounts WHERE username='$username'";
         $result = $database->query($sql);
         $row = $result->fetch_assoc();
                             
         $userID = $row["userID"];
                             
-        // Retrieves Messageboard from communityMembers table
+        // Retrieves Messageboards from communityMembers
         $sql = "SELECT Messageboard FROM communityMembers WHERE userID='$userID' AND Messageboard='$placardName'";
         $result = $database->query($sql);
                             
@@ -61,7 +60,7 @@
                             
     }
             
-    // Retrieves messages from placard table
+    // Retrieves messages
     $sql = "SELECT * FROM $placardName";
     $result = $database->query($sql);
         
@@ -112,6 +111,7 @@
             echo "</div>";
                                 
             echo "</div>";
-        }    
+        }
+            
     }
 ?>

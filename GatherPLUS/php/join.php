@@ -60,7 +60,7 @@
                 }
                     
                 // Attempts to insert user into communityMembers table
-                $sql = "INSERT INTO communityMembers (userID, Messageboard) VALUES ('$userID', '$newCommunity)";
+                $sql = "INSERT INTO communityMembers (userID, Messageboard) VALUES ('$userID', '$newCommunity')";
                 
                 if ($database->query($sql))
                 {
