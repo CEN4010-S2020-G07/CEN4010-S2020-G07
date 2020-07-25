@@ -11,12 +11,12 @@
         <!--FOLLOWING LINE IMPORTANT TO ADD FOR BOOTSTRAP-->
         <meta name="viewport" content="width-device-width, initial-scale=1.0, shrink-to-fit=no">
 
-        <title>Vertical Prototype Template</title>
+        <title>Beta Launch</title>
 
         <!--BOOTSTRAP CSS-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-        <link rel="stylesheet" type="text/css" href="css/prototype.css">
+        <link rel="stylesheet" type="text/css" href="css/global.css">
         <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
 
@@ -25,7 +25,7 @@
         <!--NAVIGATION-->
         <nav id="navigate" class="navbar navbar-expand-xl navbar-fixed-top navbar-light bg-light">
 
-            <a href="#" class="navbar-brand">Gather+</a>
+            <a href="index.php" class="navbar-brand">Gather+</a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -34,7 +34,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav text-uppercase">
                     <li class="nav-item active"><a class="nav-link" href="index.php">Main Page</a></li>
-                    <li class="nav-item"><a class="nav-link" href="bookhub.html">Book Hub</a></li>
+                    <li class="nav-item"><a class="nav-link" href="bookhub.php">Book Hub</a></li>
                     <li class="nav-item"><a class="nav-link" href="audiohub.html">Podcasts </a></li>
                     <li class="nav-item"><a class="nav-link" href="newshub.html">News</a></li>
                     <li class="nav-item"><a class="nav-link" href="arcade.html">Games</a></li>
@@ -53,11 +53,9 @@
         
         <!-- PHP for -->
         <?php include 'php/join.php'; ?>
-        
-        <h3 class="mt-5">Book Placard Page</h3>
             <div class="container placard">
                 <div class="row full_thing">
-                    <div class="col-md-4 mt-3 full_plac_image">
+                    <div class="col-md-4 mt-3 full_plac_image" id="coverShots">
                             <?php
                                 
                                 if (isset($_POST["placardName"]))
@@ -83,19 +81,19 @@
                         
                                 $_SESSION["placardName"] = $placardName;
                         
-                                echo "<img src=\"$placardImageLink\" alt=\"Cover: The Nature Fix\" class=\"img-fluid\">";
+                                echo "<img src=\"$placardImageLink\" alt=\"Cover Image\" class=\"img-fluid\">";
                             
                             ?>
                     </div>
-                    <div class="col-md-8 mt-3 full_feature">
+                    <div class="col-md-8 full_feature" id="fullDescript">
                             <?php
                                 
-                                echo "<h3 class=\"mt-3\">$placardName</h3>";
+                                echo "<h3 class=\"mt-3 mb-0\">$placardName</h3>";
                                 echo "<p class=\"text-left full_describe\">$placardBio</p>";
                             
                             ?>
                         <div class="d-flex flex-row button_row">
-                            <button type="button" class="btn btn-secondary ml-4 mr-3 view_button" ONCLICK="ShowAndHide()">Click to Read</button>
+                            <button type="button" class="btn btn-secondary ml-4 mr-3 view_button" onlclick="ShowAndHide()">Click to Read</button>
                             <form method="post" action="bookplacard.php" id="chatForm">
                                 <div class="form-check">
                                     <?php
@@ -104,7 +102,7 @@
                                         echo "<input type=\"hidden\" name=\"join\" value=\"$placardName\">";
                           
                                     ?>
-                                    <button type="submit" class="btn btn-secondary comm_button" ONCLICK="ShowAndHide()">Join the Community!</button>
+                                    <button type="button" class="btn btn-secondary comm_button" onlclick="ShowAndHide()">Join the Community!</button>
                                 </div>                        
                             </form>
                         </div>
@@ -112,11 +110,11 @@
                 </div>
             </div>
         
-            <div class="container col-sm-12 col-md-8 seeDiv" id="eReader" style="display:none">
+            <div class="container col-sm-12 col-md-8 seeDiv e_reader">
                 <div class="card">
                     <div class="card-body text-center">
                         <?php       
-                            echo "<iframe id=\"viewerPro\" style=\"width:600px; height: 500px;\" src=\"books/TheNatureFix.pdf\"></iframe>";          
+                            echo "<iframe id=\"viewerPro\" style=\"width:600px; height: 500px;\" src=\"books/\"></iframe>";          
                         ?>
                     </div>
                 </div>
@@ -200,17 +198,6 @@
         
 
     <footer class="footer text-center"> &copy;2020 FunkyTech</footer>
-    
-    <!--button script-->
-    <script>
-        function ShowAndHide() {
-        var x = document.getElementByClassName('seeDiv');
-        if (x.style.display == 'none') {
-            x.style.display = 'block';
-        } else {
-            x.style.display = 'none';
-        }
-    }</script>
 
     <!--BOOTSTRAP SCRIPTS-->
 
@@ -219,6 +206,13 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    
+        <!--button script-->
+    <script>
+        function ShowAndHide() {
+        document.getElementByClassName("seeDiv").style.display="block";
+        }
+    </script>
 
 </body>
 
