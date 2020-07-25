@@ -11,7 +11,7 @@
 
         <!--BOOTSTRAP CSS-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="css/prototype.css">      
+        <link rel="stylesheet" type="text/css" href="css/global.css">      
     </head>
 
     <body>
@@ -76,100 +76,90 @@
             
             <!-- ROW #1 -->
             <div class="d-flex justify-content-around">
-                
+
                 <!-- Book Placard #1 -->
-                <div class="card" style="width: 16rem;">
-                    <div><img class="card-img-top" id = "books" src="images/book.png" alt="Card image cap"></div>
-                    <div class="card-body text-center">
-                        <h5 class="card-title">The Nature Fix</h5>
-                        <p class="text-left">Florence Williams sets out to uncover the science behind nature's positive effects on the brain.</p>
+                <div class="card h-100" style="width: 16rem;">
+                    <img class="card-img-top img-fluid" src="books/covers/TheGuardian2.jpg" alt="The Guardian by Nicholas Sparks">
+                    <div class="card-body placardBody">
                         <form method="post" action="bookplacard.php">
-                            <div class="form-check">
-                                <input type="hidden" name="placardName" value="TheNatureFix">
+                            <div class="form-check bForm">
+                                <input type="hidden" name="placardName" value="TheGuardian">
                                 <button type="submit" class="btn btn_R">Read Now</button>
-                            </div>                        
+                            </div>
                         </form>
                     </div>
                 </div>
 
                 <!-- Book Placard #2 -->
-                <div class="card" style="width: 16rem;">
-                    <div><img class="card-img-top" id = "books" src="images/book.png" alt="Card image cap"></div>
-                    <div class="card-body text-center">
-                        <h5 class="card-title">The Nature Fix</h5>
-                        <p class="text-left">Florence Williams sets out to uncover the science behind nature's positive effects on the brain.</p>
+                <div class="card h-100" style="width: 16rem;">
+                    <img class="card-img-top img-fluid" src="books/covers/JaneAustenComplete2.jpg" alt="The Complete Novels of Jane Austen">
+                    <div class="card-body text-center placardBody">
                         <form method="post" action="bookplacard.php">
-                            <div class="form-check">
-                                <input type="hidden" name="placardName" value="TheNatureFix">
+                            <div class="form-check bForm">
+                                <input type="hidden" name="placardName" value="TheCompleteNovelsofJaneAusten">
                                 <button type="submit" class="btn btn_R">Read Now</button>
-                            </div>                        
+                            </div>
                         </form>
                     </div>
                 </div>
                 
                 <!-- Book Placard #3 -->
-                <div class="card" style="width: 16rem;">
-                    <div><img class="card-img-top" id = "books" src="images/book.png" alt="Card image cap"></div>
-                    <div class="card-body text-center">
-                        <h5 class="card-title">The Nature Fix</h5>
-                        <p class="text-left">Florence Williams sets out to uncover the science behind nature's positive effects on the brain.</p>
+                <div class="card h-100" style="width: 16rem;">
+                    <img class="card-img-top img-fluid" src="books/covers/BornACrime2.jpg" alt="Born A Crime by Trevor Noah">
+                        <div class="card-body text-center placardBody">
                         <form method="post" action="bookplacard.php">
-                            <div class="form-check">
-                                <input type="hidden" name="placardName" value="TheNatureFix">
+                            <div class="form-check bForm">
+                                <input type="hidden" name="placardName" value="BornACrime">
                                 <button type="submit" class="btn btn_R">Read Now</button>
-                            </div>                        
+                            </div>
                         </form>
                     </div>
                 </div>
+                
             </div>
 
             <!--ROW #2-->
             <div class="d-flex justify-content-around">
                 
                 <!-- Book Placard #4 -->
-                <div class="card" style="width: 16rem;">
-                    <div><img class="card-img-top" id = "books" src="images/book.png" alt="Card image cap"></div>
-                    <div class="card-body text-center">
-                        <h5 class="card-title">The Nature Fix</h5>
-                        <p class="text-left">Florence Williams sets out to uncover the science behind nature's positive effects on the brain.</p>
+                <div class="card h-100" style="width: 16rem;">
+                    <img class="card-img-top img-fluid" src="books/covers/JustMercy2.jpg" alt="Just Mercy by Bryan Stevenson">
+                    <div class="card-body text-center placardBody">
                         <form method="post" action="bookplacard.php">
-                            <div class="form-check">
-                                <input type="hidden" name="placardName" value="TheNatureFix">
-                                <button type="submit" class="btn btn_R">Read Now</button>
-                            </div>                        
+                            <div class="form-check bForm">
+                                <input type="hidden" name="placardName" value="JustMercy">
+                                <button type="submit" class="btn btn_R ">Read Now</button>
+                            </div>
                         </form>
                     </div>
                 </div>
 
                 <!-- Book Placard #5 -->
-                <div class="card" style="width: 16rem;">
-                    <div><img class="card-img-top" id = "books" src="images/book.png" alt="Card image cap"></div>
-                    <div class="card-body text-center">
-                        <h5 class="card-title">The Nature Fix</h5>
-                        <p class="text-left">Florence Williams sets out to uncover the science behind nature's positive effects on the brain.</p>
+                <div class="card h-100" style="width: 16rem;">
+                    <img class="card-img-top img-fluid" src="books/covers/ThePelicanBrief2.jpg" alt="The Pelican Brief by John Grisham">
+                    <div class="card-body text-center placardBody">
                         <form method="post" action="bookplacard.php">
-                            <div class="form-check">
-                                <input type="hidden" name="placardName" value="TheNatureFix">
+                            <div class="form-check bForm">
+                                <input type="hidden" name="placardName" value="ThePelicanBrief">
                                 <button type="submit" class="btn btn_R">Read Now</button>
-                            </div>                        
+                            </div>
                         </form>
                     </div>
                 </div>
                 
                 <!-- Book Placard #6 -->
-                <div class="card" style="width: 16rem;">
-                    <div><img class="card-img-top" id = "books" src="images/book.png" alt="Card image cap"></div>
-                    <div class="card-body text-center">
-                        <h5 class="card-title">The Nature Fix</h5>
-                        <p class="text-left">Florence Williams sets out to uncover the science behind nature's positive effects on the brain.</p>
+                <div class="card h-100" style="width: 16rem;">
+                    <img class="card-img-top img-fluid" src="books/covers/MurderInMesopotamia2.jpg" alt="Murder In Mesopotamia by Agatha Christie">
+                    <div class="card-body text-center placardBody">
                         <form method="post" action="bookplacard.php">
-                            <div class="form-check">
-                                <input type="hidden" name="placardName" value="TheNatureFix">
+                            <div class="form-check bForm">
+                                <input type="hidden" name="placardName" value="MurderInMesopotamia">
                                 <button type="submit" class="btn btn_R">Read Now</button>
-                            </div>                        
+                            </div>
                         </form>
                     </div>
                 </div>
+                
             </div>
 
             <!--ROW #3-->
