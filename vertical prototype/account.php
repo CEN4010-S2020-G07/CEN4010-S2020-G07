@@ -64,7 +64,7 @@
                 
                     $username = $_POST["username"];
                     $password = $_POST["password"];
-                    $_SESSION["username"];
+                
                     // Connects to MySQL Database
                     $database = new mysqli("localhost", "cen4010s2020_g07", "faueng2020", "cen4010s2020_g07");
  
@@ -177,7 +177,6 @@
                         </div>
                         <div class ="card-footer text-center">
                             <a class="btn btn-info" href="editProfile.php" role="button">Edit Profile</a> 
-                            <button type="button" class="btn log bg-success" data-toggle="modal" data-target="#modal2">Delete Account</button>
                         </div>
                     </div>
                 </div>
@@ -282,39 +281,8 @@
             </div>  
         </div>
         
-        <!--Modal-->
-        <div class="modal" id="modal2" role="dialog">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5>Gather+</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
-                    </div>
-                <div class="modal-body">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-4 text-center" id="mod"></div>
-                                <div class="col-md-8">
-                                    <form id="loginForm" method="post" action="account.php">
-                                        <button type="submit" class="btn btn-info">Cancel</button>
-                                        <a class="btn btn-info" href="deleteProfile.php" role="button">Delete Account</a>
-                                    </form>
-                                
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                    
-                    </div>     
-                </div>
-            </div>  
-        </div>
-        <br>
-        <br>
-        
         <footer class="footer text-center"> <div class="container">(c)2020 FunkyTech</div></footer>
-        
+    
         <!--BOOTSTRAP SCRIPTS-->
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
