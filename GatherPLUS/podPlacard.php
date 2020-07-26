@@ -108,10 +108,8 @@
                             <form method="post" action="bookplacard.php" id="chatForm">
                                 <div class="form-check">
                                     <?php
-                                        $placardNoSpace = str_replace(" ", "" , $placardName);
-                                    
                                         echo "<input type=\"hidden\" name=\"placardName\" value=\"$placardName\">";
-                                        echo "<input type=\"hidden\" name=\"join\" value=\"$placardNoSpace\">";
+                                        echo "<input type=\"hidden\" name=\"join\" value=\"$placardName\">";
                                     ?>
                                     
                                     <!-- Join Button -->
@@ -156,7 +154,7 @@
                             <?php
                                 echo "<input type=\"hidden\" name=\"placardName\" value=\"$placardName\">";
                             ?>
-                            <input type="text" name="text" id="text" class="form-control" placeholder="Enter Your Message Here" />
+                            <input type="text" name="text" id="text" class="form-control" placeholder="type your message" />
                             <br>
                             <input type="submit" class="btn btn-success center-block" value="Send">
 		                  </form>

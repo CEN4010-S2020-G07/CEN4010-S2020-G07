@@ -47,7 +47,7 @@
         {                      
             foreach ($_POST["communities"] as $community)
             {
-                $sql = "DELETE FROM communityMembers WHERE userID='$userID' AND Messageboard='$community'";
+                $sql = "DELETE FROM communityMembers WHERE userID='$userID' AND placardName='$community'";
                             
                 if($database->query($sql))
                 {
@@ -64,9 +64,17 @@
         if (isset($_POST["remove"]))
         {
             // Deletes profile picture from user account
-            $sql = "UPDATE user_accounts SET userImage='' WHERE userID = '$userID'";
-                        
-            echo "<h4 class=\"alert alert-success\">Loss</h4>";
+            $sql = "UPDATE user_accounts SET userImage='' WHERE userID='$userID'";
+            
+            if ($database->query($sql))
+            {
+                echo "<h4 class=\"alert alert-success\">Profile Picture Successfully Removed</h4>";
+            }
+            
+            else
+            {
+                echo "<h4 class=\"alert alert-danger\">Error with Picture Deletion</h4>";
+            }
         }
                         
         else if(!empty($_FILES["image"]["name"])) 

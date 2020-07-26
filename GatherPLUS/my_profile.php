@@ -34,7 +34,7 @@
                     <li class="nav-item"><a class="nav-link" href="newshub.php">News</a></li>
                     <li class="nav-item"><a class="nav-link" href="arcade.php">Games</a></li>
                     <li class="nav-item"><a class="nav-link" href="wellspace.html">Wellspace</a></li>
-                    <li class="nav-item"><a class="nav-link" href="account.php">My Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="my_profile.php">My Profile</a></li>
                 </ul>
             </div>
             
@@ -157,7 +157,7 @@
                                 if (isset($_SESSION["username"]))
                                 {
                                     // Retrieves a list of messageboards from the communityMembers table that the user has joined
-                                    $sql = "SELECT Messageboard FROM communityMembers WHERE userID='$userID'";
+                                    $sql = "SELECT placardName FROM communityMembers WHERE userID='$userID'";
                                     $result = $database->query($sql);
                             
                                     // Displays message if user has not joined any communities
@@ -173,7 +173,7 @@
                                     
                                         while($row = $result->fetch_assoc())
                                         {
-                                            $community = $row['Messageboard'];
+                                            $community = $row['placardName'];
                                         
                                             echo "<li>$community</li>";
                                         }
@@ -196,7 +196,7 @@
             <!-- Link to the Edit Profile Page -->
             <div class="row">
                 <div class="col-sm-3 text-center">
-                    <a class="btn btn-info" href="editProfile.php" role="button">Edit Profile</a>
+                    <a class="btn btn-info" href="account_view.php" role="button">Edit Profile</a>
                 </div>
             </div>
             
@@ -217,7 +217,7 @@
                             <div class="row">
                                 <div class="col-md-4 text-center" id="mod"></div>
                                 <div class="col-md-8">
-                                    <form id="loginForm" method="post" action="account.php">
+                                    <form id="loginForm" method="post" action="my_profile.php">
                                         <div class="form-group">
                                             <label for="username">Username</label>
                                             <input type="text" class="form-control" name="username" id="username" placeholder="Username">

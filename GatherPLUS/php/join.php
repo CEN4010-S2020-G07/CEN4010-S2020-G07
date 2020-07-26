@@ -21,6 +21,8 @@
             $userID = $row["userID"];
                 
             $newCommunity = $_POST["join"];
+            
+            $placardName = $_POST["placardName"];
                     
             // Retrieves Messageboard list from communityMembers
             $sql = "SELECT Messageboard FROM communityMembers WHERE userID='$userID'";
@@ -31,7 +33,7 @@
             if ($result->num_rows == 0) 
             {
                 // Adds User to CommunityMembers list
-                $sql = "INSERT INTO communityMembers (userID, Messageboard) VALUES ('$userID', '$newCommunity')";
+                $sql = "INSERT INTO communityMembers (userID, Messageboard, placardName) VALUES ('$userID', '$newCommunity', '$placardName')";
                 
                 if ($database->query($sql))
                 {
@@ -60,7 +62,7 @@
                 }
                     
                 // Attempts to insert user into communityMembers table
-                $sql = "INSERT INTO communityMembers (userID, Messageboard) VALUES ('$userID', '$newCommunity')";
+                $sql = "INSERT INTO communityMembers (userID, Messageboard, placardName) VALUES ('$userID', '$newCommunity', '$placardName')";
                 
                 if ($database->query($sql))
                 {

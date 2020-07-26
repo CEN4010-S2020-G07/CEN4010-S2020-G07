@@ -35,7 +35,7 @@
                     <li class="nav-item"><a class="nav-link" href="newshub.php">News</a></li>
                     <li class="nav-item"><a class="nav-link" href="arcade.php">Games</a></li>
                     <li class="nav-item"><a class="nav-link" href="wellspace.html">Wellspace</a></li>
-                    <li class="nav-item"><a class="nav-link" href="account.php">My Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="my_profile.php">My Profile</a></li>
                 </ul>
             </div>
             
@@ -55,7 +55,7 @@
             <?php include 'php/edit.php'; ?>
             
             <!-- Account Information -->
-            <form id="input" method="post" action="editProfile.php" enctype="multipart/form-data">
+            <form id="input" method="post" action="account_view.php" enctype="multipart/form-data">
                 <div class="row">
                 
                     <!-- Card for Profile Picture/username -->
@@ -178,10 +178,12 @@
                             
                             <!-- PHP for listing communities -->
                             <div class="card-body">
+                                <p class="text-center"><strong>Check the Communities You Wish To Leave</strong></p>
+                                <br>
                                 <?php
                                 
                                     // Retrieves List of communities a user is a member of from communityMembers table
-                                    $sql = "SELECT Messageboard FROM communityMembers WHERE userID='$userID'";
+                                    $sql = "SELECT placardName FROM communityMembers WHERE userID='$userID'";
                                     $result = $database->query($sql);
                             
                                     // Displays message if user is not a member of any communities
@@ -195,7 +197,7 @@
                                     {                              
                                         while($row = $result->fetch_assoc())
                                         {
-                                            $community = $row['Messageboard'];
+                                            $community = $row['placardName'];
                                         
                                             echo "<div class=\"checkbox\"><label><input type=\"checkbox\" name=\"communities[]\" value=\"$community\"> $community</label></div>";
                                         }
@@ -232,7 +234,7 @@
                         <div class="row">
                             <div class="col-md-4 text-center" id="mod"></div>
                                 <div class="col-md-8">
-                                    <form id="loginForm" method="post" action="account.php">
+                                    <form id="loginForm" method="post" action="my_profile.php">
                                         <div class="form-group">
                                             <label for="username">Username</label>
                                             <input type="text" class="form-control" name="username" id="username" placeholder="Username">
@@ -267,7 +269,7 @@
                         <div class="row">
                             <div class="col-md-4 text-center" id="mod"></div>
                                 <div class="col-md-8">
-                                    <form id="loginForm" method="post" action="account.php">
+                                    <form id="loginForm" method="post" action="my_profile.php">
                                         <button type="submit" class="btn btn-info">Cancel</button>
                                         <a class="btn btn-warning" href="deleteProfile.php" role="button">Delete Account</a>
                                     </form>

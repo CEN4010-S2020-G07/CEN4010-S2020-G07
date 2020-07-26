@@ -29,9 +29,11 @@
         $row = $result->fetch_assoc();
                             
         $userID = $row["userID"];
+        
+        $placardNoSpace = str_replace(" ", "" , $placardName);
                             
         // Retrieves Messageboards from communityMembers
-        $sql = "SELECT Messageboard FROM communityMembers WHERE userID='$userID' AND Messageboard='$placardName'";
+        $sql = "SELECT Messageboard FROM communityMembers WHERE userID='$userID' AND Messageboard='$placardNoSpace'";
         $result = $database->query($sql);
                             
         // Error Message if username Not Found in Database
@@ -45,7 +47,7 @@
             $username = $_SESSION["username"];
             $message = $_POST["text"];
             
-            $sql = "INSERT INTO $placardName (username, message) VALUES ('$username', '$message')";
+            $sql = "INSERT INTO $placardNoSpace (username, message) VALUES ('$username', '$message')";
             
             if($database->query($sql))
             {
@@ -59,9 +61,11 @@
         }
                             
     }
-            
+
+    $placardNoSpace = str_replace(" ", "" , $placardName);
+
     // Retrieves messages
-    $sql = "SELECT * FROM $placardName";
+    $sql = "SELECT * FROM $placardNoSpace";
     $result = $database->query($sql);
         
     // Error Message if Site is Unable to Retrieve Information
