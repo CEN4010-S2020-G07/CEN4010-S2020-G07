@@ -37,7 +37,7 @@
         // Displays message if successfully updated user account
         if ($database->query($sql))
         {
-            echo "<h4 class=\"alert alert-success\">Success</h4>";
+            echo "<h4 class=\"alert alert-success\">Successfully Updated User Account</h4>";
                         
             $_SESSION["username"] = $username;
         }

@@ -42,36 +42,43 @@
                         
                 else
                 {
-                    echo "<h4 class=\"alert alert-success\">Uh OH</h4>";
+                    echo "<h4 class=\"alert alert-danger\">ERROR with Joining Community</h4>";
                 }
             }
             
             // Runs if user is a member of 1 or more communities
             else
             {
-                $row = $result->fetch_array(MYSQLI_NUM);
+                $check = 0;
                     
                 // Exits if user is already a member of the community
-                foreach ($row as $community) 
-                {
-                    if($community == $newCommunity)
-                    {
-                        echo "<h4 class=\"alert alert-warning\">You are already a member of this community</h4>";
-                        exit("");
+                while ($row = $result->fetch_assoc()) 
+                {   
+                    if($row["Messageboard"] == $newCommunity)
+                    {                        
+                        $check = 1;
                     }
                 }
                     
-                // Attempts to insert user into communityMembers table
-                $sql = "INSERT INTO communityMembers (userID, Messageboard, placardName) VALUES ('$userID', '$newCommunity', '$placardName')";
-                
-                if ($database->query($sql))
+                if ($check != 1)
                 {
-                    echo "<h4 class=\"alert alert-success\">Successfully Joined Community</h4>";
-                } 
+                    // Attempts to insert user into communityMembers table
+                    $sql = "INSERT INTO communityMembers (userID, Messageboard, placardName) VALUES ('$userID', '$newCommunity', '$placardName')";
+                
+                    if ($database->query($sql))
+                    {
+                        echo "<h4 class=\"alert alert-success\">Successfully Joined Community</h4>";
+                    } 
                         
+                    else
+                    {
+                        echo "<h4 class=\"alert alert-danger\">ERROR with Joining Community</h4>";  
+                    } 
+                }
+                
                 else
                 {
-                    echo "<h4 class=\"alert alert-warning\">Major Error</h4>";  
+                    echo "<h4 class=\"alert alert-warning\">You are already a member of this community</h4>";
                 }
             }
         }
