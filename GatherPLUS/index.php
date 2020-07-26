@@ -11,14 +11,14 @@
 
         <!--BOOTSTRAP CSS-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="css/prototype.css">      
+        <link rel="stylesheet" type="text/css" href="css/global.css">      
     </head>
 
     <body>
         
         <!--NAVIGATION-->
         <nav id="navigate" class="navbar navbar-expand-xl navbar-fixed-top navbar-light bg-light">
-            <a href="index.php" class="navbar-brand">Gather+</a>
+            <a href="index.php" class="navbar-brand nav-link-active gBrand">Gather+</a>
 
             <!-- TOGGLER -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,22 +28,21 @@
             <!-- Navbar Items -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav text-uppercase">
-                    <li class="nav-item active"><a class="nav-link" href="index.php">Main Page</a></li>
                     <li class="nav-item"><a class="nav-link" href="bookhub.php">Book Hub</a></li>
                     <li class="nav-item"><a class="nav-link" href="audiohub.php">Podcasts </a></li>
                     <li class="nav-item"><a class="nav-link" href="newshub.php">News</a></li>
                     <li class="nav-item"><a class="nav-link" href="arcade.php">Games</a></li>
                     <li class="nav-item"><a class="nav-link" href="wellspace.html">Wellspace</a></li>
-                    <li class="nav-item"><a class="nav-link" href="account.php">My Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="my_profile.php">My Profile</a></li>
                 </ul>
             </div>
             
             <!-- Login Button -->
-            <div class="nav navbar-nav navbar-right" id="navbarSupportedContent">
+         <!-- <div class="nav navbar-nav navbar-right" id="navbarSupportedContent">
                 <ul class="navbar-nav text-uppercase">
                     <li class="nav-item active"><button type="button" class="btn log bg-success" data-toggle="modal" data-target="#modal1">Login</button></li>
                 </ul>
-            </div>
+            </div> -->
         </nav>
     
         <!-- PHP for Welcoming (new) user -->
@@ -73,8 +72,6 @@
         ?>
     
         <!-- Header Title -->
-        <h3 class="mt-5">Gather+</h3>
-        
         <!-- Carousel Images -->
         <div id="well_carousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -93,8 +90,9 @@
     
         <!-- Greeting Message -->
         <div class="container-fluid text-center section" id="welcome">
-            <p id="greeting" class="text-left">We may be miles apart in real life, or maybe just six feet...but online we are side by side. We gather together over fascinating books or the latest podcasts. We talk about the news that matters most to us or play games (no matter how old we are!). All of our content is free, and the communities we form are priceless. </p>
-            <p class="text-center">Welcome to Gather Plus.</p>
+            <p class="text-center greeting">We may be miles apart in real life, or maybe just six feet...but online we are side by side. We gather together over fascinating books or the latest podcasts. We talk about the news that matters most to us or play games 
+            (no matter how old we are!). All of our content is free, and the communities we form are priceless. </p>
+            <p class="text-center greeting">Welcome to Gather Plus.</p>
 
             <!-- Sign-Up/Login Buttons -->
             <div class="btn-group" role="group">
@@ -221,7 +219,7 @@
                             <div class="row">
                                 <div class="col-md-4 text-center" id="mod"></div>
                                 <div class="col-md-8">
-                                    <form id="loginForm" method="post" action="account.php">
+                                    <form id="loginForm" method="post" action="my_profile.php">
                                         <div class="form-group">
                                             <label for="username">Username</label>
                                             <input type="text" class="form-control" name="username" id="username" placeholder="Username">

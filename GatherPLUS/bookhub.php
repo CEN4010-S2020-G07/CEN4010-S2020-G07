@@ -12,14 +12,14 @@
         <!--BOOTSTRAP CSS-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/global.css">      
-    </head>
+    </head> 
 
     <body>
 
 
         <!--NAVIGATION-->
         <nav id="navigate" class="navbar navbar-expand-xl navbar-fixed-top navbar-light bg-light">
-            <a href="index.php" class="navbar-brand">Gather+</a>
+            <a href="index.php" class="navbar-brand nav-item active">Gather+</a>
 
             <!-- TOGGLER -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +35,7 @@
                     <li class="nav-item"><a class="nav-link" href="newshub.php">News</a></li>
                     <li class="nav-item"><a class="nav-link" href="arcade.php">Games</a></li>
                     <li class="nav-item"><a class="nav-link" href="wellspace.html">Wellspace</a></li>
-                    <li class="nav-item"><a class="nav-link" href="account.php">My Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="my_profile.php">My Profile</a></li>
                 </ul>
             </div>
             
@@ -48,25 +48,29 @@
         </nav>
         
         <!-- Carousel -->
-        <h3 class="mt-5">Book Hub</h3>
         <div id="book_carousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#book_carousel" data-slide-to="0" class="active"></li>
                 <li data-target="#book_carousel" data-slide-to="1"></li>
-                <!-- <li data-target="#book_carousel" data-slide-to="2"></li>-->
+                <li data-target="#book_carousel" data-slide-to="2"></li>
+                <li data-target="#book_carousel" data-slide-to="3"></li>
+                
             </ol>
 
             <!-- Carousel images -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="images/happy_toddler.jpg" class="carapic w-100" alt="...">
+                    <img src="images/bookshelfR.jpg" class="carapic w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="images/bookshelf.jpg" class="carapic w-100" alt="...">
+                    <img src="images/happy_toddlerR.jpg" class="carapic w-100" alt="...">
                 </div>
-                <!-- <div class="carousel-item">
-                    <img src="images/" class="carapic w-100" alt="...">
-                </div>-->
+                <div class="carousel-item">
+                    <img src="images/woman_readingR.jpg" class="carapic w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/seniors_readingR.jpg" class="carapic w-100" alt="">
+                </div>
             </div>
         </div>
         
@@ -75,12 +79,12 @@
         <div class="container" id="bookhub">
             
             <!-- ROW #1 -->
-            <div class="d-flex justify-content-around">
+            <div class="d-flex justify-content-around mt-5">
 
                 <!-- Book Placard #1 -->
-                <div class="card h-100" style="width: 16rem;">
-                    <img class="card-img-top img-fluid" src="books/covers/TheGuardian.jpg" alt="The Guardian by Nicholas Sparks">
-                    <div class="card-body placardBody">
+                <div class="card h-100 " style="width: 16rem;">
+                    <img class="card-img-top img-fluid bCard" src="books/covers/TheGuardian.jpg" alt="The Guardian by Nicholas Sparks">
+                    <div class="card-body placBody">
                         <form method="post" action="bookplacard.php">
                             <div class="form-check bForm">
                                 <input type="hidden" name="placardName" value="TheGuardian">
@@ -91,9 +95,9 @@
                 </div>
 
                 <!-- Book Placard #2 -->
-                <div class="card h-100" style="width: 16rem;">
-                    <img class="card-img-top img-fluid" src="books/covers/JaneAustenComplete.jpg" alt="The Complete Novels of Jane Austen">
-                    <div class="card-body text-center placardBody">
+                <div class="card h-100 " style="width: 16rem;">
+                    <img class="card-img-top img-fluid bCard" src="books/covers/JaneAustenComplete.jpg" alt="The Complete Novels of Jane Austen">
+                    <div class="card-body text-center placBody">
                         <form method="post" action="bookplacard.php">
                             <div class="form-check bForm">
                                 <input type="hidden" name="placardName" value="TheCompleteNovelsofJaneAusten">
@@ -104,9 +108,9 @@
                 </div>
                 
                 <!-- Book Placard #3 -->
-                <div class="card h-100" style="width: 16rem;">
-                    <img class="card-img-top img-fluid" src="books/covers/BornACrime.jpg" alt="Born A Crime by Trevor Noah">
-                        <div class="card-body text-center placardBody">
+                <div class="card h-100 " style="width: 16rem;">
+                    <img class="card-img-top img-fluid bCard" src="books/covers/BornACrime.jpg" alt="Born A Crime by Trevor Noah">
+                        <div class="card-body text-center placBody">
                         <form method="post" action="bookplacard.php">
                             <div class="form-check bForm">
                                 <input type="hidden" name="placardName" value="BornACrime">
@@ -122,9 +126,9 @@
             <div class="d-flex justify-content-around">
                 
                 <!-- Book Placard #4 -->
-                <div class="card h-100" style="width: 16rem;">
-                    <img class="card-img-top img-fluid" src="books/covers/JustMercy.jpg" alt="Just Mercy by Bryan Stevenson">
-                    <div class="card-body text-center placardBody">
+                <div class="card h-100 " style="width: 16rem;">
+                    <img class="card-img-top img-fluid bCard" src="books/covers/JustMercy.jpg" alt="Just Mercy by Bryan Stevenson">
+                    <div class="card-body text-center placBody">
                         <form method="post" action="bookplacard.php">
                             <div class="form-check bForm">
                                 <input type="hidden" name="placardName" value="JustMercy">
@@ -135,9 +139,9 @@
                 </div>
 
                 <!-- Book Placard #5 -->
-                <div class="card h-100" style="width: 16rem;">
-                    <img class="card-img-top img-fluid" src="books/covers/ThePelicanBrief.jpg" alt="The Pelican Brief by John Grisham">
-                    <div class="card-body text-center placardBody">
+                <div class="card h-100 " style="width: 16rem;">
+                    <img class="card-img-top img-fluid bCard" src="books/covers/ThePelicanBrief.jpg" alt="The Pelican Brief by John Grisham">
+                    <div class="card-body text-center placBody">
                         <form method="post" action="bookplacard.php">
                             <div class="form-check bForm">
                                 <input type="hidden" name="placardName" value="ThePelicanBrief">
@@ -148,9 +152,9 @@
                 </div>
                 
                 <!-- Book Placard #6 -->
-                <div class="card h-100" style="width: 16rem;">
-                    <img class="card-img-top img-fluid" src="books/covers/MurderInMesopotamia.jpg" alt="Murder In Mesopotamia by Agatha Christie">
-                    <div class="card-body text-center placardBody">
+                <div class="card h-100 " style="width: 16rem;">
+                    <img class="card-img-top img-fluid bCard" src="books/covers/MurderInMesopotamia.jpg" alt="Murder In Mesopotamia by Agatha Christie">
+                    <div class="card-body text-center placBody">
                         <form method="post" action="bookplacard.php">
                             <div class="form-check bForm">
                                 <input type="hidden" name="placardName" value="MurderInMesopotamia">
@@ -178,7 +182,7 @@
                             <div class="row">
                                 <div class="col-md-4 text-center" id="mod"></div>
                                 <div class="col-md-8">
-                                    <form id="loginForm" method="post" action="account.php">
+                                    <form id="loginForm" method="post" action="my_profile.php">
                                         <div class="form-group">
                                             <label for="username">Username</label>
                                             <input type="text" class="form-control" name="username" id="username" placeholder="Username">

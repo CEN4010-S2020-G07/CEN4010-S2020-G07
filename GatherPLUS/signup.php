@@ -34,7 +34,7 @@
                     <li class="nav-item"><a class="nav-link" href="newshub.php">News</a></li>
                     <li class="nav-item"><a class="nav-link" href="arcade.php">Games</a></li>
                     <li class="nav-item"><a class="nav-link" href="wellspace.html">Wellspace</a></li>
-                    <li class="nav-item"><a class="nav-link" href="account.php">My Profile</a></li>
+                    <li class="nav-item"><a class="nav-link" href="my_profile.php">My Profile</a></li>
                 </ul>
             </div>
             
@@ -135,7 +135,7 @@
                             <div class="row">
                                 <div class="col-md-4 text-center" id="mod"></div>
                                 <div class="col-md-8">
-                                    <form id="loginForm" method="post" action="account.php">
+                                    <form id="loginForm" method="post" action="my_profile.php">
                                         <div class="form-group">
                                             <label for="username">Username</label>
                                             <input type="text" class="form-control" name="username" id="username" placeholder="Username">

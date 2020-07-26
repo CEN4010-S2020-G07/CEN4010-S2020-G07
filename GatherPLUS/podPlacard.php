@@ -32,11 +32,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
             <ul class="navbar-nav text-uppercase">
-                <li class="nav-item active"><a class="nav-link" href="featuremain.html">Main Page</a></li>
-                <li class="nav-item"><a class="nav-link" href="bookhub.html">Book Hub</a></li>
-                <li class="nav-item"><a class="nav-link" href="audiohub.html">Podcasts </a></li>
-                <li class="nav-item"><a class="nav-link" href="newshub.html">News</a></li>
-                <li class="nav-item"><a class="nav-link" href="arcade.html">Games</a></li>
+                <li class="nav-item"><a class="nav-link" href="bookhub.php">Book Hub</a></li>
+                <li class="nav-item"><a class="nav-link" href="audiohub.php">Podcasts </a></li>
+                <li class="nav-item"><a class="nav-link" href="newshub.php">News</a></li>
+                <li class="nav-item"><a class="nav-link" href="arcade.php">Games</a></li>
                 <li class="nav-item"><a class="nav-link" href="wellspace.html">Wellspace</a></li>
                 <li class=""><a class="nav-link" href="profile.html">My Profile</a></li>
             </ul>
