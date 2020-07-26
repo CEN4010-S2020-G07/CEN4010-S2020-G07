@@ -11,7 +11,8 @@
 
         <!--BOOTSTRAP CSS-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="css/global.css">      
+        <link rel="stylesheet" type="text/css" href="css/global.css"> 
+        <link rel="stylesheet" type="text/css" href="css/global.css"> 
     </head>
 
     <body>
@@ -19,7 +20,7 @@
 
         <!--NAVIGATION-->
         <nav id="navigate" class="navbar navbar-expand-xl navbar-fixed-top navbar-light bg-light">
-            <a href="index.php" class="navbar-brand">Gather+</a>
+            <a href="index.php" class="navbar-brand nav-link-active gBrand">Gather+</a>
 
             <!-- TOGGLER -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

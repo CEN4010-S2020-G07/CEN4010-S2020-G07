@@ -19,7 +19,7 @@
 
         <!--NAVIGATION-->
         <nav id="navigate" class="navbar navbar-expand-xl navbar-fixed-top navbar-light bg-light">
-            <a href="index.php" class="navbar-brand">Gather+</a>
+            <a href="index.php" class="navbar-brand nav-link-active gBrand">Gather+</a>
 
             <!-- TOGGLER -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

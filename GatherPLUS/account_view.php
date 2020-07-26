@@ -7,19 +7,20 @@
         <meta name="viewport" content="width-device-width, initial-scale=1.0, shrink-to-fit=no">
 
         <!-- TITLE -->
-        <title>Edit Profile</title>
+        <title>Gather+: Edit Profile</title>
 
         <!--BOOTSTRAP CSS-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/prototype.css">
         <link rel="stylesheet" type="text/css" href="style.css" />
+        <link rel="stylesheet" type="text/css" href="css/global.css"> 
     </head>
 
     <body>
         
         <!--NAVIGATION-->
         <nav id="navigate" class="navbar navbar-expand-xl navbar-fixed-top navbar-light bg-light">
-            <a href="index.php" class="navbar-brand">Gather+</a>
+            <a href="index.php" class="navbar-brand nav-link-active gBrand">Gather+</a>
 
             <!-- TOGGLER -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,7 +46,7 @@
                     <li class="nav-item active"><button type="button" class="btn log bg-success" data-toggle="modal" data-target="#modal1">Login</button></li>
                 </ul>
             </div>
-        </nav> 
+        </nav>
         
         <!-- Edit Profile Section -->
         <div id="about" class="container-fluid">
@@ -269,7 +270,8 @@
                         <div class="row">
                             <div class="col-md-4 text-center" id="mod"></div>
                                 <div class="col-md-8">
-                                    <form id="loginForm" method="post" action="my_profile.php">
+                                    <p class="text-center"><strong>Are You Sure You Wish to Delete Your Gather+ Account?</strong></p>
+                                    <form class="text-center" id="loginForm" method="post" action="account_view.php">
                                         <button type="submit" class="btn btn-info">Cancel</button>
                                         <a class="btn btn-warning" href="deleteProfile.php" role="button">Delete Account</a>
                                     </form>

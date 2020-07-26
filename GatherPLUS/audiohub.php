@@ -19,7 +19,7 @@
 
         <!--NAVIGATION-->
         <nav id="navigate" class="navbar navbar-expand-xl navbar-fixed-top navbar-light bg-light">
-            <a href="index.php" class="navbar-brand nav-item active">Gather+</a>
+            <a href="index.php" class="navbar-brand nav-link-active gBrand">Gather+</a>
 
             <!-- TOGGLER -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,6 +29,7 @@
             <!-- Navbar Items -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav text-uppercase">
+                    <li class="nav-item active"><a class="nav-link" href="index.php">Main Page</a></li>
                     <li class="nav-item"><a class="nav-link" href="bookhub.php">Book Hub</a></li>
                     <li class="nav-item"><a class="nav-link" href="audiohub.php">Podcasts </a></li>
                     <li class="nav-item"><a class="nav-link" href="newshub.php">News</a></li>

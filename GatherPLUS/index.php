@@ -7,7 +7,7 @@
         <meta name="viewport" content="width-device-width, initial-scale=1.0, shrink-to-fit=no">
 
         <!-- TITLE -->
-        <title>Gather+ Main</title>
+        <title>Gather+: Main</title>
 
         <!--BOOTSTRAP CSS-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -28,6 +28,7 @@
             <!-- Navbar Items -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav text-uppercase">
+                    <li class="nav-item active"><a class="nav-link" href="index.php">Main Page</a></li>
                     <li class="nav-item"><a class="nav-link" href="bookhub.php">Book Hub</a></li>
                     <li class="nav-item"><a class="nav-link" href="audiohub.php">Podcasts </a></li>
                     <li class="nav-item"><a class="nav-link" href="newshub.php">News</a></li>
@@ -36,13 +37,6 @@
                     <li class="nav-item"><a class="nav-link" href="my_profile.php">My Profile</a></li>
                 </ul>
             </div>
-            
-            <!-- Login Button -->
-         <!-- <div class="nav navbar-nav navbar-right" id="navbarSupportedContent">
-                <ul class="navbar-nav text-uppercase">
-                    <li class="nav-item active"><button type="button" class="btn log bg-success" data-toggle="modal" data-target="#modal1">Login</button></li>
-                </ul>
-            </div> -->
         </nav>
     
         <!-- PHP for Welcoming (new) user -->
@@ -205,7 +199,7 @@
     
         <!-- Backstory Log -->
         <div class="container-fluid section text-center" id="learnmore"> Gather+ Backstory and Information about FunkyTech (site link) </div>
-    
+        
         <!--Modal for Login-->
         <div class="modal" id="modal1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
