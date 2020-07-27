@@ -113,8 +113,10 @@
                             <form method="post" action="podPlacard.php" id="chatForm">
                                 <div class="form-check">
                                     <?php
+										$placardNoSpace = str_replace(" ", "" , $placardName);
+										
                                         echo "<input type=\"hidden\" name=\"placardName\" value=\"$placardName\">";
-                                        echo "<input type=\"hidden\" name=\"join\" value=\"$placardName\">";
+                                        echo "<input type=\"hidden\" name=\"join\" value=\"$placardNoSpace\">";
                                     ?>
                                     
                                     <!-- Join Button -->
