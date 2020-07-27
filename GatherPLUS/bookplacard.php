@@ -221,7 +221,6 @@
     
             <!--button script-->
             <script>
-                
                 function ShowAndHide2() {
                 var x = document.getElementById('board');
                 if (x.style.display == 'none') {
@@ -230,9 +229,7 @@
                     x.style.display = 'none';
                     }
                 }
-                    
-                    
-                    
+ 
                 function ShowContent() {
                     var x = document.getElementById('embed');
                     if (x.style.display == 'none') {
@@ -240,8 +237,7 @@
                     } else {
                         x.style.display = 'none';
                     }
-                }
-                
+                }  
             </script>
 
         <!--BOOTSTRAP SCRIPTS-->

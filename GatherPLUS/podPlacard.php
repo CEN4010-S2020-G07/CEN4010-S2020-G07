@@ -118,7 +118,7 @@
                                     ?>
                                     
                                     <!-- Join Button -->
-                                    <button type="submit" class="btn btn-secondary comm_button" ONCLICK="ShowAndHide()">Join the Community!</button>
+                                    <button type="submit" class="btn btn-secondary comm_button">Join the Community!</button>
                                 </div>                        
                             </form>
                             
@@ -140,7 +140,7 @@
             </div>
         
             <!-- Message Board Card -->
-            <div class="container col-sm-12 col-md-8 book_board" id="talk" style="display:none">
+            <div class="container col-sm-12 col-md-8 book_board" id="board" style="display:none">
                 <div class="card card-default">
             
                     <!-- Header -->
@@ -214,7 +214,6 @@
     
             <!--button script-->
             <script>
-                
                 function ShowAndHide2() {
                 var x = document.getElementById('board');
                 if (x.style.display == 'none') {
@@ -230,15 +229,6 @@
                         x.style.display = 'block';
                     } else {
                         x.style.display = 'none';
-                    }
-                }
-
-                function ShowCommunity() {
-                    var y = document.getElementById('talk');
-                    if (y.style.display == 'none') {
-                        y.style.display = 'block';
-                    } else {
-                        y.style.display = 'none';
                     }
                 }
             </script>
