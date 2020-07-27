@@ -34,7 +34,7 @@
                     <li class="nav-item"><a class="nav-link" href="bookhub.php">Books</a></li>
                     <li class="nav-item"><a class="nav-link" href="audiohub.php">Podcasts </a></li>
                     <li class="nav-item"><a class="nav-link" href="newshub.php">News</a></li>
-                    <li class="nav-item"><a class="nav-link" href="arcade.php">Games</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gamehub.php">Games</a></li>
                     <li class="nav-item"><a class="nav-link" href="wellspace.html">Wellspace</a></li>
                     <li class="nav-item"><a class="nav-link" href="my_profile.php">My Profile</a></li>
                 </ul>
