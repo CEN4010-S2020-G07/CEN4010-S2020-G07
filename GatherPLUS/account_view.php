@@ -43,7 +43,7 @@
             <!-- Login Button -->
             <div class="nav navbar-nav navbar-right" id="navbarSupportedContent">
                 <ul class="navbar-nav text-uppercase">
-                    <li class="nav-item active"><button type="button" class="btn log bg-success" data-toggle="modal" data-target="#modal1">Login</button></li>
+                    <li class="nav-item active"><button type="button" class="btn log bg-success" data-toggle="modal" data-target="#modal1">Login/Logout</button></li>
                 </ul>
             </div>
         </nav>
@@ -246,6 +246,11 @@
                                         </div>
                                         <button type="submit" class="btn btn-info">Login</button>
                                         <a href="signup.php" class="btn btn-success" role="button">Create An Account</a>
+                                    </form>
+                                    <br>
+                                    <form id="logout" method="post" action="my_profile.php">
+                                        <input type="hidden" name="logout" value="1">
+                                        <button type="submit" class="btn btn-warning">Logout</button>
                                     </form>
                                 </div>
                             </div>

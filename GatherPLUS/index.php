@@ -110,84 +110,90 @@
                 }
             ?>
         
-            <div class="card-group text-center">
-                <div class="card category">
-                    <?php
-                        if (isset($_SESSION["username"]))
-                        {
-                            echo "<a href=\"bookhub.php\">";
-                        }
-        
-                        else
-                        {
-                            echo "<a href=\"index.php\">";
-                        }
-                    ?>
-                    <img src="images/book.png" alt="books" class="img-fluid">
-                        <div class="text-nowrap">Books</div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="card-group col-md-6">
+                    <div class="card category">
                         <?php
-                            echo "</a>";
-                        ?>
-                </div>
-                <div class="card category">
-                    <?php
-                        if (isset($_SESSION["username"]))
-                        {
-                            echo "<a href=\"bookhub.php\">";
-                        }
+                            if (isset($_SESSION["username"]))
+                            {
+                                echo "<a href=\"bookhub.php\">";
+                            }
         
-                        else
-                        {
-                            echo "<a href=\"index.php\">";
-                        }
+                            else
+                            {
+                                echo "<a href=\"index.php\">";
+                            }
                         ?>
-                    <img src="images/sing.png" alt="" class="img-fluid">
-                    <div class="text-nowrap">Podcasts</div>
-                    <?php
-                        echo "</a>";              
-                    ?>
+                        <img src="images/book.png" alt="books" class="img-fluid center-block">
+                            <div class="text-nowrap">Books</div>
+                            <?php
+                                echo "</a>";
+                            ?>
+                    </div>
+                    <div class="card category">
+                        <?php
+                            if (isset($_SESSION["username"]))
+                            {
+                                echo "<a href=\"bookhub.php\">";
+                            }
+        
+                            else
+                            {
+                                echo "<a href=\"index.php\">";
+                            }
+                        ?>
+                        <img src="images/sing.png" alt="" class="img-fluid">
+                        <div class="text-nowrap">Podcasts</div>
+                        <?php
+                            echo "</a>";              
+                        ?>
+                    </div>
                 </div>
             </div>
         
-            <div class="card-group text-center">
-                <div class="card category">
-                    <?php
-                        if (isset($_SESSION["username"]))
-                        {
-                            echo "<a href=\"bookhub.php\">";
-                        }
+            <div class="row">
+                <div class="col-md-3"></div>
+                    <div class="card-group col-md-6">
+                        <div class="card category">
+                            <?php
+                                if (isset($_SESSION["username"]))
+                                {
+                                    echo "<a href=\"bookhub.php\">";
+                                }
         
-                        else
-                        {
-                            echo "<a href=\"index.php\">";            
-                        }
+                                else
+                                {
+                                    echo "<a href=\"index.php\">";            
+                                }
                 
-                    ?>
-                    <img src="images/newspaper.png" alt="news" class="img-fluid">
-                    <div class="text-nowrap">Articles</div>
-                    <?php
-                        echo "</a>";
-                    ?>
-                </div>
-                <div class="card category">
-                    <?php
+                            ?>
+                            <img src="images/newspaper.png" alt="news" class="img-fluid">
+                            <div class="text-nowrap">Articles</div>
+                            <?php
+                                echo "</a>";
+                            ?>
+                        </div>
+                    <div class="card category">
+                        <?php
             
-                        if (isset($_SESSION["username"]))
-                        {
-                            echo "<a href=\"bookhub.php\">";
-                        }
+                            if (isset($_SESSION["username"]))
+                            {
+                                echo "<a href=\"bookhub.php\">";
+                            }
         
-                        else
-                        {
-                            echo "<a href=\"index.php\">";
-                        }
-                    ?>
+                            else
+                            {
+                                echo "<a href=\"index.php\">";
+                            }
+                        ?>
                 
-                    <img src="images/puzzle.png" alt="games" class="img-fluid">
-                    <div class="text-nowrap">Games</div>
-                    <?php
-                        echo "</a>";
-                    ?>
+                        <img src="images/puzzle.png" alt="games" class="img-fluid">
+                        <div class="text-nowrap">Games</div>
+                        <?php
+                            echo "</a>";
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -200,7 +206,7 @@
         <!-- Backstory Log -->
         <div class="container-fluid section text-center" id="learnmore"> Gather+ Backstory and Information about FunkyTech (site link) </div>
         
-        <!--Modal for Login-->
+        <!-- Login Modal -->
         <div class="modal" id="modal1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
@@ -208,10 +214,10 @@
                         <h5>Gather+</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
                     </div>
-                    <div class="modal-body">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-4 text-center" id="mod"></div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4 text-center" id="mod"></div>
                                 <div class="col-md-8">
                                     <form id="loginForm" method="post" action="my_profile.php">
                                         <div class="form-group">
@@ -219,11 +225,16 @@
                                             <input type="text" class="form-control" name="username" id="username" placeholder="Username">
                                         </div>
                                         <div class="form-group">
-                                            <label for="password">Password <a href="iforgot.php" class="iforgot">(Forgot Password)</a></label>
+                                            <label for="password">Password</label>
                                             <input type="password" class="form-control" name="password" id="password" placeholder="Password (Case-Sensitive)">
                                         </div>
                                         <button type="submit" class="btn btn-info">Login</button>
                                         <a href="signup.php" class="btn btn-success" role="button">Create An Account</a>
+                                    </form>
+                                    <br>
+                                    <form id="logout" method="post" action="my_profile.php">
+                                        <input type="hidden" name="logout" value="1">
+                                        <button type="submit" class="btn btn-warning">Logout</button>
                                     </form>
                                 </div>
                             </div>

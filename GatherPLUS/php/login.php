@@ -82,6 +82,12 @@
                             
         }
     }
+
+    else if (isset($_POST["logout"]))
+    {
+        unset($_SESSION["username"]);
+        echo "<h4 class=\"alert alert-warning\">You Have Been Logged-Out</h4>";
+    }
             
     // Runs if user signed in earlier
     else if(isset($_SESSION["username"]))

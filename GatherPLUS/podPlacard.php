@@ -117,6 +117,8 @@
                                 </div>                        
                             </form>
                             
+                            <button type="button" class="btn btn-secondary ml-4 mr-3 view_button" ONCLICK="ShowAndHide2()">View The Discussion</button>
+                            
                         </div>
                     </div>
                 </div>
@@ -134,7 +136,7 @@
             </div>
         
             <!-- Message Board Card -->
-            <div class="container col-sm-12 col-md-8 book_board seeDiv">
+            <div class="container col-sm-12 col-md-8 book_board seeDiv" id="board" style="display:none">
                 <div class="card card-default">
             
                     <!-- Header -->
@@ -210,6 +212,15 @@
             <script>
                 function ShowAndHide() {
                 var x = document.getElementById('eReader');
+                if (x.style.display == 'none') {
+                    x.style.display = 'block';
+                } else {
+                    x.style.display = 'none';
+                    }
+                }
+                
+                function ShowAndHide2() {
+                var x = document.getElementById('board');
                 if (x.style.display == 'none') {
                     x.style.display = 'block';
                 } else {

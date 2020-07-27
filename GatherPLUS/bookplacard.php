@@ -46,7 +46,7 @@
             <!-- Login Button -->
             <div class="nav navbar-nav navbar-right" id="navbarSupportedContent">
                 <ul class="navbar-nav text-uppercase">
-                    <li class="nav-item active"><button type="button" class="btn log bg-success" data-toggle="modal" data-target="#modal1">Login</button></li>
+                    <li class="nav-item active"><button type="button" class="btn log bg-success" data-toggle="modal" data-target="#modal1">Login/Logout</button></li>
                 </ul>
             </div>
         </nav>
@@ -85,10 +85,13 @@
                                 $placardBio = $row["placardBio"];
                                 $placardLink = $row["placardLink"];
                                 $placardImageLink = $row["placardImageLink"];
+                                $placardAuthor = $row["Author"];
+                                $placardGenre = $row["Genre"];
                         
                                 $_SESSION["placardName"] = $placardName;
                         
                                 echo "<img src=\"$placardImageLink\" alt=\"$placardName\" class=\"img-fluid\">";
+                                echo "<h5 class=\"text-center\"> $placardGenre</h5>";
                             ?>
                     </div>
                     
@@ -96,6 +99,7 @@
                     <div class="col-md-8 mt-3 full_feature">
                             <?php
                                 echo "<h3 class=\"mt-3\">$placardName</h3>";
+                                echo "<h6 class=\"text-center\">$placardAuthor</h6>";
                                 echo "<p class=\"text-left full_describe\">$placardBio</p>";
                             ?>
                         
@@ -116,9 +120,11 @@
                                     ?>
                                     
                                     <!-- Join Button -->
-                                    <button type="submit" class="btn btn-secondary comm_button" ONCLICK="ShowAndHide()">Join the Community!</button>
+                                    <button type="submit" class="btn btn-secondary comm_button">Join the Community!</button>
                                 </div>                        
                             </form>
+                            
+                            <button type="button" class="btn btn-secondary ml-4 mr-3 view_button" ONCLICK="ShowAndHide2()">View The Discussion</button>
                             
                         </div>
                     </div>
@@ -137,7 +143,7 @@
             </div>
         
             <!-- Message Board Card -->
-            <div class="container col-sm-12 col-md-8 book_board seeDiv">
+            <div class="container col-sm-12 col-md-8 book_board seeDiv" id="board" style="display:none">
                 <div class="card card-default">
             
                     <!-- Header -->
@@ -169,40 +175,45 @@
                 </div>
             </div>
         
-            <!--Modal for Login-->
-            <div class="modal" id="modal1" role="dialog">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5>Gather+</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-md-4 text-center" id="mod"></div>
-                                    <div class="col-md-8">
-                                        <form id="loginForm" method="post" action="my_profile.php">
-                                            <div class="form-group">
-                                                <label for="username">Username</label>
-                                                <input type="text" class="form-control" name="username" id="username" placeholder="Username">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="password">Password <a href="iforgot.php" class="iforgot">(Forgot Password)</a></label>
-                                                <input type="password" class="form-control" name="password" id="password" placeholder="Password (Case-Sensitive)">
-                                            </div>
-                                            <button type="submit" class="btn btn-info">Login</button>
-                                            <a href="signup.php" class="btn btn-success" role="button">Create An Account</a>
-                                        </form>
-                                    </div>
+        <!-- Login Modal -->
+        <div class="modal" id="modal1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5>Gather+</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                    </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4 text-center" id="mod"></div>
+                                <div class="col-md-8">
+                                    <form id="loginForm" method="post" action="my_profile.php">
+                                        <div class="form-group">
+                                            <label for="username">Username</label>
+                                            <input type="text" class="form-control" name="username" id="username" placeholder="Username">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password">Password</label>
+                                            <input type="password" class="form-control" name="password" id="password" placeholder="Password (Case-Sensitive)">
+                                        </div>
+                                        <button type="submit" class="btn btn-info">Login</button>
+                                        <a href="signup.php" class="btn btn-success" role="button">Create An Account</a>
+                                    </form>
+                                    <br>
+                                    <form id="logout" method="post" action="my_profile.php">
+                                        <input type="hidden" name="logout" value="1">
+                                        <button type="submit" class="btn btn-warning">Logout</button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
-                        <div class="modal-footer">
-                        </div>     
                     </div>
-                </div>  
-            </div>
+                    <div class="modal-footer">
+                    </div>     
+                </div>
+            </div>  
+        </div>
             <br>
             <br>
         
@@ -213,6 +224,15 @@
             <script>
                 function ShowAndHide() {
                 var x = document.getElementById('eReader');
+                if (x.style.display == 'none') {
+                    x.style.display = 'block';
+                } else {
+                    x.style.display = 'none';
+                    }
+                }
+                
+                function ShowAndHide2() {
+                var x = document.getElementById('board');
                 if (x.style.display == 'none') {
                     x.style.display = 'block';
                 } else {

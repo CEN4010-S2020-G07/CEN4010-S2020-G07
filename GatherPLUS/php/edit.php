@@ -84,7 +84,7 @@
             $fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
          
              // Allow certain file formats 
-            $allowTypes = array('jpg','PNG','jpeg','gif'); 
+            $allowTypes = array('jpg','PNG','jpeg','gif', 'png'); 
                             
             if(in_array($fileType, $allowTypes))
             { 

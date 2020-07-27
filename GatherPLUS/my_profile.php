@@ -42,7 +42,7 @@
             <!-- Login Button -->
             <div class="nav navbar-nav navbar-right" id="navbarSupportedContent">
                 <ul class="navbar-nav text-uppercase">
-                    <li class="nav-item active"><button type="button" class="btn log bg-success" data-toggle="modal" data-target="#modal1">Login</button></li>
+                    <li class="nav-item active"><button type="button" class="btn log bg-success" data-toggle="modal" data-target="#modal1">Login/Logout</button></li>
                 </ul>
             </div>
         </nav>  
@@ -105,12 +105,12 @@
                             
                                 if ($username != "")
                                 {
-                                    echo "<h4 class=\"card-title text-center\">$username</h4>";
+                                    echo "<h4 class=\"card-title text-center\"><strong>$username</strong></h4>";
                                 }
                             
                                 else
                                 {
-                                    echo "<h4 class=\"card-title text-center\">Username</h4>";
+                                    echo "<h4 class=\"card-title text-center\"><strong>Username</strong></h4>";
                                 }
                             
                             ?>
@@ -205,7 +205,7 @@
         <br>
         <br>
         
-        <!--Modal for Login-->
+        <!-- Login Modal -->
         <div class="modal" id="modal1" role="dialog">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
@@ -213,10 +213,10 @@
                         <h5>Gather+</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
                     </div>
-                    <div class="modal-body">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-4 text-center" id="mod"></div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4 text-center" id="mod"></div>
                                 <div class="col-md-8">
                                     <form id="loginForm" method="post" action="my_profile.php">
                                         <div class="form-group">
@@ -224,11 +224,16 @@
                                             <input type="text" class="form-control" name="username" id="username" placeholder="Username">
                                         </div>
                                         <div class="form-group">
-                                            <label for="password">Password <a href="iforgot.php" class="iforgot">(Forgot Password)</a></label>
+                                            <label for="password">Password</label>
                                             <input type="password" class="form-control" name="password" id="password" placeholder="Password (Case-Sensitive)">
                                         </div>
                                         <button type="submit" class="btn btn-info">Login</button>
                                         <a href="signup.php" class="btn btn-success" role="button">Create An Account</a>
+                                    </form>
+                                    <br>
+                                    <form id="logout" method="post" action="my_profile.php">
+                                        <input type="hidden" name="logout" value="1">
+                                        <button type="submit" class="btn btn-warning">Logout</button>
                                     </form>
                                 </div>
                             </div>
