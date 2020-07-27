@@ -8,12 +8,12 @@
     <!--FOLLOWING LINE IMPORTANT TO ADD FOR BOOTSTRAP-->
     <meta name="viewport" content="width-device-width, initial-scale=1.0, shrink-to-fit=no">
 
-    <title>Beta Launch</title>
+    <title>Gather+ News Placard</title>
 
     <!--BOOTSTRAP CSS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="css/prototype.css">
+    <link rel="stylesheet" type="text/css" href="css/global.css">
 
 </head>
 
@@ -23,7 +23,7 @@
       <!--NAVIGATION-->
     <nav id="navigate" class="navbar navbar-expand-xl navbar-fixed-top navbar-light bg-light">
 
-        <a href="#" class="navbar-brand">Gather+</a>
+        <a href="index.php" class="navbar-brand nav-item active gBrand">Gather+</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -32,17 +32,17 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
             <ul class="navbar-nav text-uppercase">
-                <li class="nav-item active"><a class="nav-link" href="featuremain.html">Main Page</a></li>
-                <li class="nav-item"><a class="nav-link" href="bookhub.html">Book Hub</a></li>
-                <li class="nav-item"><a class="nav-link" href="audiohub.html">Podcasts </a></li>
-                <li class="nav-item"><a class="nav-link" href="newshub.html">News</a></li>
-                <li class="nav-item"><a class="nav-link" href="arcade.html">Games</a></li>
+                <li class="nav-item"><a class="nav-link" href="bookhub.php">Books</a></li>
+                <li class="nav-item"><a class="nav-link" href="audiohub.php">Podcasts </a></li>
+                <li class="nav-item"><a class="nav-link" href="newshub.php">News</a></li>
+                <li class="nav-item"><a class="nav-link" href="arcade.php">Games</a></li>
                 <li class="nav-item"><a class="nav-link" href="wellspace.html">Wellspace</a></li>
-                <li class=""><a class="nav-link" href="profile.html">My Profile</a></li>
+                <li class=""><a class="nav-link" href="my_profile.php">My Profile</a></li>
             </ul>
         </div>
     </nav>  
-     <h3 class="mt-5">PLACARD TEMPLATE</h3>
+    
+     <h3 class="mt-5">NEWS PLACARD TEMPLATE</h3>
         <div class="container placard">
             <div class="row full_thing">
                 <div class="col-md-4 mt-3 full_plac_image">
@@ -54,19 +54,19 @@
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore numquam magnam quos velit quam tenetur ex eum sunt pariatur ducimus voluptatibus aut, est assumenda qui eligendi nisi, laboriosam quidem fugiat.Lorem
                     </p> 
                     <div class="d-flex flex-row button_row">
-                    <button type="button" class="btn btn-secondary ml-4 mr-3 view_button" ONCLICK="ShowAndHide()">Click to Read/Listen/Play</button>
-                    <button type="button" class="btn btn-secondary comm_button">Join the Community!</button>
+                    <button type="button" class="btn btn-secondary ml-4 mr-3 view_button" ONCLICK="ShowContent()">Click to Read</button>
+                    <button type="submit" class="btn btn-secondary comm_button" ONCLICK="ShowCommunity()">Join the Community!</button>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container col-sm-12 col-md-8 e_reader" id="eReader" style="display:none">
+        <div class="container col-sm-12 col-md-8" id="embed" style="display:none">
             <div class="card">
             <div class="card-body text-center"><iframe id="viewerPro" style="width:600px; height: 500px;" src="">INSERT CONTENT HERE</iframe></div>
             </div>
         </div>
-        
-        <div class="container col-sm-12 col-md-8 book_board">
+
+        <div class="container col-sm-12 col-md-8 book_board" id="talk" style="display:none">
             <div class="card">
             <div class="card-body text-center">message board goes here</div>
             </div>
@@ -77,14 +77,23 @@
     
     <!--button script-->
     <script>
-        function ShowAndHide() {
-        var x = document.getElementById('eReader');
+        
+        function ShowContent() {
+        var x = document.getElementById('embed');
         if (x.style.display == 'none') {
             x.style.display = 'block';
-        } else {
-            x.style.display = 'none';
-        }
-    }</script>
+        } 
+        else { x.style.display = 'none';}
+        } 
+        
+        function ShowCommunity(){
+        var y = document.getElementById('talk');
+        if (y.style.display == 'none') {
+            y.style.display = 'block';
+        } 
+        else { y.style.display = 'none';}
+        }     
+    </script>
 
     <!--BOOTSTRAP SCRIPTS-->
 

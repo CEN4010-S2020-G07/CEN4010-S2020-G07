@@ -7,7 +7,7 @@
         <meta name="viewport" content="width-device-width, initial-scale=1.0, shrink-to-fit=no">
 
         <!-- TITLE -->
-        <title>Gather+: Bookhub</title>
+        <title>Gather+ Books</title>
 
         <!--BOOTSTRAP CSS-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -29,8 +29,8 @@
             <!-- Navbar Items -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav text-uppercase">
-                    <li class="nav-item active"><a class="nav-link" href="index.php">Main Page</a></li>
-                    <li class="nav-item"><a class="nav-link" href="bookhub.php">Book Hub</a></li>
+                   
+                    <li class="nav-item"><a class="nav-link" href="bookhub.php">Books</a></li>
                     <li class="nav-item"><a class="nav-link" href="audiohub.php">Podcasts </a></li>
                     <li class="nav-item"><a class="nav-link" href="newshub.php">News</a></li>
                     <li class="nav-item"><a class="nav-link" href="arcade.php">Games</a></li>
@@ -42,7 +42,7 @@
             <!-- Login Button -->
             <div class="nav navbar-nav navbar-right" id="navbarSupportedContent">
                 <ul class="navbar-nav text-uppercase">
-                    <li class="nav-item active"><button type="button" class="btn log bg-success" data-toggle="modal" data-target="#modal1">Login/Logout</button></li>
+                    <li class="nav-item active"><button type="button" class="btn log" data-toggle="modal" data-target="#modal1">Login/Logout</button></li>
                 </ul>
             </div>
         </nav>
@@ -76,14 +76,14 @@
         
         
         <!--Book Placards List-->
-        <div class="container" id="bookhub">
+        <div class="container" id="hubBox">
             
             <!-- ROW #1 -->
             <div class="d-flex justify-content-around mt-5">
 
                 <!-- Book Placard #1 -->
                 <div class="card h-100 " style="width: 16rem;">
-                    <img class="card-img-top img-fluid bCard" src="books/covers/TheGuardian.jpg" alt="The Guardian by Nicholas Sparks">
+                    <img class="card-img-top img-fluid bCard" src="books/covers/TheGuardianR.jpg" alt="The Guardian by Nicholas Sparks">
                     <div class="card-body placBody">
                         <form method="post" action="bookplacard.php">
                             <div class="form-check bForm">
@@ -96,7 +96,7 @@
 
                 <!-- Book Placard #2 -->
                 <div class="card h-100 " style="width: 16rem;">
-                    <img class="card-img-top img-fluid bCard" src="books/covers/JaneAustenComplete.jpg" alt="The Complete Novels of Jane Austen">
+                    <img class="card-img-top img-fluid bCard" src="books/covers/JaneAustenCompleteR.jpg" alt="The Complete Novels of Jane Austen">
                     <div class="card-body text-center placBody">
                         <form method="post" action="bookplacard.php">
                             <div class="form-check bForm">
@@ -109,7 +109,7 @@
                 
                 <!-- Book Placard #3 -->
                 <div class="card h-100 " style="width: 16rem;">
-                    <img class="card-img-top img-fluid bCard" src="books/covers/BornACrime.jpg" alt="Born A Crime by Trevor Noah">
+                    <img class="card-img-top img-fluid bCard" src="books/covers/BornACrimeR.jpg" alt="Born A Crime by Trevor Noah">
                         <div class="card-body text-center placBody">
                         <form method="post" action="bookplacard.php">
                             <div class="form-check bForm">
@@ -127,7 +127,7 @@
                 
                 <!-- Book Placard #4 -->
                 <div class="card h-100 " style="width: 16rem;">
-                    <img class="card-img-top img-fluid bCard" src="books/covers/JustMercy.jpg" alt="Just Mercy by Bryan Stevenson">
+                    <img class="card-img-top img-fluid bCard" src="books/covers/JustMercyR.jpg" alt="Just Mercy by Bryan Stevenson">
                     <div class="card-body text-center placBody">
                         <form method="post" action="bookplacard.php">
                             <div class="form-check bForm">
@@ -140,7 +140,7 @@
 
                 <!-- Book Placard #5 -->
                 <div class="card h-100 " style="width: 16rem;">
-                    <img class="card-img-top img-fluid bCard" src="books/covers/ThePelicanBrief.jpg" alt="The Pelican Brief by John Grisham">
+                    <img class="card-img-top img-fluid bCard" src="books/covers/ThePelicanBriefR.jpg" alt="The Pelican Brief by John Grisham">
                     <div class="card-body text-center placBody">
                         <form method="post" action="bookplacard.php">
                             <div class="form-check bForm">
@@ -153,7 +153,7 @@
                 
                 <!-- Book Placard #6 -->
                 <div class="card h-100 " style="width: 16rem;">
-                    <img class="card-img-top img-fluid bCard" src="books/covers/MurderInMesopotamia.jpg" alt="Murder In Mesopotamia by Agatha Christie">
+                    <img class="card-img-top img-fluid bCard" src="books/covers/MurderInMesopotamiaR.jpg" alt="Murder In Mesopotamia by Agatha Christie">
                     <div class="card-body text-center placBody">
                         <form method="post" action="bookplacard.php">
                             <div class="form-check bForm">

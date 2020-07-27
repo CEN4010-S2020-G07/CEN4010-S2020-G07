@@ -7,7 +7,7 @@
         <meta name="viewport" content="width-device-width, initial-scale=1.0, shrink-to-fit=no">
 
         <!-- TITLE -->
-        <title>Bookhub</title>
+        <title>Gather+ Games</title>
 
         <!--BOOTSTRAP CSS-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -19,7 +19,8 @@
 
         <!--NAVIGATION-->
         <nav id="navigate" class="navbar navbar-expand-xl navbar-fixed-top navbar-light bg-light">
-            <a href="index.php" class="navbar-brand nav-link-active gBrand">Gather+</a>
+            <a href="index.php" class="navbar-brand nav-item active gBrand">Gather+</a>
+
 
             <!-- TOGGLER -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,8 +30,7 @@
             <!-- Navbar Items -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav text-uppercase">
-                    <li class="nav-item active"><a class="nav-link" href="index.php">Main Page</a></li>
-                    <li class="nav-item"><a class="nav-link" href="bookhub.php">Book Hub</a></li>
+                    <li class="nav-item"><a class="nav-link" href="bookhub.php">Books</a></li>
                     <li class="nav-item"><a class="nav-link" href="audiohub.php">Podcasts </a></li>
                     <li class="nav-item"><a class="nav-link" href="newshub.php">News</a></li>
                     <li class="nav-item"><a class="nav-link" href="arcade.php">Games</a></li>
@@ -42,27 +42,27 @@
             <!-- Login Button -->
             <div class="nav navbar-nav navbar-right" id="navbarSupportedContent">
                 <ul class="navbar-nav text-uppercase">
-                    <li class="nav-item active"><button type="button" class="btn log bg-success" data-toggle="modal" data-target="#modal1">Login</button></li>
+                    <li class="nav-item active"><button type="button" class="btn log" data-toggle="modal" data-target="#modal1">Login</button></li>
                 </ul>
             </div>
         </nav>
         
         <!-- Carousel -->
-        <h3 class="mt-5">Book Hub</h3>
-        <div id="book_carousel" class="carousel slide" data-ride="carousel">
+        <h3 class="mt-5">Game Hub</h3>
+        <div id="game_carousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
-                <li data-target="#book_carousel" data-slide-to="0" class="active"></li>
-                <li data-target="#book_carousel" data-slide-to="1"></li>
-                <!-- <li data-target="#book_carousel" data-slide-to="2"></li>-->
+                <li data-target="#game_carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#game_carousel" data-slide-to="1"></li>
+                <!-- <li data-target="#game_carousel" data-slide-to="2"></li>-->
             </ol>
 
             <!-- Carousel images -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="images/happy_toddler.jpg" class="carapic w-100" alt="...">
+                    <img src="images/" class="carapic w-100" alt="...">
                 </div>
                 <div class="carousel-item">
-                    <img src="images/bookshelf.jpg" class="carapic w-100" alt="...">
+                    <img src="images/" class="carapic w-100" alt="...">
                 </div>
                 <!-- <div class="carousel-item">
                     <img src="images/" class="carapic w-100" alt="...">
@@ -71,94 +71,100 @@
         </div>
         
         
-        <!--Book Placards List-->
-        <div class="container" id="bookhub">
+        <!--game Placards List-->
+        <div class="container" id="hubBox">
             
             <!-- ROW #1 -->
             <div class="d-flex justify-content-around">
 
-                <!-- Book Placard #1 -->
+                <!-- game Placard #1 -->
                 <div class="card h-100" style="width: 16rem;">
-                    <img class="card-img-top img-fluid" src="books/covers/TheGuardian.jpg" alt="The Guardian by Nicholas Sparks">
+                    <img class="card-img-top img-fluid" src="" alt="">
                     <div class="card-body placardBody">
-                        <form method="post" action="bookplacard.php">
+                        <form method="post" action="gamePlacard.php">
                             <div class="form-check bForm">
-                                <input type="hidden" name="placardName" value="TheGuardian">
-                                <button type="submit" class="btn btn_R">Read Now</button>
+                                <input type="hidden" name="placardName" value="#gameTitle">
+                                <button type="submit" class="btn btn_R">Play Now</button>
                             </div>
                         </form>
                     </div>
                 </div>
+         
 
-                <!-- Book Placard #2 -->
+                <!-- game Placard #2 -->
                 <div class="card h-100" style="width: 16rem;">
-                    <img class="card-img-top img-fluid" src="books/covers/JaneAustenComplete.jpg" alt="The Complete Novels of Jane Austen">
-                    <div class="card-body text-center placardBody">
-                        <form method="post" action="bookplacard.php">
+                    <img class="card-img-top img-fluid" src="" alt="">
+                    <div class="card-body placardBody">
+                        <form method="post" action="gamePlacard.php">
                             <div class="form-check bForm">
-                                <input type="hidden" name="placardName" value="TheCompleteNovelsofJaneAusten">
-                                <button type="submit" class="btn btn_R">Read Now</button>
+                                <input type="hidden" name="placardName" value="#gameTitle">
+                                <button type="submit" class="btn btn_R">Play Now</button>
                             </div>
                         </form>
                     </div>
                 </div>
+ 
                 
-                <!-- Book Placard #3 -->
+                <!-- game Placard #3 -->
                 <div class="card h-100" style="width: 16rem;">
-                    <img class="card-img-top img-fluid" src="books/covers/BornACrime.jpg" alt="Born A Crime by Trevor Noah">
-                        <div class="card-body text-center placardBody">
-                        <form method="post" action="bookplacard.php">
+                    <img class="card-img-top img-fluid" src="" alt="">
+                    <div class="card-body placardBody">
+                        <form method="post" action="gamePlacard.php">
                             <div class="form-check bForm">
-                                <input type="hidden" name="placardName" value="BornACrime">
-                                <button type="submit" class="btn btn_R">Read Now</button>
+                                <input type="hidden" name="placardName" value="#gameTitle">
+                                <button type="submit" class="btn btn_R">Play Now</button>
                             </div>
                         </form>
                     </div>
                 </div>
+ 
                 
             </div>
 
             <!--ROW #2-->
             <div class="d-flex justify-content-around">
                 
-                <!-- Book Placard #4 -->
+                <!-- game Placard #4 -->
                 <div class="card h-100" style="width: 16rem;">
-                    <img class="card-img-top img-fluid" src="books/covers/JustMercy.jpg" alt="Just Mercy by Bryan Stevenson">
-                    <div class="card-body text-center placardBody">
-                        <form method="post" action="bookplacard.php">
+                    <img class="card-img-top img-fluid" src="" alt="">
+                    <div class="card-body placardBody">
+                        <form method="post" action="gamePlacard.php">
                             <div class="form-check bForm">
-                                <input type="hidden" name="placardName" value="JustMercy">
-                                <button type="submit" class="btn btn_R ">Read Now</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
-                <!-- Book Placard #5 -->
-                <div class="card h-100" style="width: 16rem;">
-                    <img class="card-img-top img-fluid" src="books/covers/ThePelicanBrief.jpg" alt="The Pelican Brief by John Grisham">
-                    <div class="card-body text-center placardBody">
-                        <form method="post" action="bookplacard.php">
-                            <div class="form-check bForm">
-                                <input type="hidden" name="placardName" value="ThePelicanBrief">
-                                <button type="submit" class="btn btn_R">Read Now</button>
+                                <input type="hidden" name="placardName" value="#gameTitle">
+                                <button type="submit" class="btn btn_R">Play Now</button>
                             </div>
                         </form>
                     </div>
                 </div>
                 
-                <!-- Book Placard #6 -->
+
+                <!-- game Placard #5 -->
                 <div class="card h-100" style="width: 16rem;">
-                    <img class="card-img-top img-fluid" src="books/covers/MurderInMesopotamia.jpg" alt="Murder In Mesopotamia by Agatha Christie">
-                    <div class="card-body text-center placardBody">
-                        <form method="post" action="bookplacard.php">
+                    <img class="card-img-top img-fluid" src="" alt="">
+                    <div class="card-body placardBody">
+                        <form method="post" action="gamePlacard.php">
                             <div class="form-check bForm">
-                                <input type="hidden" name="placardName" value="MurderInMesopotamia">
-                                <button type="submit" class="btn btn_R">Read Now</button>
+                                <input type="hidden" name="placardName" value="#gameTitle">
+                                <button type="submit" class="btn btn_R">Play Now</button>
                             </div>
                         </form>
                     </div>
                 </div>
+                
+                
+                <!-- game Placard #6 -->
+                <div class="card h-100" style="width: 16rem;">
+                    <img class="card-img-top img-fluid" src="" alt="">
+                    <div class="card-body placardBody">
+                        <form method="post" action="gamePlacard.php">
+                            <div class="form-check bForm">
+                                <input type="hidden" name="placardName" value="#gameTitle">
+                                <button type="submit" class="btn btn_R">Play Now</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
                 
             </div>
 
