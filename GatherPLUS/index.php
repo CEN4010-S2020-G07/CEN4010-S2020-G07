@@ -28,7 +28,7 @@
             <!-- Navbar Items -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav text-uppercase">
-                    <li class="nav-item"><a class="nav-link" href="bookhub.php">Book Hub</a></li>
+                    <li class="nav-item"><a class="nav-link" href="bookhub.php">Books</a></li>
                     <li class="nav-item"><a class="nav-link" href="audiohub.php">Podcasts </a></li>
                     <li class="nav-item"><a class="nav-link" href="newshub.php">News</a></li>
                     <li class="nav-item"><a class="nav-link" href="arcade.php">Games</a></li>
@@ -40,7 +40,7 @@
             <!-- Login Button -->
          <!-- <div class="nav navbar-nav navbar-right" id="navbarSupportedContent">
                 <ul class="navbar-nav text-uppercase">
-                    <li class="nav-item active"><button type="button" class="btn log bg-success" data-toggle="modal" data-target="#modal1">Login</button></li>
+                    <li class="nav-item active"><button type="button" class="btn log" data-toggle="modal" data-target="#modal1">Login</button></li>
                 </ul>
             </div> -->
         </nav>
@@ -65,10 +65,6 @@
                 echo "<h4 class=\"alert alert-success\">Welcome $username</h4>";
             }
     
-            else
-            {
-                echo "<h4 class=\"alert alert-warning\">Please Sign-In To Join Communities</h4>";
-            }
         ?>
     
         <!-- Header Title -->
@@ -111,7 +107,7 @@
         
                 else
                 {
-                    echo "<h5 class=\"text-center mb-3\">Sign-in To Join A Community</h5>";
+                    echo "<h5 class=\"text-center mb-3\">Sign-in to Browse Content</h5>";
             
                 }
             ?>

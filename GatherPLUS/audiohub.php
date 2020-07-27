@@ -7,7 +7,7 @@
         <meta name="viewport" content="width-device-width, initial-scale=1.0, shrink-to-fit=no">
 
         <!-- TITLE -->
-        <title>Beta Launch</title>
+        <title>Gather+ Podcasts</title>
 
         <!--BOOTSTRAP CSS-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -19,7 +19,7 @@
 
         <!--NAVIGATION-->
         <nav id="navigate" class="navbar navbar-expand-xl navbar-fixed-top navbar-light bg-light">
-            <a href="index.php" class="navbar-brand nav-item active">Gather+</a>
+            <a href="index.php" class="navbar-brand nav-item active gBrand">Gather+</a>
 
             <!-- TOGGLER -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,7 +29,7 @@
             <!-- Navbar Items -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav text-uppercase">
-                    <li class="nav-item"><a class="nav-link" href="bookhub.php">Book Hub</a></li>
+                    <li class="nav-item"><a class="nav-link" href="bookhub.php">Books</a></li>
                     <li class="nav-item"><a class="nav-link" href="audiohub.php">Podcasts </a></li>
                     <li class="nav-item"><a class="nav-link" href="newshub.php">News</a></li>
                     <li class="nav-item"><a class="nav-link" href="arcade.php">Games</a></li>
@@ -41,7 +41,7 @@
             <!-- Login Button -->
             <div class="nav navbar-nav navbar-right" id="navbarSupportedContent">
                 <ul class="navbar-nav text-uppercase">
-                    <li class="nav-item active"><button type="button" class="btn log bg-success" data-toggle="modal" data-target="#modal1">Login</button></li>
+                    <li class="nav-item active"><button type="button" class="btn log" data-toggle="modal" data-target="#modal1">Login</button></li>
                 </ul>
             </div>
         </nav>
@@ -81,7 +81,7 @@
                     <div class="card-body placBody">
                         <form method="post" action="podPlacard.php">
                             <div class="form-check bForm">
-                                <input type="hidden" name="placardName" value="ThisAmericanLife">
+                                <input type="hidden" name="placardName" value="This American Life">
                                 <button type="submit" class="btn btn_R">Listen Now</button>
                             </div>
                         </form>
@@ -90,11 +90,11 @@
 
                 <!-- Audio Placard #2 -->
                 <div class="card h-100" style="width: 16rem;">
-                    <img class="card-img-top img-fluid" src="podcasts/covers/TheDailyR.jpeg" alt="The Daily">
+                    <img class="card-img-top img-fluid" src="podcasts/covers/GoodLifeProjectR.png" alt="The Good Life Project">
                     <div class="card-body placBody">
                         <form method="post" action="podPlacard.php">
                             <div class="form-check bForm">
-                                <input type="hidden" name="placardName" value="TheDaily">
+                                <input type="hidden" name="placardName" value="The Good Life Project">
                                 <button type="submit" class="btn btn_R">Listen Now</button>
                             </div>
                         </form>
@@ -107,7 +107,7 @@
                     <div class="card-body placBody">
                         <form method="post" action="podPlacard.php">
                             <div class="form-check bForm">
-                                <input type="hidden" name="placardName" value="TheDaveRamseyShow">
+                                <input type="hidden" name="placardName" value="The Dave Ramsey Show">
                                 <button type="submit" class="btn btn_R">Listen Now</button>
                             </div>
                         </form>
@@ -139,7 +139,7 @@
                     <div class="card-body placBody">
                         <form method="post" action="podPlacard.php">
                             <div class="form-check bForm">
-                                <input type="hidden" name="placardName" value="TheBenShapiroShow">
+                                <input type="hidden" name="placardName" value="The Ben Shapiro Show">
                                 <button type="submit" class="btn btn_R">Listen Now</button>
                             </div>
                         </form>
@@ -152,7 +152,7 @@
                     <div class="card-body placBody">
                         <form method="post" action="podPlacard.php">
                             <div class="form-check bForm">
-                                <input type="hidden" name="placardName" value="NPRTinyDeskConcerts">
+                                <input type="hidden" name="placardName" value="Tiny Desk Concerts">
                                 <button type="submit" class="btn btn_R">Listen Now</button>
                             </div>
                         </form>
@@ -165,7 +165,7 @@
                     <div class="card-body placBody">
                         <form method="post" action="podPlacard.php">
                             <div class="form-check bForm">
-                                <input type="hidden" name="placardName" value="TheHappyRant">
+                                <input type="hidden" name="placardName" value="The Happy Rant">
                                 <button type="submit" class="btn btn_R">Listen Now</button>
                             </div>
                         </form>
