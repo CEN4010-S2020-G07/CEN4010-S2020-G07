@@ -135,7 +135,7 @@
                 <div class="card">
                     <div class="card-body text-center">
                         <?php       
-                            echo "<iframe id=\"viewerPro\" style=\"width:600px; height: 500px;\" src=\"$placardLink\"></iframe>";          
+                            echo "<iframe id=\"viewerPro\" style=\"width:600px; height: 200px;\" src=\"$placardLink\"></iframe>";          
                         ?>
                     </div>
                 </div>
@@ -162,7 +162,7 @@
                             <?php
                                 echo "<input type=\"hidden\" name=\"placardName\" value=\"$placardName\">";
                             ?>
-                            <input type="text" name="text" id="text" class="form-control" placeholder="type your message" />
+                            <input type="text" name="text" id="text" class="form-control" placeholder="Enter Your Message Here" />
                             <br>
                             <input type="submit" class="btn btn-success center-block" value="Send">
 		                  </form>
