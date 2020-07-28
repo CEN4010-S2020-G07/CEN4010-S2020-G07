@@ -42,7 +42,7 @@
             <!-- Login Button -->
             <div class="nav navbar-nav navbar-right" id="navbarSupportedContent">
                 <ul class="navbar-nav text-uppercase">
-                    <li class="nav-item active"><button type="button" class="btn log" data-toggle="modal" data-target="#modal1">Login</button></li>
+                    <li class="nav-item active"><button type="button" class="btn log" data-toggle="modal" data-target="#modal1">Login/Logout</button></li>
                 </ul>
             </div>
         </nav>
@@ -79,11 +79,11 @@
 
                 <!-- game Placard #1 -->
                 <div class="card h-100" style="width: 16rem;">
-                    <img class="card-img-top img-fluid" src="" alt="">
+                    <img class="card-img-top img-fluid" src="images/bubbleshooter.png" alt="Bubble Shooter">
                     <div class="card-body placardBody">
                         <form method="post" action="gamePlacard.php">
                             <div class="form-check bForm">
-                                <input type="hidden" name="placardName" value="#gameTitle">
+                                <input type="hidden" name="placardName" value="Bubble Shooter">
                                 <button type="submit" class="btn btn_R">Play Now</button>
                             </div>
                         </form>
@@ -93,11 +93,11 @@
 
                 <!-- game Placard #2 -->
                 <div class="card h-100" style="width: 16rem;">
-                    <img class="card-img-top img-fluid" src="" alt="">
+                    <img class="card-img-top img-fluid" src="images/bubbletrouble.png" alt="Bubble Trouble">
                     <div class="card-body placardBody">
                         <form method="post" action="gamePlacard.php">
                             <div class="form-check bForm">
-                                <input type="hidden" name="placardName" value="#gameTitle">
+                                <input type="hidden" name="placardName" value="Bubble Trouble">
                                 <button type="submit" class="btn btn_R">Play Now</button>
                             </div>
                         </form>
@@ -107,11 +107,11 @@
                 
                 <!-- game Placard #3 -->
                 <div class="card h-100" style="width: 16rem;">
-                    <img class="card-img-top img-fluid" src="" alt="">
+                    <img class="card-img-top img-fluid" src="images/minesweeper.png" alt="Minesweeper">
                     <div class="card-body placardBody">
                         <form method="post" action="gamePlacard.php">
                             <div class="form-check bForm">
-                                <input type="hidden" name="placardName" value="#gameTitle">
+                                <input type="hidden" name="placardName" value="Minesweeper">
                                 <button type="submit" class="btn btn_R">Play Now</button>
                             </div>
                         </form>
@@ -126,11 +126,11 @@
                 
                 <!-- game Placard #4 -->
                 <div class="card h-100" style="width: 16rem;">
-                    <img class="card-img-top img-fluid" src="" alt="">
+                    <img class="card-img-top img-fluid" src="images/Sudoku.png" alt="Sudoku">
                     <div class="card-body placardBody">
                         <form method="post" action="gamePlacard.php">
                             <div class="form-check bForm">
-                                <input type="hidden" name="placardName" value="#gameTitle">
+                                <input type="hidden" name="placardName" value="Sudoku">
                                 <button type="submit" class="btn btn_R">Play Now</button>
                             </div>
                         </form>
@@ -140,11 +140,11 @@
 
                 <!-- game Placard #5 -->
                 <div class="card h-100" style="width: 16rem;">
-                    <img class="card-img-top img-fluid" src="" alt="">
+                    <img class="card-img-top img-fluid" src="images/solitaire.png" alt="Solitaire">
                     <div class="card-body placardBody">
                         <form method="post" action="gamePlacard.php">
                             <div class="form-check bForm">
-                                <input type="hidden" name="placardName" value="#gameTitle">
+                                <input type="hidden" name="placardName" value="Solitaire">
                                 <button type="submit" class="btn btn_R">Play Now</button>
                             </div>
                         </form>
@@ -154,11 +154,11 @@
                 
                 <!-- game Placard #6 -->
                 <div class="card h-100" style="width: 16rem;">
-                    <img class="card-img-top img-fluid" src="" alt="">
+                    <img class="card-img-top img-fluid" src="images/Tetris.png" alt="Tetris">
                     <div class="card-body placardBody">
                         <form method="post" action="gamePlacard.php">
                             <div class="form-check bForm">
-                                <input type="hidden" name="placardName" value="#gameTitle">
+                                <input type="hidden" name="placardName" value="Tetris">
                                 <button type="submit" class="btn btn_R">Play Now</button>
                             </div>
                         </form>

@@ -46,23 +46,77 @@
         <div class="container placard">
             <div class="row full_thing">
                 <div class="col-md-4 mt-3 full_plac_image">
-                   <img src="" alt="Cover:Image" class="img-fluid"> 
+                              <?php
+                                
+                                // Sets placard name as the name of the link
+                                if (isset($_POST["placardName"]))
+                                {
+                                    $placardName = $_POST["placardName"];
+                                }
+                        
+                                // Sets placard name as current session placard
+                                else
+                                {
+                                    $placardName = $_SESSION["placardName"];
+                                }
+                        
+                                $database = new mysqli("localhost", "cen4010s2020_g07", "faueng2020", "cen4010s2020_g07");
+                        
+                                $sql = "SELECT * FROM placards WHERE placardName='$placardName'";
+                                $result = $database->query($sql);
+                                $row = $result->fetch_assoc();
+                        
+                                $placardName = $row["placardName"];
+                                $placardBio = $row["placardBio"];
+                                $placardLink = $row["placardLink"];
+                                $placardImageLink = $row["placardImageLink"];
+                        
+                                $_SESSION["placardName"] = $placardName;
+                        
+                                echo "<img src=\"$placardImageLink\" alt=\"$placardName\" class=\"img-fluid\">";
+                            ?>
                 </div>
                 <div class="col-md-8 mt-3 full_feature">
-                    <h3 class="mt-3">Insert Title Here</h3>
-                    <p class="text-left full_describe">Full Description Here:
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore numquam magnam quos velit quam tenetur ex eum sunt pariatur ducimus voluptatibus aut, est assumenda qui eligendi nisi, laboriosam quidem fugiat.Lorem
-                    </p> 
-                    <div class="d-flex flex-row button_row">
-                    <button type="button" class="btn btn-secondary ml-4 mr-3 view_button" ONCLICK="ShowContent()">Click to Read</button>
-                    <button type="submit" class="btn btn-secondary comm_button" ONCLICK="ShowCommunity()">Join the Community!</button>
-                    </div>
+                            <?php
+                                echo "<h3 class=\"mt-3 mb-0\">$placardName</h3>";
+                                echo "<p class=\"text-left
+                                full_describe\">$placardBio</p>";
+                            ?>
+                            <div class="d-flex flex-row button_row">
+                                     <!-- Button for viewing e-reader -->
+                            
+                            <button type="button" class="btn btn-secondary ml-4 mr-3 view_button" ONCLICK="ShowContent()">Click to Listen</button>
+                            
+                            <!-- PHP Form for joining a community -->
+                            <form method="post" action="podPlacard.php" id="chatForm">
+                                <div class="form-check">
+                                    <?php
+										$placardNoSpace = str_replace(" ", "" , $placardName);
+										
+                                        echo "<input type=\"hidden\" name=\"placardName\" value=\"$placardName\">";
+                                        echo "<input type=\"hidden\" name=\"join\" value=\"$placardNoSpace\">";
+                                    ?>
+                                    
+                                    <!-- Join Button -->
+                                    <button type="submit" class="btn btn-secondary comm_button">Join the Community!</button>
+                                </div>                        
+                            </form>
+                            
+                            <button type="button" class="btn btn-secondary ml-4 mr-3 view_button" ONCLICK="ShowAndHide2()">View The Discussion</button>
+                            </div>
                 </div>
             </div>
         </div>
         <div class="container col-sm-12 col-md-8" id="embed" style="display:none">
+           <div class="test mt-5">
+           </div>
             <div class="card">
-            <div class="card-body text-center"><iframe id="viewerPro" style="width:600px; height: 500px;" src="">INSERT CONTENT HERE</iframe></div>
+            <div class="card-body text-center"> 
+                        <?php 
+                            echo "<blockquote class=\"embedly-card\"><h4><a href=\"$placardLink\"</a></h4>\"></blockquote>";       
+                        ?>
+                        <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
+            </div>
             </div>
         </div>
 

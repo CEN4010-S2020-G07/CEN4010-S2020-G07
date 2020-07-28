@@ -142,7 +142,7 @@
             </div>
         
             <!-- Message Board Card -->
-            <div class="container col-sm-12 col-md-8 book_board" id="board" style="display:none">
+            <div class="container col-sm-12 col-md-8 book_board" id="board">
                 <div class="card card-default">
             
                     <!-- Header -->

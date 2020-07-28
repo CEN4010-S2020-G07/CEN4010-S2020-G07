@@ -113,8 +113,7 @@
             ?>
         
             <div class="row">
-                <div class="col-md-3"></div>
-                <div class="card-group col-md-6">
+                <div class="card-group col-md-12">
                     <div class="card category">
                         <?php
                             if (isset($_SESSION["username"]))
@@ -155,8 +154,7 @@
             </div>
         
             <div class="row">
-                <div class="col-md-3"></div>
-                    <div class="card-group col-md-6">
+                    <div class="card-group col-md-12">
                         <div class="card category">
                             <?php
                                 if (isset($_SESSION["username"]))
