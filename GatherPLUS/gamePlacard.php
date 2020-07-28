@@ -134,7 +134,7 @@
                 <div class="card">
                     <div class="card-body text-center">
                         <?php       
-                            echo "\"$placardLink\"";          
+                            echo "$placardLink";          
                         ?>
                     </div>
                 </div>
