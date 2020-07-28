@@ -70,15 +70,25 @@ h3 {
     max-height: 525px !important;
 }
 
+.hero{
+max-height:350px !important;
+}
+
 /*MAIN PAGE*/
 
 h6 {
     padding: 10px;
 }
 
-.greeting{
+.section{
     
-    font-size:20px;
+    background-color: #f7f9fa;
+    padding:5%;
+}
+
+.greeting {
+    font-size:20px; 
+    line-height:1.6;
     padding: 10px 70px 25px 70px;
 }
 
@@ -122,17 +132,16 @@ h6 {
 .category {
 
     margin: 0px !important;
-    max-width: 20em;
     min-height: 200px;
     text-align: center;
     border-radius: 5%;
+    padding:20px !important;
 }
 
 .category img {
     
     float: center;
-    padding-top: 30px;
-    padding-bottom: 10px;
+    padding:20px;
     max-height: 150px;
 }
 
@@ -143,12 +152,6 @@ h6 {
 .category a:hover {
     
     color: goldenrod;
-}
-
-.section {
-    
-    background-color: #f7f9fa;
-    padding: 5%;
 }
 
 #learnmore {
@@ -331,10 +334,10 @@ h6 {
     background-color: #f0f2f2;
 }
 
-.card_para {
+p.card_para {
     
-    margin-top: 35px;
-    margin-bottom: 35px;
+    margin-top: 33px !important;
+    margin-bottom: 29px !important;
 }
 
 .anchor_list {
@@ -400,20 +403,34 @@ h3 {
 
 .bFull_Plac_Image{
     
-height:520px !important;    
+max-height:520px !important;    
 
 }
+
+.genre{
+border:1px solid lightgrey;
+}
+
 .full_feature {
     
     background-color: #f5f5f5;
-    height: 520px !important;
+    max-height: 520px;
     margin-bottom: 20px;
+}
+
+.pFeature{
+height:341px !important;
 }
 
 .full_thing {
     
     padding: 10px;
-    border: 1px solid lightgray;
+    padding-right:14px;
+    border: 1px solid lightgray; 
+}
+
+#podRow{
+max-height:385px !important;
 }
 
 .full_describe {

@@ -40,40 +40,138 @@
                 <li class=""><a class="nav-link" href="my_profile.php">My Profile</a></li>
             </ul>
         </div>
+        <!-- Login Button -->
+        <div class="nav navbar-nav navbar-right" id="navbarSupportedContent">
+            <ul class="navbar-nav text-uppercase">
+                <li class="nav-item active"><button type="button" class="btn log" data-toggle="modal" data-target="#modal1">Login/Logout</button></li>
+            </ul>
+        </div>
     </nav>  
-    
-     <h3 class="mt-5">NEWS PLACARD TEMPLATE</h3>
-        <div class="container placard">
+        <div class="container placard mb-5">
             <div class="row full_thing">
                 <div class="col-md-4 mt-3 full_plac_image">
-                   <img src="" alt="Cover:Image" class="img-fluid"> 
+                              <?php
+                                
+                                // Sets placard name as the name of the link
+                                if (isset($_POST["placardName"]))
+                                {
+                                    $placardName = $_POST["placardName"];
+                                }
+                        
+                                // Sets placard name as current session placard
+                                else
+                                {
+                                    $placardName = $_SESSION["placardName"];
+                                }
+                        
+                                $database = new mysqli("localhost", "cen4010s2020_g07", "faueng2020", "cen4010s2020_g07");
+                        
+                                $sql = "SELECT * FROM placards WHERE placardName='$placardName'";
+                                $result = $database->query($sql);
+                                $row = $result->fetch_assoc();
+                        
+                                $placardName = $row["placardName"];
+                                $placardBio = $row["placardBio"];
+                                $placardLink = $row["placardLink"];
+                                $placardImageLink = $row["placardImageLink"];
+                        
+                                $_SESSION["placardName"] = $placardName;
+                        
+                                echo "<img src=\"$placardImageLink\" alt=\"$placardName\" class=\"img-fluid\">";
+                            ?>
                 </div>
-                <div class="col-md-8 mt-3 full_feature">
-                    <h3 class="mt-3">Insert Title Here</h3>
-                    <p class="text-left full_describe">Full Description Here:
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore numquam magnam quos velit quam tenetur ex eum sunt pariatur ducimus voluptatibus aut, est assumenda qui eligendi nisi, laboriosam quidem fugiat.Lorem
-                    </p> 
-                    <div class="d-flex flex-row button_row">
-                    <button type="button" class="btn btn-secondary ml-4 mr-3 view_button" ONCLICK="ShowContent()">Click to Read</button>
-                    <button type="submit" class="btn btn-secondary comm_button" ONCLICK="ShowCommunity()">Join the Community!</button>
-                    </div>
+                <div class="col-md-8 mt-3 full_feature" id="newsFeature">
+                            <?php
+                                echo "<h3 class=\"mt-3 mb-0\">$placardName</h3>";
+                                echo "<p class=\"text-left
+                                full_describe\">$placardBio</p>";
+                            ?>
+                            <div class="d-flex flex-row button_row">
+                                     <!-- Button for viewing e-reader -->
+                            
+                            <button type="button" class="btn btn-secondary ml-4 mr-2 view_button" ONCLICK="ShowContent()">Click to Visit</button>
+                            
+                            <!-- PHP Form for joining a community -->
+                            <form method="post" action="newsPlacard.php" id="chatForm">
+                                <div class="form-check">
+                                    <?php
+										$placardNoSpace = str_replace(" ", "" , $placardName);
+										
+                                        echo "<input type=\"hidden\" name=\"placardName\" value=\"$placardName\">";
+                                        echo "<input type=\"hidden\" name=\"join\" value=\"$placardNoSpace\">";
+                                    ?>
+                                    
+                                    <!-- Join Button -->
+                                    <button type="submit" class="btn btn-secondary comm_button">Join the Community!</button>
+                                </div>                        
+                            </form>
+                            </div>
                 </div>
             </div>
         </div>
         <div class="container col-sm-12 col-md-8" id="embed" style="display:none">
-            <div class="card">
-            <div class="card-body text-center"><iframe id="viewerPro" style="width:600px; height: 500px;" src="">INSERT CONTENT HERE</iframe></div>
+            <div class="card mb-5">
+            <div class="card-body text-center"> 
+                        <?php 
+                            echo "<blockquote class=\"embedly-card\"><h4><a href=\"$placardLink\"</a></h4>\"></blockquote>";       
+                        ?>
+                        <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
+            </div>
             </div>
         </div>
 
-        <div class="container col-sm-12 col-md-8 book_board" id="talk" style="display:none">
+        <div class="container col-sm-12 col-md-8 book_board">
+        <!--id="talk" style="display:none"-->
             <div class="card">
-            <div class="card-body text-center">message board goes here</div>
+            <div class="card-body text-center"></div>
             </div>
         </div>
         
-
-    <footer class="footer text-center"> &copy;2020 FunkyTech</footer>
+            <!-- Login Modal -->
+        <div class="modal" id="modal1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5>Gather+</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                    </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4 text-center" id="mod"></div>
+                                <div class="col-md-8">
+                                    <form id="loginForm" method="post" action="my_profile.php">
+                                        <div class="form-group">
+                                            <label for="username">Username</label>
+                                            <input type="text" class="form-control" name="username" id="username" placeholder="Username">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="password">Password</label>
+                                            <input type="password" class="form-control" name="password" id="password" placeholder="Password (Case-Sensitive)">
+                                        </div>
+                                        <button type="submit" class="btn btn-info">Login</button>
+                                        <a href="signup.php" class="btn btn-success" role="button">Create An Account</a>
+                                    </form>
+                                    <br>
+                                    <br>
+                                    <form id="logout" method="post" action="my_profile.php">
+                                        <input type="hidden" name="logout" value="1">
+                                        <button type="submit" class="btn btn-warning">Logout</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                    </div>     
+                </div>
+            </div>  
+        </div>
+        <br>
+        <br>
+        
+    <!-- FOOTER -->
+    <footer class="footer text-center">&copy;2020 FunkyTech</footer>
     
     <!--button script-->
     <script>
@@ -84,15 +182,8 @@
             x.style.display = 'block';
         } 
         else { x.style.display = 'none';}
-        } 
+        }
         
-        function ShowCommunity(){
-        var y = document.getElementById('talk');
-        if (y.style.display == 'none') {
-            y.style.display = 'block';
-        } 
-        else { y.style.display = 'none';}
-        }     
     </script>
 
     <!--BOOTSTRAP SCRIPTS-->

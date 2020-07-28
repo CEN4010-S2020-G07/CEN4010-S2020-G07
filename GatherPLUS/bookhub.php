@@ -47,36 +47,14 @@
             </div>
         </nav>
         
-        <!-- Carousel -->
-        <div id="book_carousel" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#book_carousel" data-slide-to="0" class="active"></li>
-                <li data-target="#book_carousel" data-slide-to="1"></li>
-                <li data-target="#book_carousel" data-slide-to="2"></li>
-                <li data-target="#book_carousel" data-slide-to="3"></li>
-                
-            </ol>
-
-            <!-- Carousel images -->
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="images/bookshelfR.jpg" class="carapic w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="images/happy_toddlerR.jpg" class="carapic w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="images/woman_readingR.jpg" class="carapic w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="images/seniors_readingR.jpg" class="carapic w-100" alt="">
-                </div>
+        <!-- Hero Image -->
+            <div class="container col-md-12">
+                    <img src="images/ReadingR.jpg" class="w-100 hero" alt="...">
             </div>
-        </div>
         
         
         <!--Book Placards List-->
-        <div class="container" id="hubBox">
+        <div class="container mt-5" id="hubBox">
             
             <!-- ROW #1 -->
             <div class="d-flex justify-content-around mt-5">

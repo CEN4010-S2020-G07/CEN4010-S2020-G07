@@ -15,7 +15,6 @@
 
         <!--BOOTSTRAP CSS-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="css/prototype.css">
         <link rel="stylesheet" type="text/css" href="css/global.css"> 
     </head>
 
@@ -119,7 +118,7 @@
                                     ?>
                                     
                                     <!-- Join Button -->
-                                    <button type="submit" class="btn btn-secondary comm_button" ONCLICK="ShowCommunity()">Join the Community!</button>
+                                    <button type="submit" class="btn btn-secondary comm_button">Join the Community!</button>
                                 </div>                        
                             </form>
                             
@@ -135,14 +134,14 @@
                 <div class="card">
                     <div class="card-body text-center">
                         <?php       
-                            echo "<iframe id=\"viewerPro\" style=\"width:600px; height: 500px;\" src=\"$placardLink\"></iframe>";          
+                            echo "<iframe id=\"viewerPro\" style=\"width:600px; height: 500px;\" src=\"$placardLink\"></iframe>";    
                         ?>
                     </div>
                 </div>
             </div>
         
             <!-- Message Board Card -->
-            <div class="container col-sm-12 col-md-8 book_board" id="talk" style="display:none">
+            <div class="container col-sm-12 col-md-8 book_board" id="board">
                 <div class="card card-default">
             
                     <!-- Header -->
@@ -221,14 +220,15 @@
     
             <!--button script-->
             <script>
-                
                 function ShowAndHide2() {
                 var x = document.getElementById('board');
                 if (x.style.display == 'none') {
                     x.style.display = 'block';
                 } else {
                     x.style.display = 'none';
-                    
+                    }
+                }
+ 
                 function ShowContent() {
                     var x = document.getElementById('embed');
                     if (x.style.display == 'none') {
@@ -236,16 +236,7 @@
                     } else {
                         x.style.display = 'none';
                     }
-                }
-
-                function ShowCommunity() {
-                    var y = document.getElementById('talk');
-                    if (y.style.display == 'none') {
-                        y.style.display = 'block';
-                    } else {
-                        y.style.display = 'none';
-                    }
-                }
+                }  
             </script>
 
         <!--BOOTSTRAP SCRIPTS-->

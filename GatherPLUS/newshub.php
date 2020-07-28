@@ -43,37 +43,19 @@
             <!-- Login Button -->
             <div class="nav navbar-nav navbar-right" id="navbarSupportedContent">
                 <ul class="navbar-nav text-uppercase">
-                    <li class="nav-item active"><button type="button" class="btn log" data-toggle="modal" data-target="#modal1">Login</button></li>
+                    <li class="nav-item active"><button type="button" class="btn log" data-toggle="modal" data-target="#modal1">Login/Logout</button></li>
                 </ul>
             </div>
         </nav>
         
-        <!-- Carousel -->
-        <div id="book_carousel" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#book_carousel" data-slide-to="0" class="active"></li>
-                <li data-target="#book_carousel" data-slide-to="1"></li>
-                <!-- <li data-target="#book_carousel" data-slide-to="2"></li>-->
-            </ol>
-
-            <!-- Carousel images -->
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="images/" class="carapic w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="images/" class="carapic w-100" alt="...">
-                </div>
-                <!-- <div class="carousel-item">
-                    <img src="images/" class="carapic w-100" alt="...">
-                </div>-->
-            </div>
+         <!-- Hero Image -->
+        <div class="container col-md-12">
+                <img src="images/Paper.jpg" class="w-100 hero" alt="...">
         </div>
-        
+
         
         <!--Book Placards List-->
-        <h3 class="mt-5">News Hub</h3>
-        <div class="container" id="hubBox">
+        <div class="container mt-5" id="hubBox">
         
             
             <!-- ROW #1 -->
@@ -81,11 +63,11 @@
 
                 <!-- News Placard #1 -->
                 <div class="card h-100" style="width: 16rem;">
-                    <img class="card-img-top img-fluid" src="" alt="">
+                    <img class="card-img-top img-fluid" src="news/NYTimes3.jpg" alt="The New York Times">
                     <div class="card-body placardBody">
                         <form method="post" action="newsPlacard.php">
                             <div class="form-check bForm">
-                                <input type="hidden" name="placardName" value="#newsFeedTitle">
+                                <input type="hidden" name="placardName" value="The New York Times">
                                 <button type="submit" class="btn btn_R">Read Now</button>
                             </div>
                         </form>
@@ -94,11 +76,11 @@
 
                 <!-- News Placard #2 -->
                 <div class="card h-100" style="width: 16rem;">
-                    <img class="card-img-top img-fluid" src="" alt="">
+                    <img class="card-img-top img-fluid" src="news/BBCWorld.png" alt="BBC World News">
                     <div class="card-body text-center placardBody">
                         <form method="post" action="newsPlacard.php">
                             <div class="form-check bForm">
-                                <input type="hidden" name="placardName" value="#newsFeedTitle">
+                                <input type="hidden" name="placardName" value="BBC World News">
                                 <button type="submit" class="btn btn_R">Read Now</button>
                             </div>
                         </form>
@@ -107,11 +89,11 @@
                 
                 <!-- News Placard #3 -->
                 <div class="card h-100" style="width: 16rem;">
-                    <img class="card-img-top img-fluid" src="" alt="">
+                    <img class="card-img-top img-fluid" src="news/WAPost2.jpg" alt="The Washington Post">
                         <div class="card-body text-center placardBody">
                         <form method="post" action="newsPlacard.php">
                             <div class="form-check bForm">
-                                <input type="hidden" name="placardName" value="#newsFeedTitle">
+                                <input type="hidden" name="placardName" value="The Washington Post">
                                 <button type="submit" class="btn btn_R">Read Now</button>
                             </div>
                         </form>
@@ -125,11 +107,11 @@
                 
                 <!-- News Placard #4 -->
                 <div class="card h-100" style="width: 16rem;">
-                    <img class="card-img-top img-fluid" src="" alt="">
+                    <img class="card-img-top img-fluid" src="news/CHITrib.jpg" alt="The Chicago Tribune">
                     <div class="card-body text-center placardBody">
                         <form method="post" action="newsPlacard.php">
                             <div class="form-check bForm">
-                                <input type="hidden" name="placardName" value="#newsFeedTitle">
+                                <input type="hidden" name="placardName" value="The Chicago Tribune">
                                 <button type="submit" class="btn btn_R ">Read Now</button>
                             </div>
                         </form>
@@ -138,11 +120,11 @@
 
                 <!-- News Placard #5 -->
                 <div class="card h-100" style="width: 16rem;">
-                    <img class="card-img-top img-fluid" src="" alt="">
+                    <img class="card-img-top img-fluid" src="news/Mashable2.jpg" alt="Mashable">
                     <div class="card-body text-center placardBody">
                         <form method="post" action="newsPlacard.php">
                             <div class="form-check bForm">
-                                <input type="hidden" name="placardName" value="#newsFeedTitle">
+                                <input type="hidden" name="placardName" value="Mashable">
                                 <button type="submit" class="btn btn_R">Read Now</button>
                             </div>
                         </form>
@@ -151,11 +133,11 @@
                 
                 <!-- News Placard #6 -->
                 <div class="card h-100" style="width: 16rem;">
-                    <img class="card-img-top img-fluid" src="" alt="">
+                    <img class="card-img-top img-fluid" src="news/Gizmodo2.png" alt="Gizmodo">
                     <div class="card-body text-center placardBody">
                         <form method="post" action="newsPlacard.php">
                             <div class="form-check bForm">
-                                <input type="hidden" name="placardName" value="#newsFeedTitle">
+                                <input type="hidden" name="placardName" value="Gizmodo">
                                 <button type="submit" class="btn btn_R">Read Now</button>
                             </div>
                         </form>
@@ -191,6 +173,11 @@
                                         </div>
                                         <button type="submit" class="btn btn-info">Login</button>
                                         <a href="signup.php" class="btn btn-success" role="button">Create An Account</a>
+                                    </form>
+                                     <br>
+                                    <form id="logout" method="post" action="my_profile.php">
+                                        <input type="hidden" name="logout" value="1">
+                                        <button type="submit" class="btn btn-warning">Logout</button>
                                     </form>
                                 </div>
                             </div>

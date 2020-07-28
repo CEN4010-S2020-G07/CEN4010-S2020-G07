@@ -5,7 +5,7 @@
     {
         $username = $_SESSION["username"];
             
-        echo "<h4 class=\"alert alert-success\">Welcome $username</h4>";
+        echo "<h5 class=\"alert alert-success\">Welcome $username</h5>";
                
         // Checks if user is attempting to join community
         if (isset($_POST["join"]))
@@ -37,12 +37,12 @@
                 
                 if ($database->query($sql))
                 {
-                    echo "<h4 class=\"alert alert-success\">Successfully Joined Community</h4>";
+                    echo "<h5 class=\"alert alert-success\">Successfully Joined Community</h5>";
                 }
                         
                 else
                 {
-                    echo "<h4 class=\"alert alert-danger\">ERROR with Joining Community</h4>";
+                    echo "<h5 class=\"alert alert-danger\">ERROR with Joining Community</h5>";
                 }
             }
             
@@ -67,18 +67,18 @@
                 
                     if ($database->query($sql))
                     {
-                        echo "<h4 class=\"alert alert-success\">Successfully Joined Community</h4>";
+                        echo "<h5 class=\"alert alert-success\">Successfully Joined Community</h5>";
                     } 
                         
                     else
                     {
-                        echo "<h4 class=\"alert alert-danger\">ERROR with Joining Community</h4>";  
+                        echo "<h5 class=\"alert alert-danger\">ERROR with Joining Community</h5>";  
                     } 
                 }
                 
                 else
                 {
-                    echo "<h4 class=\"alert alert-warning\">You are already a member of this community</h4>";
+                    echo "<h5 class=\"alert alert-warning\">You are already a member of this community</h5>";
                 }
             }
         }
@@ -87,7 +87,7 @@
         
     else
     {
-        echo "<h4 class=\"alert alert-warning\">Please Sign-In To Join The Community</h4>";  
+        echo "<h5 class=\"alert alert-warning\">Please Sign-In To Join The Community</h5>";  
     }
     
 ?>

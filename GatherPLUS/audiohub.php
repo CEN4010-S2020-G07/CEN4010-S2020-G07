@@ -41,38 +41,19 @@
             <!-- Login Button -->
             <div class="nav navbar-nav navbar-right" id="navbarSupportedContent">
                 <ul class="navbar-nav text-uppercase">
-                    <li class="nav-item active"><button type="button" class="btn log" data-toggle="modal" data-target="#modal1">Login</button></li>
+                    <li class="nav-item active"><button type="button" class="btn log" data-toggle="modal" data-target="#modal1">Login/Logout</button></li>
                 </ul>
             </div>
         </nav>
         
-        <!-- Carousel -->
-        <div id="audio_carousel" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#audio_carousel" data-slide-to="0" class="active"></li>
-                <li data-target="#audio_carousel" data-slide-to="1"></li>
-                <!-- <li data-target="#audio_carousel" data-slide-to="2"></li>-->
-            </ol>
-
-            <!-- Carousel images -->
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                <div class="carousel-item">
-                    <img src="images/" class="carapic w-100" alt="...">
-                    <img src="images/" class="carapic w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="images/" class="carapic w-100" alt="...">
-                </div>
-                <!-- <div class="carousel-item">
-                    <img src="images/" class="carapic w-100" alt="...">
-                </div>-->
-            </div>
+         <!-- Hero Image -->
+        <div class="container col-md-12 Hero">
+                <img src="images/HearingR.jpg" class="w-100 hero" alt="...">
         </div>
-    </div>
         
-        <!--Book Placards List-->
-        <div class="container" id="audiohub">
+        
+        <!--Audio Placards List-->
+        <div class="container mt-5" id="audiohub">
             
             <!-- ROW #1 -->
             <div class="d-flex justify-content-around mt-5">
@@ -222,6 +203,11 @@
                                         </div>
                                         <button type="submit" class="btn btn-info">Login</button>
                                         <a href="signup.php" class="btn btn-success" role="button">Create An Account</a>
+                                    </form>
+                                     <br>
+                                    <form id="logout" method="post" action="my_profile.php">
+                                        <input type="hidden" name="logout" value="1">
+                                        <button type="submit" class="btn btn-warning">Logout</button>
                                     </form>
                                 </div>
                             </div>

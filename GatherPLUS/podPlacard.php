@@ -55,7 +55,7 @@
         
         <!-- Book Placard Information -->
             <div class="container placard">
-                <div class="row full_thing">
+                <div class="row full_thing" id="podRow">
                     
                     <!-- PHP for Retrieving Placard information -->
                     <div class="col-md-4 mt-3 full_plac_image">
@@ -83,21 +83,17 @@
                                 $placardBio = $row["placardBio"];
                                 $placardLink = $row["placardLink"];
                                 $placardImageLink = $row["placardImageLink"];
-                                $placardAuthor = $row["Author"];
-                                $placardGenre = $row["Genre"];
                         
                                 $_SESSION["placardName"] = $placardName;
                         
                                 echo "<img src=\"$placardImageLink\" alt=\"$placardName\" class=\"img-fluid\">";
-                                echo "<h6 class=\"text-center\"> $placardGenre</h6>";
                             ?>
                     </div>
                     
                     <!-- PHP for filling in book placard information -->
-                    <div class="col-md-8 mt-3 full_feature">
+                    <div class="col-md-8 mt-3 full_feature pFeature">
                             <?php
-                                echo "<h3 class=\"mt-3\" \"mb-0\">$placardName</h3>";
-                                echo "<h5 class=\"text-center\">$placardAuthor</h5>";
+                                echo "<h3 class=\"mt-3 mb-0\">$placardName</h3>";
                                 echo "<p class=\"text-left
                                 full_describe\">$placardBio</p>";
                             ?>
@@ -107,22 +103,24 @@
                             
                             <!-- Button for viewing e-reader -->
                             
-                            <button type="button" class="btn btn-secondary ml-4 mr-3 view_button" ONCLICK="ShowContent()">Click to Listen</button>
+                            <button type="button" class="btn btn-secondary ml-4 mr-2 view_button" ONCLICK="ShowContent()">Click to Listen</button>
                             
                             <!-- PHP Form for joining a community -->
                             <form method="post" action="podPlacard.php" id="chatForm">
                                 <div class="form-check">
                                     <?php
+										$placardNoSpace = str_replace(" ", "" , $placardName);
+										
                                         echo "<input type=\"hidden\" name=\"placardName\" value=\"$placardName\">";
-                                        echo "<input type=\"hidden\" name=\"join\" value=\"$placardName\">";
+                                        echo "<input type=\"hidden\" name=\"join\" value=\"$placardNoSpace\">";
                                     ?>
                                     
                                     <!-- Join Button -->
-                                    <button type="submit" class="btn btn-secondary comm_button" ONCLICK="ShowAndHide()">Join the Community!</button>
+                                    <button type="submit" class="btn btn-secondary comm_button">Join the Community!</button>
                                 </div>                        
                             </form>
                             
-                            <button type="button" class="btn btn-secondary ml-4 mr-3 view_button" ONCLICK="ShowAndHide2()">View The Discussion</button>
+                        <!-- <button type="button" class="btn btn-secondary ml-4 mr-3 view_button" ONCLICK="ShowAndHide2()">View The Discussion</button> -->
                         </div>
                     </div>
                 </div>
@@ -133,19 +131,19 @@
                 <div class="card">
                     <div class="card-body text-center">
                         <?php       
-                            echo "<iframe id=\"viewerPro\" style=\"width:600px; height: 500px;\" src=\"$placardLink\"></iframe>";          
+                            echo "<iframe id=\"viewerPro\" style=\"width:600px; height: 200px;\" src=\"$placardLink\"></iframe>";          
                         ?>
                     </div>
                 </div>
             </div>
         
             <!-- Message Board Card -->
-            <div class="container col-sm-12 col-md-8 book_board" id="talk" style="display:none">
+            <div class="container col-sm-12 col-md-8 book_board" id="board">
                 <div class="card card-default">
             
                     <!-- Header -->
                     <div class="card-header text-center">
-                        <span><strong>Message Board</strong></span>
+                        <h5>Message Board</h5>
                     </div>
                 
                     <!-- PHP for displaying messageboard -->
@@ -156,11 +154,11 @@
                     <!-- Footer -->
                     <div class="card-footer text-center">
                         <div class="chatBottom">
-		                  <form method="post" action="bookplacard.php" id="chatForm">
+		                  <form method="post" action="podPlacard.php" id="chatForm">
                             <?php
                                 echo "<input type=\"hidden\" name=\"placardName\" value=\"$placardName\">";
                             ?>
-                            <input type="text" name="text" id="text" class="form-control" placeholder="type your message" />
+                            <input type="text" name="text" id="text" class="form-control" placeholder="Enter Your Message Here" />
                             <br>
                             <input type="submit" class="btn btn-success center-block" value="Send">
 		                  </form>
@@ -214,7 +212,6 @@
     
             <!--button script-->
             <script>
-                
                 function ShowAndHide2() {
                 var x = document.getElementById('board');
                 if (x.style.display == 'none') {
@@ -230,15 +227,6 @@
                         x.style.display = 'block';
                     } else {
                         x.style.display = 'none';
-                    }
-                }
-
-                function ShowCommunity() {
-                    var y = document.getElementById('talk');
-                    if (y.style.display == 'none') {
-                        y.style.display = 'block';
-                    } else {
-                        y.style.display = 'none';
                     }
                 }
             </script>

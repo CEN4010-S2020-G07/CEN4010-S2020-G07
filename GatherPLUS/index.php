@@ -56,39 +56,30 @@
             {
                 echo "Error";
             }
-
-            // Welcomes User if they are Logged-in
-            if (isset($_SESSION["username"]))
-            {
-                $username = $_SESSION["username"];
-            
-                echo "<h6 class=\"alert alert-success\">Welcome $username</h6>";
-            }
-    
         ?>
     
         <!-- Header Title -->
+        <!-- <video src="images/Together.mp4" type=video/mp4 width="1200" height="400"></video>-->
         <!-- Carousel Images -->
         <div id="well_carousel" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
+          <!--  <ol class="carousel-indicators">
                 <li data-target="#well_carousel" data-slide-to="0" class="active"></li>
-                <!--<li data-target="#well_carousel" data-slide-to="1"></li>
-                <li data-target="#well_carousel" data-slide-to="2"></li>-->
-            </ol>
+                <li data-target="#well_carousel" data-slide-to="1"></li>
+                <li data-target="#well_carousel" data-slide-to="2"></li>
+            </ol> -->
 
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="images/scenic.jpg" class="d-block w-100" alt="...">
+                    <img src="images/TogetherR.jpg" class="img-fluid w-100" alt="Gather Together">
                 </div>
             </div>
         </div>
-        <br>
     
         <!-- Greeting Message -->
         <div class="container-fluid text-center section" id="welcome">
             <p class="text-center greeting">We may be miles apart in real life, or maybe just six feet...but online we are side by side. We gather together over fascinating books or the latest podcasts. We talk about the news that matters most to us or play games 
             (no matter how old we are!). All of our content is free, and the communities we form are priceless. </p>
-            <p class="text-center greeting">Welcome to Gather Plus.</p>
+            <p class="text-center greeting"><bold>Welcome to Gather Plus.</bold></p>
 
             <!-- Sign-Up/Login Buttons -->
             <div class="btn-group" role="group">
@@ -96,25 +87,28 @@
                 <a class="btn btn-success" data-toggle="modal" data-target="#modal1">Log In</a>   
             </div>
         </div>
-    
+        
+    <div class="container col-md-12 mt-3">
+        <?php
+        // Welcomes User if they are Logged-in
+            if (isset($_SESSION["username"]))
+            {
+                $username = $_SESSION["username"];
+            
+                echo "<h5 class=\"alert alert-success text-center\">Welcome $username</h5>";
+            } else {
+                
+                echo "<h5 class=\"alert alert-warning text-center\">Please sign in for full access</h5>";
+            }
+        ?>
+    </div>
         <!-- Hubs Catelog -->
         <div class="container col-md-6 text-center" id="cat_hubs">
-            <?php
-                if (isset($_SESSION["username"]))
-                {
-                    echo "<h5 class=\"text-center mb-3\">Select a Category, Join A Community!</h5>";
-                }
+           
+            <h5>Select a Category, Join a Community!</h5>
         
-                else
-                {
-                    echo "<h5 class=\"text-center mb-3\">Sign-in to Browse Content</h5>";
-            
-                }
-            ?>
-        
-            <div class="row">
-                <div class="col-md-3"></div>
-                <div class="card-group col-md-6">
+            <div class="row mt-3">
+                <div class="card-group col-md-12">
                     <div class="card category">
                         <?php
                             if (isset($_SESSION["username"]))
@@ -137,7 +131,7 @@
                         <?php
                             if (isset($_SESSION["username"]))
                             {
-                                echo "<a href=\"bookhub.php\">";
+                                echo "<a href=\"audiohub.php\">";
                             }
         
                             else
@@ -155,13 +149,12 @@
             </div>
         
             <div class="row">
-                <div class="col-md-3"></div>
-                    <div class="card-group col-md-6">
+                    <div class="card-group col-md-12">
                         <div class="card category">
                             <?php
                                 if (isset($_SESSION["username"]))
                                 {
-                                    echo "<a href=\"bookhub.php\">";
+                                    echo "<a href=\"newshub.php\">";
                                 }
         
                                 else
@@ -181,7 +174,7 @@
             
                             if (isset($_SESSION["username"]))
                             {
-                                echo "<a href=\"bookhub.php\">";
+                                echo "<a href=\"gamehub.php\">";
                             }
         
                             else
@@ -247,8 +240,6 @@
                 </div>
             </div>  
         </div>
-        <br>
-        <br>
         
         <!-- FOOTER -->
         <footer class="footer">
