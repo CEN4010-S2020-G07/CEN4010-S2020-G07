@@ -40,6 +40,12 @@
         // Error Message if username Not Found in Database
         else if ($result->num_rows == 0) 
         {
+             
+  
+            // Redirect browser 
+            $_SESSION["loginAttempt"] = "Fail";
+            header("Location: https://lamp.cse.fau.edu/~cen4010s2020_g07/GatherPLUS/index.php");
+            exit;
             echo "<h4 class=\"alert alert-danger\">Incorrect username or password</h4>";
                         
             $username = "";
@@ -68,7 +74,7 @@
                             
                 // Sets session cookie for user     
                 $_SESSION["username"] = $username;
-                        
+                $_SESSION["loginAttempt"] = "Success";     
                 // Welcome Message
                 echo "<h4 class=\"alert alert-success\">Welcome $username</h4>";
                         
@@ -77,7 +83,13 @@
             // Error Message if passwords Did Not Match
             else 
             {
+                // Redirect browser 
+                $_SESSION["loginAttempt"] = "Fail";
+                header("Location: https://lamp.cse.fau.edu/~cen4010s2020_g07/GatherPLUS/index.php"); 
                 echo "<h4 class=\"alert alert-danger\">Incorrect username or password</h4>";
+
+                exit;
+                
             }
                             
         }
@@ -86,6 +98,9 @@
     else if (isset($_POST["logout"]))
     {
         unset($_SESSION["username"]);
+        $_SESSION["loginAttempt"] = "logout";
+        header("Location: https://lamp.cse.fau.edu/~cen4010s2020_g07/GatherPLUS/index.php");
+        exit; 
         echo "<h4 class=\"alert alert-warning\">You Have Been Logged-Out</h4>";
     }
             
