@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    $_SESSION["loginAttempt"] == "";
+    if($_SESSION["loginAttempt"] == "Fail"){
+        echo "<h4 class=\"alert alert-danger\">Incorrect username or password</h4>";
+    }else if($_SESSION["loginAttempt"] == "logout"){
+        echo "<h4 class=\"alert alert-warning\">You Have Been Logged-Out</h4>";
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
