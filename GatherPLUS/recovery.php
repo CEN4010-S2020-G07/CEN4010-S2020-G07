@@ -31,7 +31,7 @@
                     <li class="nav-item"><a class="nav-link" href="audiohub.php">Podcasts </a></li>
                     <li class="nav-item"><a class="nav-link" href="newshub.php">News</a></li>
                     <li class="nav-item"><a class="nav-link" href="gamehub.php">Games</a></li>
-                    <li class="nav-item"><a class="nav-link" href="wellspace.html">Wellspace</a></li>
+                    <li class="nav-item"><a class="nav-link" href="wellspace.php">Wellspace</a></li>
                     <li class="nav-item"><a class="nav-link" href="my_profile.php">My Profile</a></li>
                 </ul>
             </div>
@@ -39,7 +39,13 @@
             <!-- Login Button -->
             <div class="nav navbar-nav navbar-right" id="navbarSupportedContent">
                 <ul class="navbar-nav text-uppercase">
-                    <li class="nav-item active"><button type="button" class="btn log" data-toggle="modal" data-target="#modal1">Login/Logout</button></li>
+                    <?php
+                    if($_SESSION["loginAttempt"] != "Success"){
+                        echo '<li class="nav-item active"><button type="button" class="btn log" data-toggle="modal" data-target="#modal1">Login</button></li>';
+                    }else if($_SESSION["loginAttempt"] == "Success"){
+                        echo '<li class="nav-item active"><button type="button" class="btn log" data-toggle="modal" data-target="#modal1">Logout</button></li>';
+                    }
+                    ?>
                 </ul>
             </div>
         </nav> 

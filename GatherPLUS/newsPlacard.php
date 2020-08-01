@@ -1,5 +1,12 @@
 <?php
+
     session_start();
+    $_SESSION["loginAttempt"] == "";
+    if($_SESSION["loginAttempt"] == "Fail"){
+        echo "<h4 class=\"alert alert-danger\">Incorrect username or password</h4>";
+    }else if($_SESSION["loginAttempt"] == "logout"){
+        echo "<h4 class=\"alert alert-warning\">You Have Been Logged-Out</h4>";
+    }
 ?>
 
 <!DOCTYPE html>
@@ -40,14 +47,20 @@
                 <li class="nav-item"><a class="nav-link" href="audiohub.php">Podcasts </a></li>
                 <li class="nav-item"><a class="nav-link" href="newshub.php">News</a></li>
                 <li class="nav-item"><a class="nav-link" href="gamehub.php">Games</a></li>
-                <li class="nav-item"><a class="nav-link" href="wellspace.html">Wellspace</a></li>
+                <li class="nav-item"><a class="nav-link" href="wellspace.php">Wellspace</a></li>
                 <li class=""><a class="nav-link" href="my_profile.php">My Profile</a></li>
             </ul>
         </div>
         <!-- Login Button -->
         <div class="nav navbar-nav navbar-right" id="navbarSupportedContent">
             <ul class="navbar-nav text-uppercase">
-                <li class="nav-item active"><button type="button" class="btn log" data-toggle="modal" data-target="#modal1">Login/Logout</button></li>
+                    <?php
+                    if($_SESSION["loginAttempt"] != "Success"){
+                        echo '<li class="nav-item active"><button type="button" class="btn log" data-toggle="modal" data-target="#modal1">Login</button></li>';
+                    }else if($_SESSION["loginAttempt"] == "Success"){
+                        echo '<li class="nav-item active"><button type="button" class="btn log" data-toggle="modal" data-target="#modal1">Logout</button></li>';
+                    }
+                    ?>
             </ul>
         </div>
     </nav>
@@ -163,46 +176,73 @@
             </div>
         </div>
         
-            <!-- Login Modal -->
-        <div class="modal" id="modal1" role="dialog">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5>Gather+</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
-                    </div>
+
+    <!-- Login/Logout Modal -->
+    <?php
+    if($_SESSION["loginAttempt"] != "Success"){
+    echo '<div class="modal" id="modal1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Gather+</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                </div>
                 <div class="modal-body">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-4 text-center" id="mod"></div>
-                                <div class="col-md-8">
-                                    <form id="loginForm" method="post" action="my_profile.php">
-                                        <div class="form-group">
-                                            <label for="username">Username</label>
-                                            <input type="text" class="form-control" name="username" id="username" placeholder="Username">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="password">Password</label>
-                                            <input type="password" class="form-control" name="password" id="password" placeholder="Password (Case-Sensitive)">
-                                        </div>
-                                        <button type="submit" class="btn btn-info">Login</button>
-                                        <a href="signup.php" class="btn btn-success" role="button">Create An Account</a>
-                                    </form>
-                                    <br>
-                                    <br>
-                                    <form id="logout" method="post" action="my_profile.php">
-                                        <input type="hidden" name="logout" value="1">
-                                        <button type="submit" class="btn btn-warning">Logout</button>
-                                    </form>
-                                </div>
+                            <div class="col-md-8">
+                                <form id="loginForm" method="post" action="my_profile.php">
+                                    <div class="form-group">
+                                        <label for="username">Username</label>
+                                        <input type="text" class="form-control" name="username" id="username" placeholder="Username">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input type="password" class="form-control" name="password" id="password" placeholder="Password (Case-Sensitive)">
+                                    </div>
+                                    <button type="submit" class="btn btn-info">Login</button>
+                                    <a href="signup.php" class="btn btn-success" role="button">Create An Account</a>
+                                </form>
+                                <br>
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                    </div>     
                 </div>
-            </div>  
+                <div class="modal-footer">
+                </div>
+            </div>
         </div>
+    </div>';
+    }else if($_SESSION["loginAttempt"] == "Success"){
+    echo '<div class="modal" id="modal1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Gather+</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4 text-center" id="mod"></div>
+                            <div class="col-md-8">
+                                <form id="logout" method="post" action="my_profile.php">
+                                    <input type="hidden" name="logout" value="1">
+                                    <button type="submit" class="btn btn-warning">Logout</button>
+                                </form>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>';
+    }   
+    ?>
         <br>
         <br>
         
