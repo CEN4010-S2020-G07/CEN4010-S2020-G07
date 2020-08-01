@@ -120,7 +120,7 @@
                                 </div>                        
                             </form>
                             
-                        <!-- <button type="button" class="btn btn-secondary ml-4 mr-3 view_button" ONCLICK="ShowAndHide2()">View The Discussion</button> -->
+                            <a href="#board"><button type="button" class="btn btn-secondary ml-4 mr-3 view_button" ONCLICK="ShowAndHide2()">View The Discussion</button></a>
                         </div>
                     </div>
                 </div>
@@ -147,7 +147,7 @@
                     </div>
                 
                     <!-- PHP for displaying messageboard -->
-                    <div class="card-body">
+                    <div class="card-body" style="max-height: 500px; height: auto; overflow: scroll;">
                         <?php include 'php/messageboard.php'; ?>
                     </div>
                 

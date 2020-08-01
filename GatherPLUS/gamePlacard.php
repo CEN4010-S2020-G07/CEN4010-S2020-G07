@@ -1,5 +1,6 @@
 <?php
     session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -108,7 +109,7 @@
                             <button type="button" class="btn btn-secondary ml-4 mr-3 view_button" ONCLICK="ShowContent()">Click to Play</button>
                             
                             <!-- PHP Form for joining a community -->
-                            <form method="post" action="bookplacard.php" id="chatForm">
+                            <form method="post" action="gamePlacard.php" id="chatForm">
                                 <div class="form-check">
                                     <?php
                                         $placardNoSpace = str_replace(" ", "" , $placardName);
@@ -121,6 +122,8 @@
                                     <button type="submit" class="btn btn-secondary comm_button">Join the Community!</button>
                                 </div>                        
                             </form>
+
+                            <a href="#board"><button type="button" class="btn btn-secondary ml-4 mr-3 view_button" ONCLICK="ShowAndHide2()">View The Discussion</button></a>
                         </div>
                     </div>
                 </div>
@@ -129,10 +132,12 @@
             <!-- PHP for viewing book PDF file -->
             <div class="container col-sm-12 col-md-8" id="embed" style="display:none">
                 <div class="card">
-                    <div class="card-body text-center">
-                        <?php       
-                            echo "$placardLink";          
-                        ?>
+                    <div class="restrict">
+                        <div class="card-body text-center">
+                            <?php       
+                                echo $placardLink;          
+                            ?>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -147,7 +152,7 @@
                     </div>
                 
                     <!-- PHP for displaying messageboard -->
-                    <div class="card-body">
+                    <div class="card-body" style="max-height: 500px; height: auto; overflow: scroll;">
                         <?php include 'php/messageboard.php'; ?>
                     </div>
                 
@@ -225,6 +230,14 @@
                         x.style.display = 'none';
                     }
                 }  
+                function ShowAndHide2() {
+                var x = document.getElementById('board');
+                if (x.style.display == 'none') {
+                    x.style.display = 'block';
+                } else {
+                    x.style.display = 'none';
+                    }
+                }
             </script>
 
         <!--BOOTSTRAP SCRIPTS-->

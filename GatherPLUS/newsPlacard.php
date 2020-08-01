@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,7 +50,11 @@
                 <li class="nav-item active"><button type="button" class="btn log" data-toggle="modal" data-target="#modal1">Login/Logout</button></li>
             </ul>
         </div>
-    </nav>  
+    </nav>
+
+		<!-- PHP for joining communities -->
+        <?php include 'php/join.php'; ?>
+		
         <div class="container placard mb-5">
             <div class="row full_thing">
                 <div class="col-md-4 mt-3 full_plac_image">
@@ -83,8 +91,7 @@
                 <div class="col-md-8 mt-3 full_feature" id="newsFeature">
                             <?php
                                 echo "<h3 class=\"mt-3 mb-0\">$placardName</h3>";
-                                echo "<p class=\"text-left
-                                full_describe\">$placardBio</p>";
+                                echo "<p class=\"text-left full_describe\">$placardBio</p>";
                             ?>
                             <div class="d-flex flex-row button_row">
                                      <!-- Button for viewing e-reader -->
@@ -105,7 +112,9 @@
                                     <button type="submit" class="btn btn-secondary comm_button">Join the Community!</button>
                                 </div>                        
                             </form>
-                            </div>
+
+                            <a href="#board"><button type="button" class="btn btn-secondary ml-4 mr-3 view_button" ONCLICK="ShowAndHide2()">View The Discussion</button></a>
+                        </div>
                 </div>
             </div>
         </div>
@@ -113,17 +122,44 @@
             <div class="card mb-5">
             <div class="card-body text-center"> 
                         <?php 
-                            echo "<blockquote class=\"embedly-card\"><h4><a href=\"$placardLink\"</a></h4>\"></blockquote>";       
+                            echo "<blockquote class=\"embedly-card\"><h4><a href=\"$placardLink\"></a></h4>\"></blockquote>";       
                         ?>
                         <script async src="//cdn.embedly.com/widgets/platform.js" charset="UTF-8"></script>
             </div>
             </div>
         </div>
 
-        <div class="container col-sm-12 col-md-8 book_board">
+        <!-- Message Board Card -->
+        <div class="container col-sm-12 col-md-8 book_board" id="board">
         <!--id="talk" style="display:none"-->
-            <div class="card">
-            <div class="card-body text-center"></div>
+            <div class="card card-default">
+			
+				    <!-- Header -->
+                    <div class="card-header text-center">
+                        <span><strong>Message Board</strong></span>
+                    </div>
+                
+                    <!-- PHP for displaying messageboard -->
+                    <div class="card-body" style="max-height: 500px; height: auto; overflow: scroll;">
+                        <?php include 'php/messageboard.php'; ?>
+                    </div>
+                
+                    <!-- Footer -->
+                    <div class="card-footer text-center">
+                        <div class="chatBottom">
+		                  <form method="post" action="newsPlacard.php" id="chatForm">
+                            <?php
+                                echo "<input type=\"hidden\" name=\"placardName\" value=\"$placardName\">";
+                            ?>
+                            <input type="text" name="text" id="text" class="form-control" placeholder="Enter Your Message Here" />
+                            <br>
+                            <input type="submit" class="btn btn-success center-block" value="Send">
+		                  </form>
+	                   </div>
+                    </div>
+                    <br>
+                    <br>
+				
             </div>
         </div>
         
@@ -183,7 +219,14 @@
         } 
         else { x.style.display = 'none';}
         }
-        
+        function ShowAndHide2() {
+        var x = document.getElementById('board');
+        if (x.style.display == 'none') {
+            x.style.display = 'block';
+        } else {
+            x.style.display = 'none';
+        }
+        }
     </script>
 
     <!--BOOTSTRAP SCRIPTS-->
