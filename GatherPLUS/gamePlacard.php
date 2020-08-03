@@ -18,7 +18,7 @@
     <meta name="viewport" content="width-device-width, initial-scale=1.0, shrink-to-fit=no">
 
     <!-- TITLE -->
-    <title>Gather+ Book Placard</title>
+    <title>Gather+ Game Placard</title>
 
     <!--BOOTSTRAP CSS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -50,7 +50,7 @@
                 <li class="nav-item"><a class="nav-link" href="audiohub.php">Podcasts </a></li>
                 <li class="nav-item"><a class="nav-link" href="newshub.php">News</a></li>
                 <li class="nav-item"><a class="nav-link" href="gamehub.php">Games</a></li>
-                <li class="nav-item"><a class="nav-link" href="wellspace.html">Wellspace</a></li>
+                <li class="nav-item"><a class="nav-link" href="wellspace.php">Wellspace</a></li>
                 <li class="nav-item"><a class="nav-link" href="my_profile.php">My Profile</a></li>
             </ul>
         </div>
@@ -117,7 +117,7 @@
             </div>
 
             <!-- PHP for filling in book placard information -->
-            <div class="col-md-8 mt-3 full_feature">
+            <div class="col-md-8 mt-3 full_feature pFeature">
                 <?php
                                 echo "<h3 class=\"mt-3\" \"mb-0\">$placardName</h3>";
                                 echo "<p class=\"text-left full_describe\">$placardBio</p>";
@@ -151,12 +151,12 @@
     </div>
 
     <!-- PHP for viewing book PDF file -->
-    <div class="container col-sm-12 col-md-8" id="embed" style="display:none">
+    <div class="container col-sm-12 col-md-8" id="embed" style="display:none min-height:500px !important">
         <div class="card">
             <div class="card-body text-center">
                 <?php       
-                            echo "$placardLink";          
-                        ?>
+                    echo "$placardLink";          
+                ?>
             </div>
         </div>
     </div>

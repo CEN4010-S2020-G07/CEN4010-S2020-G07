@@ -50,7 +50,7 @@
                 <li class="nav-item"><a class="nav-link" href="audiohub.php">Podcasts </a></li>
                 <li class="nav-item"><a class="nav-link" href="newshub.php">News</a></li>
                 <li class="nav-item"><a class="nav-link" href="gamehub.php">Games</a></li>
-                <li class="nav-item"><a class="nav-link" href="wellspace.html">Wellspace</a></li>
+                <li class="nav-item"><a class="nav-link" href="wellspace.php">Wellspace</a></li>
                 <li class="nav-item"><a class="nav-link" href="my_profile.php">My Profile</a></li>
             </ul>
         </div>
@@ -80,66 +80,10 @@
     <!--Game Placards List-->
     <div class="container mt-5" id="hubBox">
 
-        <!-- ROW #1 -->
+        <!--ROW #1-->
         <div class="d-flex justify-content-around">
 
             <!-- game Placard #1 -->
-            <div class="card h-100" style="width: 16rem;">
-                <img class="card-img-top img-fluid" src="games/bubbleshooter.png" alt="Bubble Shooter">
-                <div class="overlay">
-                    <div class="text">Bubble Shooter</div>
-                </div>
-                <div class="card-body placBody">
-                    <form method="post" action="gamePlacard.php">
-                        <div class="form-check bForm">
-                            <input type="hidden" name="placardName" value="Bubble Shooter">
-                            <button type="submit" class="btn btn_R">Play Now</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-
-            <!-- game Placard #2 -->
-            <div class="card h-100" style="width: 16rem;">
-                <img class="card-img-top img-fluid" src="games/bubbletrouble.png" alt="Bubble Trouble">
-                <div class="overlay">
-                    <div class="text">Bubble Trouble</div>
-                </div>
-                <div class="card-body placBody">
-                    <form method="post" action="gamePlacard.php">
-                        <div class="form-check bForm">
-                            <input type="hidden" name="placardName" value="Bubble Trouble">
-                            <button type="submit" class="btn btn_R">Play Now</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-
-            <!-- game Placard #3 -->
-            <div class="card h-100" style="width: 16rem;">
-                <img class="card-img-top img-fluid" src="games/minesweeper.png" alt="Minesweeper">
-                <div class="overlay">
-                    <div class="text">Minesweeper</div>
-                </div>
-                <div class="card-body placBody">
-                    <form method="post" action="gamePlacard.php">
-                        <div class="form-check bForm">
-                            <input type="hidden" name="placardName" value="Minesweeper">
-                            <button type="submit" class="btn btn_R">Play Now</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-
-        </div>
-
-        <!--ROW #2-->
-        <div class="d-flex justify-content-around">
-
-            <!-- game Placard #4 -->
             <div class="card h-100" style="width: 16rem;">
                 <img class="card-img-top img-fluid" src="games/Sudoku.png" alt="Sudoku">
                 <div class="overlay">
@@ -156,16 +100,16 @@
             </div>
 
 
-            <!-- game Placard #5 -->
+            <!-- game Placard #2 -->
             <div class="card h-100" style="width: 16rem;">
-                <img class="card-img-top img-fluid" src="games/solitaire.png" alt="Solitaire">
+                <img class="card-img-top img-fluid" src="games/ClassicPac.jfif" alt="Pacman">
                 <div class="overlay">
-                    <div class="text">Solitaire</div>
+                    <div class="text">An Updated Version of the Old School Favorite: PACMAN</div>
                 </div>
                 <div class="card-body placBody">
                     <form method="post" action="gamePlacard.php">
                         <div class="form-check bForm">
-                            <input type="hidden" name="placardName" value="Solitaire">
+                            <input type="hidden" name="placardName" value="ClassicPac">
                             <button type="submit" class="btn btn_R">Play Now</button>
                         </div>
                     </form>
@@ -173,7 +117,7 @@
             </div>
 
 
-            <!-- game Placard #6 -->
+            <!-- game Placard #3 -->
             <div class="card h-100" style="width: 16rem;">
                 <img class="card-img-top img-fluid" src="games/Tetris.png" alt="Tetris">
                 <div class="overlay">
@@ -184,6 +128,61 @@
                         <div class="form-check bForm">
                             <input type="hidden" name="placardName" value="Tetris">
                             <button type="submit" class="btn btn_R">Play Now</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+                <!-- ROW #2 -->
+        <div class="d-flex justify-content-around">
+
+            <!-- game Placard #4 -->
+            <div class="card h-100" style="width: 16rem;">
+                <img class="card-img-top img-fluid" src="games/Roblox.jpg" alt="Roblox">
+                <div class="overlay">
+                    <div class="text">A World of Fun 3D Games</div>
+                </div>
+                <div class="card-body placBody">
+                    <form method="post" action="gamePlacard.php">
+                        <div class="form-check bForm">
+                            <input type="hidden" name="placardName" value="Roblox">
+                            <button type="button" class="btn btn_R"><a href="https://www.roblox.com/" target="_blank">Go Now</a></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+            <!-- game Placard #5 -->
+            <div class="card h-100" style="width: 16rem;">
+                <img class="card-img-top img-fluid" src="games/Tabletopia.png" alt="Tabletopia">
+                <div class="overlay">
+                    <div class="text">A Treasure Trove of Online Board Games</div>
+                </div>
+                <div class="card-body placBody">
+                    <form method="post" action="gamePlacard.php">
+                        <div class="form-check bForm">
+                            <input type="hidden" name="placardName" value="Tabletopia">
+                            <button type="button" class="btn btn_R"><a href="https://tabletopia.com/" target="_blank">Go Now</a></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+            <!-- game Placard #6 -->
+            <div class="card h-100" style="width: 16rem;">
+                <img class="card-img-top img-fluid" src="games/Fortnite3.jpg" alt="Fortnite">
+                <div class="overlay">
+                    <div class="text">Popular Multiplayer Adventure</div>
+                </div>
+                <div class="card-body placBody">
+                    <form method="post" action="gamePlacard.php">
+                        <div class="form-check bForm">
+                            <input type="hidden" name="placardName" value="Fortnite">
+                            <button type="button" class="btn btn_R"><a href="https://www.epicgames.com/fortnite/en-US/home" target="_blank">Go Now</a></button>
                         </div>
                     </form>
                 </div>

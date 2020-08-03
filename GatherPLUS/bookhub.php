@@ -2,9 +2,9 @@
     session_start();
     if(isset($_SESSION["loginAttempt"])){
         if($_SESSION["loginAttempt"] == "Fail"){
-            echo "<h4 class=\"alert alert-danger\">Incorrect username or password</h4>";
+            echo "<h5 class=\"alert alert-danger\">Incorrect username or password</h5>";
         }else if($_SESSION["loginAttempt"] == "logout"){
-            echo "<h4 class=\"alert alert-warning\">You Have Been Logged-Out</h4>";
+            echo "<h5 class=\"alert alert-warning\">You Have Been Logged-Out</h5>";
         }
     }
 ?>
@@ -51,7 +51,7 @@
                 <li class="nav-item"><a class="nav-link" href="audiohub.php">Podcasts </a></li>
                 <li class="nav-item"><a class="nav-link" href="newshub.php">News</a></li>
                 <li class="nav-item"><a class="nav-link" href="gamehub.php">Games</a></li>
-                <li class="nav-item"><a class="nav-link" href="wellspace.html">Wellspace</a></li>
+                <li class="nav-item"><a class="nav-link" href="wellspace.php">Wellspace</a></li>
                 <li class="nav-item"><a class="nav-link" href="my_profile.php">My Profile</a></li>
             </ul>
         </div>

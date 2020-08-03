@@ -272,6 +272,7 @@ h6 {
 }
 
 #p2 {
+    
    justify-content: space-around; 
    padding-left:9%;
    padding-right:9%;
@@ -567,14 +568,16 @@ h3 {
     margin-bottom: 40px;
 }
 
-.bFull_Plac_Image{
+.pHeight{
     
-max-height:520px !important;    
+    max-height:500px !important;    
 
 }
 
-.genre{
-border:1px solid lightgrey;
+.genre {
+    
+    border:1px solid lightgrey;
+    width:380px;
 }
 
 .full_feature {

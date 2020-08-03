@@ -1,5 +1,5 @@
+    <!DOCTYPE html>
     <html lang="en">
-
     <head>
         <meta charset="UTF-8">
 
@@ -41,7 +41,7 @@
                     <li class="nav-item nl"><a class="nav-link" href="audiohub.php">Podcasts </a></li>
                     <li class="nav-item nl"><a class="nav-link" href="newshub.php">News</a></li>
                     <li class="nav-item nl"><a class="nav-link" href="gamehub.php">Games</a></li>
-                    <li class="nav-item nl"><a class="nav-link" href="wellspace.html">Wellspace</a></li>
+                    <li class="nav-item nl"><a class="nav-link" href="wellspace.php">Wellspace</a></li>
                     <li class="nav-item nl"><a class="nav-link" href="my_profile.php">My Profile</a></li>
                 </ul>
             </div>
@@ -80,28 +80,9 @@
             }
         ?>
 
-        <!-- Header Title -->
-
-        <!--   <div id="well_carousel" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#well_carousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#well_carousel" data-slide-to="1"></li>
-                    <li data-target="#well_carousel" data-slide-to="2"></li>
-                </ol>
-
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-
-                    </div>
-                    <div class="carousel-item"></div>
-                    <div class="carousel-item"></div>
-                    <div class="carousel-item"></div>
-                </div>
-            </div>-->
-
         <!-- Greeting Message -->
 
-        <video src="images/InkedTogether_LI_Trim.mp4" poster="images/InkedTogether_LI_Trim.jpg" height="100%" width="103%" autoplay></video>
+        <video src="images/InkedTogether_LI_New.mp4" poster="images/TogetherR.jpg" height="100%" width="101%" autoplay></video>
         <div class="container col-md-12 text-center">
             <div class="col-md-8" id="welcome">
                 <p class="greeting" id="g1"><i>We may be miles apart in real life, or maybe just six feet...</i></p>
@@ -228,12 +209,14 @@
         </div>
 
         <!-- Backstory Log -->
-        <div class="container-fluid text-center section">
-            <p class="learnmore" id="p1">About Us</p>
-            <p class="learnmore" id="p2">Gather Plus is a unique social platform that flies under the banner of "Connection over Content." That means we care more about forming communities than "likes" or ratings. In the midst of an unprecedented pandemic, Gather Plus is here to bridge the gap we're all feeling by giving us great things to talk about and bond over. It also happens to be the term-long software engineering project by Team FunkyTech. Learn more about us and our collaboration on our <a href="https://lamp.cse.fau.edu/~cen4010s2020_g07/"><span id="homelink">Home Page</span></a>.
+        <div class="container col-md-12 text-center">
+           <div class="section">
+            <p id="p1">About Us</p>
+            <p id="p2">Gather Plus is a unique social platform that flies under the banner of "Connection over Content." That means we care more about forming communities than "likes" or ratings. In the midst of an unprecedented pandemic, Gather Plus is here to bridge the gap we're all feeling by giving us great things to talk about and bond over. It also happens to be the term-long software engineering project by Team FunkyTech. Learn more about us and our collaboration on our <a href="https://lamp.cse.fau.edu/~cen4010s2020_g07/"><span id="homelink">Home Page</span></a>.
             </p>
+           </div> 
         </div>
-
+        
         <!-- Login/Logout Modal -->
         <?php
     if(isset($_SESSION["loginAttempt"])){//check to see if loginAttempt is defined

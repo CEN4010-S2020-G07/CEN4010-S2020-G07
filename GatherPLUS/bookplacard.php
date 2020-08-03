@@ -49,7 +49,7 @@
                 <li class="nav-item"><a class="nav-link" href="audiohub.php">Podcasts </a></li>
                 <li class="nav-item"><a class="nav-link" href="newshub.php">News</a></li>
                 <li class="nav-item"><a class="nav-link" href="gamehub.php">Games</a></li>
-                <li class="nav-item"><a class="nav-link" href="wellspace.html">Wellspace</a></li>
+                <li class="nav-item"><a class="nav-link" href="wellspace.php">Wellspace</a></li>
                 <li class="nav-item"><a class="nav-link" href="my_profile.php">My Profile</a></li>
             </ul>
         </div>
@@ -80,7 +80,7 @@
         <div class="row full_thing">
 
             <!-- PHP for Retrieving Placard information -->
-            <div class="col-md-4 mt-3 bFull_Plac_Image">
+            <div class="col-md-4 mt-3">
                 <?php
                                 
                                 // Sets placard name as the name of the link
@@ -110,7 +110,7 @@
                         
                                 $_SESSION["placardName"] = $placardName;
                         
-                                echo "<img src=\"$placardImageLink\" alt=\"$placardName\" class=\"img-fluid\">";
+                                echo "<img src=\"$placardImageLink\" alt=\"$placardName\" class=\"img-fluid pHeight\">";
                                 echo "<h6 class=\"text-center\">$placardGenre</h6>";
                             ?>
             </div>
@@ -157,26 +157,12 @@
             <div class="card-body text-center">
                 <?php       
                             echo "<iframe id=\"viewerPro\" style=\"width:600px; height: 500px;\" src=\"$placardLink\"></iframe>";    
-                        ?>
+                ?>
             </div>
         </div>
     </div>
 
-    <!-- Message Board Card -->
-    <div class="container col-sm-12 col-md-8 book_board" id="board">
-        <div class="card card-default">
-
-            <!-- Header -->
-            <div class="card-header text-center">
-                <span><strong>Message Board</strong></span>
-            </div>
-
-            <!-- PHP for displaying messageboard -->
-            <div class="card-body">
-                <?php include 'php/messageboard.php'; ?>
-            </div>
-
-            <!-- Message Board Card -->
+                <!-- Message Board Card -->
             <div class="container col-sm-12 col-md-8 book_board" id="board">
                 <div class="card card-default">
 
@@ -208,9 +194,6 @@
 
                 </div>
             </div>
-
-        </div>
-    </div>
 
     <!-- Login/Logout Modal -->
     <?php
