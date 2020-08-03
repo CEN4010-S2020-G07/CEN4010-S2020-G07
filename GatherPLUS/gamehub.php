@@ -12,6 +12,11 @@
         <!--BOOTSTRAP CSS-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/global.css">      
+        
+        <!--FONTS-->
+        <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">  
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        
     </head>
 
     <body>
@@ -47,11 +52,9 @@
             </div>
         </nav>
         
-                
-        <!-- Hero Image -->
-            <div class="container col-md-12">
-                    <img src="images/GamesR.jpg" class="w-100 hero" alt="...">
-            </div>
+         <!-- Hero Image -->
+         <div class="container col-md-12"><img src="images/GamesRS.jpg" alt="Games" class="w-100 hero">        
+         </div>
         
         <!--Game Placards List-->
         <div class="container mt-5" id="hubBox">
@@ -62,7 +65,10 @@
                 <!-- game Placard #1 -->
                 <div class="card h-100" style="width: 16rem;">
                     <img class="card-img-top img-fluid" src="games/bubbleshooter.png" alt="Bubble Shooter">
-                    <div class="card-body placardBody">
+                    <div class="overlay">
+                        <div class="text">Bubble Shooter</div>
+                    </div>
+                    <div class="card-body placBody">
                         <form method="post" action="gamePlacard.php">
                             <div class="form-check bForm">
                                 <input type="hidden" name="placardName" value="Bubble Shooter">
@@ -76,7 +82,10 @@
                 <!-- game Placard #2 -->
                 <div class="card h-100" style="width: 16rem;">
                     <img class="card-img-top img-fluid" src="games/bubbletrouble.png" alt="Bubble Trouble">
-                    <div class="card-body placardBody">
+                    <div class="overlay">
+                        <div class="text">Bubble Trouble</div>
+                    </div>
+                    <div class="card-body placBody">
                         <form method="post" action="gamePlacard.php">
                             <div class="form-check bForm">
                                 <input type="hidden" name="placardName" value="Bubble Trouble">
@@ -90,7 +99,10 @@
                 <!-- game Placard #3 -->
                 <div class="card h-100" style="width: 16rem;">
                     <img class="card-img-top img-fluid" src="games/minesweeper.png" alt="Minesweeper">
-                    <div class="card-body placardBody">
+                    <div class="overlay">
+                        <div class="text">Minesweeper</div>
+                    </div>
+                    <div class="card-body placBody">
                         <form method="post" action="gamePlacard.php">
                             <div class="form-check bForm">
                                 <input type="hidden" name="placardName" value="Minesweeper">
@@ -109,7 +121,10 @@
                 <!-- game Placard #4 -->
                 <div class="card h-100" style="width: 16rem;">
                     <img class="card-img-top img-fluid" src="games/Sudoku.png" alt="Sudoku">
-                    <div class="card-body placardBody">
+                    <div class="overlay">
+                        <div class="text">Sudoku</div>
+                    </div>
+                    <div class="card-body placBody">
                         <form method="post" action="gamePlacard.php">
                             <div class="form-check bForm">
                                 <input type="hidden" name="placardName" value="Sudoku">
@@ -123,7 +138,10 @@
                 <!-- game Placard #5 -->
                 <div class="card h-100" style="width: 16rem;">
                     <img class="card-img-top img-fluid" src="games/solitaire.png" alt="Solitaire">
-                    <div class="card-body placardBody">
+                    <div class="overlay">
+                        <div class="text">Solitaire</div>
+                    </div>
+                    <div class="card-body placBody">
                         <form method="post" action="gamePlacard.php">
                             <div class="form-check bForm">
                                 <input type="hidden" name="placardName" value="Solitaire">
@@ -137,7 +155,10 @@
                 <!-- game Placard #6 -->
                 <div class="card h-100" style="width: 16rem;">
                     <img class="card-img-top img-fluid" src="games/Tetris.png" alt="Tetris">
-                    <div class="card-body placardBody">
+                    <div class="overlay">
+                        <div class="text">Tetris</div>
+                    </div>
+                    <div class="card-body placBody">
                         <form method="post" action="gamePlacard.php">
                             <div class="form-check bForm">
                                 <input type="hidden" name="placardName" value="Tetris">

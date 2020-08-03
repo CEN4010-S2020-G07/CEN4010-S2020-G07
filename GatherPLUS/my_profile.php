@@ -12,9 +12,14 @@
         <!--BOOTSTRAP CSS-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/global.css">      
+        
+        <!--FONT-->
+        <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">  
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        
     </head>
 
-    <body>
+    <body class="profileB">
         
         <!--NAVIGATION-->
         <nav id="navigate" class="navbar navbar-expand-xl navbar-fixed-top navbar-light bg-light">
@@ -57,8 +62,8 @@
             <div class="row">
                 
                 <!-- Username/Image Card -->
-                <div class="col-sm-4">
-                    <div class="card text-center" style="width:400px">
+                <div class="col-md-3">
+                    <div class="card text-center">
                         
                         <!-- PHP for Displaying User Profile Picture -->
                         <?php
@@ -94,22 +99,18 @@
                             }
                         ?>
                         
-                        <!-- Unused Card Body Section -->
-                        <div class="card-body">
-                        </div>
-                        
                         <!-- Card footer that displays a username if the user is logged-in -->
                         <div class ="card-footer text-center">
                             <?php
                             
                                 if ($username != "")
                                 {
-                                    echo "<h4 class=\"card-title text-center\"><strong>$username</strong></h4>";
+                                    echo "<h4 class=\"card-title text-center\">$username</h4>";
                                 }
                             
                                 else
                                 {
-                                    echo "<h4 class=\"card-title text-center\"><strong>Username</strong></h4>";
+                                    echo "<h4 class=\"card-title text-center\">Username</h4>";
                                 }
                             
                             ?>
@@ -118,9 +119,7 @@
                 </div>
                 
                 <!-- User Blurb/Biography Card -->
-                <div class="col-sm-7">
-                    <br>
-                    <br>
+                <div class="col-md-9" id="blurb_section">
                     <div class="card">
                         
                         <!-- Card Header -->
@@ -141,7 +140,7 @@
             
             <!-- User Communities Card -->
             <div class="row">
-                <div class="col-sm-3">
+                <div class="col-md-3">
                     <div class="card">
                         
                         <!-- Card Header -->
@@ -195,8 +194,8 @@
             
             <!-- Link to the Edit Profile Page -->
             <div class="row">
-                <div class="col-sm-3 text-center">
-                    <a class="btn btn-info" href="account_view.php" role="button">Edit Profile</a>
+                <div class="col-md-3 text-center">
+                    <a class="btn btn-info" href="account_view.php" role="button" id="edit_prof">Edit Profile</a>
                 </div>
             </div>
             

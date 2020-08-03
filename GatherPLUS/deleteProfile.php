@@ -14,6 +14,11 @@
         <link rel="stylesheet" type="text/css" href="css/prototype.css">
         <link rel="stylesheet" type="text/css" href="style.css" />
         <link rel="stylesheet" type="text/css" href="css/global.css"> 
+        
+        <!--FONT-->
+        <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">  
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        
     </head>
     
     <body>

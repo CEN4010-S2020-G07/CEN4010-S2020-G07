@@ -13,10 +13,16 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/global.css">
         <link rel="stylesheet" type="text/css" href="style.css" />
+        
         <link rel="stylesheet" type="text/css" href="css/global.css"> 
+        
+        <!--FONT-->
+        <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">  
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        
     </head>
 
-    <body>
+    <body class="profileB">
         
         <!--NAVIGATION-->
         <nav id="navigate" class="navbar navbar-expand-xl navbar-fixed-top navbar-light bg-light">
@@ -60,8 +66,8 @@
                 <div class="row">
                 
                     <!-- Card for Profile Picture/username -->
-                    <div class="col-sm-4">
-                        <div class="card" style="width:400px">
+                    <div class="col-md-3">
+                        <div class="card">
                             <?php
                         
                                 // Checks if user is logged-in
@@ -128,9 +134,7 @@
                     </div>
                 
                     <!-- Card for editing profile information-->
-                    <div class="col-sm-7">
-                        <br>
-                        <br>
+                    <div class="col-md-9">
                         <div class="card">
                         
                             <!-- Biography header -->
@@ -169,7 +173,7 @@
             
                 <!-- User Communities List -->
                 <div class="row">
-                    <div class="col-sm-3">
+                    <div class="col-md-3">
                     
                         <!-- Card for Communities list -->
                         <div class="card">
@@ -211,7 +215,7 @@
                 
                 <!-- Commit Changes/Delete Account Button -->
                 <div class="row">
-                    <div class="col-sm-3 text-center">
+                    <div class="col-md-3 text-center">
                         <input type="submit" class="btn btn-info center-block" value="Commit Changes">
                         <button type="button" class="btn log bg-warning" data-toggle="modal" data-target="#modal2">Delete Account</button>
                     </div>            

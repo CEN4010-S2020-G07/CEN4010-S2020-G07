@@ -11,7 +11,13 @@
 
         <!--BOOTSTRAP CSS-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="css/global.css">      
+        
+        <link rel="stylesheet" type="text/css" href="css/global.css">    
+        
+        <!--FONT-->
+        <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+           
     </head> 
 
     <body>
@@ -48,10 +54,10 @@
         </nav>
         
         <!-- Hero Image -->
-            <div class="container col-md-12">
-                    <img src="images/ReadingR.jpg" class="w-100 hero" alt="...">
-            </div>
-        
+        <div class="container col-md-12">
+        <img src="images/ReadingR.jpg" alt="Books" class="w-100 hero">
+        </div>
+       
         
         <!--Book Placards List-->
         <div class="container mt-5" id="hubBox">
@@ -62,6 +68,9 @@
                 <!-- Book Placard #1 -->
                 <div class="card h-100 " style="width: 16rem;">
                     <img class="card-img-top img-fluid bCard" src="books/covers/TheGuardianR.jpg" alt="The Guardian by Nicholas Sparks">
+                    <div class="overlay">
+                        <div class="text">Modern Romance with Nicholas Sparks</div>
+                    </div>
                     <div class="card-body placBody">
                         <form method="post" action="bookplacard.php">
                             <div class="form-check bForm">
@@ -75,6 +84,9 @@
                 <!-- Book Placard #2 -->
                 <div class="card h-100 " style="width: 16rem;">
                     <img class="card-img-top img-fluid bCard" src="books/covers/JaneAustenCompleteR.jpg" alt="The Complete Novels of Jane Austen">
+                    <div class="overlay">
+                        <div class="text">Classic Romance with Jane Austen</div>
+                    </div>
                     <div class="card-body text-center placBody">
                         <form method="post" action="bookplacard.php">
                             <div class="form-check bForm">
@@ -88,6 +100,9 @@
                 <!-- Book Placard #3 -->
                 <div class="card h-100 " style="width: 16rem;">
                     <img class="card-img-top img-fluid bCard" src="books/covers/BornACrimeR.jpg" alt="Born A Crime by Trevor Noah">
+                    <div class="overlay">
+                        <div class="text">The Biography of Comedian Trevor Noah</div>
+                    </div>
                         <div class="card-body text-center placBody">
                         <form method="post" action="bookplacard.php">
                             <div class="form-check bForm">
@@ -106,6 +121,9 @@
                 <!-- Book Placard #4 -->
                 <div class="card h-100 " style="width: 16rem;">
                     <img class="card-img-top img-fluid bCard" src="books/covers/JustMercyR.jpg" alt="Just Mercy by Bryan Stevenson">
+                    <div class="overlay">
+                        <div class="text">Biography of Activist Bryan Stevenson</div>
+                    </div>
                     <div class="card-body text-center placBody">
                         <form method="post" action="bookplacard.php">
                             <div class="form-check bForm">
@@ -119,6 +137,9 @@
                 <!-- Book Placard #5 -->
                 <div class="card h-100 " style="width: 16rem;">
                     <img class="card-img-top img-fluid bCard" src="books/covers/ThePelicanBriefR.jpg" alt="The Pelican Brief by John Grisham">
+                    <div class="overlay">
+                        <div class="text">Legal Thriller with NY Times Best-Seller John Grisham</div>
+                    </div>
                     <div class="card-body text-center placBody">
                         <form method="post" action="bookplacard.php">
                             <div class="form-check bForm">
@@ -132,6 +153,9 @@
                 <!-- Book Placard #6 -->
                 <div class="card h-100 " style="width: 16rem;">
                     <img class="card-img-top img-fluid bCard" src="books/covers/MurderInMesopotamiaR.jpg" alt="Murder In Mesopotamia by Agatha Christie">
+                    <div class="overlay">
+                        <div class="text">Classic Mystery with Agatha Christie</div>
+                    </div>
                     <div class="card-body text-center placBody">
                         <form method="post" action="bookplacard.php">
                             <div class="form-check bForm">
