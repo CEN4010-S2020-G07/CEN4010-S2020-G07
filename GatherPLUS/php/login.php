@@ -1,7 +1,7 @@
 <!-- PHP for Logging users in -->
 <?php
         
-    session_start();
+
         
     // Error Handler
     set_error_handler("errorHandler");
@@ -40,7 +40,12 @@
         // Error Message if username Not Found in Database
         else if ($result->num_rows == 0) 
         {
-            echo "<h4 class=\"alert alert-danger\">Incorrect username or password</h4>";
+             
+  
+            // Redirect browser 
+            $_SESSION["loginAttempt"] = "Fail";
+            header("Location: https://lamp.cse.fau.edu/~cen4010s2020_g07/GatherPLUS/index.php");
+            exit;
                         
             $username = "";
             $password = "";
@@ -68,16 +73,20 @@
                             
                 // Sets session cookie for user     
                 $_SESSION["username"] = $username;
-                        
+                $_SESSION["loginAttempt"] = "Success";     
                 // Welcome Message
-                echo "<h4 class=\"alert alert-success\">Welcome $username</h4>";
-                        
+                       
             } 
                     
             // Error Message if passwords Did Not Match
             else 
             {
-                echo "<h4 class=\"alert alert-danger\">Incorrect username or password</h4>";
+                // Redirect browser 
+                $_SESSION["loginAttempt"] = "Fail";
+                header("Location: https://lamp.cse.fau.edu/~cen4010s2020_g07/GatherPLUS/index.php"); 
+
+                exit;
+                
             }
                             
         }
@@ -86,7 +95,10 @@
     else if (isset($_POST["logout"]))
     {
         unset($_SESSION["username"]);
-        echo "<h4 class=\"alert alert-warning\">You Have Been Logged-Out</h4>";
+        $_SESSION["loginAttempt"] = "logout";
+        header("Location: https://lamp.cse.fau.edu/~cen4010s2020_g07/GatherPLUS/index.php");
+        exit; 
+        
     }
             
     // Runs if user signed in earlier
@@ -108,7 +120,7 @@
         $lastname = $row["lastname"];
         $blurb = $row["blurb"];
                     
-        echo "<h4 class=\"alert alert-success\">Welcome $username</h4>";
+        
     }
 
 ?>

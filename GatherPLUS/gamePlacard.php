@@ -1,71 +1,88 @@
 <?php
     session_start();
+    if(isset($_SESSION["loginAttempt"])){
+        if($_SESSION["loginAttempt"] == "Fail"){
+            echo "<h5 class=\"alert alert-danger\">Incorrect username or password</h5>";
+        }else if($_SESSION["loginAttempt"] == "logout"){
+            echo "<h5 class=\"alert alert-warning\">You Have Been Logged-Out</h5>";
+        }
+    }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
 
-        <!--FOLLOWING LINE IMPORTANT TO ADD FOR BOOTSTRAP-->
-        <meta name="viewport" content="width-device-width, initial-scale=1.0, shrink-to-fit=no">
+<head>
+    <meta charset="UTF-8">
 
-        <!-- TITLE -->
-        <title>Gather+ Book Placard</title>
+    <!--FOLLOWING LINE IMPORTANT TO ADD FOR BOOTSTRAP-->
+    <meta name="viewport" content="width-device-width, initial-scale=1.0, shrink-to-fit=no">
 
-        <!--BOOTSTRAP CSS-->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="css/prototype.css">
-        <link rel="stylesheet" type="text/css" href="css/global.css"> 
-        
-        <!--FONT-->
-        <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">  
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-        
-    </head>
+    <!-- TITLE -->
+    <title>Gather+ Book Placard</title>
 
-    <body>
- 
-        <!--NAVIGATION-->
-        <nav id="navigate" class="navbar navbar-expand-xl navbar-fixed-top navbar-light bg-light">
-            <a href="index.php" class="navbar-brand nav-item active gBrand">Gather+</a>
+    <!--BOOTSTRAP CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/prototype.css">
+    <link rel="stylesheet" type="text/css" href="css/global.css">
 
-            <!-- TOGGLER -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <!--FONT-->
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
 
-            <!-- Navbar Items -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav text-uppercase">
+</head>
 
-                    <li class="nav-item"><a class="nav-link" href="bookhub.php">Books</a></li>
-                    <li class="nav-item"><a class="nav-link" href="audiohub.php">Podcasts </a></li>
-                    <li class="nav-item"><a class="nav-link" href="newshub.php">News</a></li>
-                    <li class="nav-item"><a class="nav-link" href="gamehub.php">Games</a></li>
-                    <li class="nav-item"><a class="nav-link" href="wellspace.html">Wellspace</a></li>
-                    <li class="nav-item"><a class="nav-link" href="my_profile.php">My Profile</a></li>
-                </ul>
-            </div>
-            
-            <!-- Login Button -->
-            <div class="nav navbar-nav navbar-right" id="navbarSupportedContent">
-                <ul class="navbar-nav text-uppercase">
-                    <li class="nav-item active"><button type="button" class="btn log" data-toggle="modal" data-target="#modal1">Login/Logout</button></li>
-                </ul>
-            </div>
-        </nav>
-        
-        <!-- PHP for joining communities -->
-        <?php include 'php/join.php'; ?>
-        
-        <!-- Book Placard Information -->
-            <div class="container placard">
-                <div class="row full_thing">
-                    
-                    <!-- PHP for Retrieving Placard information -->
-                    <div class="col-md-4 mt-3 bFull_Plac_Image">
-                            <?php
+<body>
+
+    <!--NAVIGATION-->
+    <nav id="navigate" class="navbar navbar-expand-xl navbar-fixed-top navbar-light bg-light">
+        <a href="index.php" class="navbar-brand nav-item active gBrand">Gather+</a>
+
+        <!-- TOGGLER -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Items -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav text-uppercase">
+
+                <li class="nav-item"><a class="nav-link" href="bookhub.php">Books</a></li>
+                <li class="nav-item"><a class="nav-link" href="audiohub.php">Podcasts </a></li>
+                <li class="nav-item"><a class="nav-link" href="newshub.php">News</a></li>
+                <li class="nav-item"><a class="nav-link" href="gamehub.php">Games</a></li>
+                <li class="nav-item"><a class="nav-link" href="wellspace.html">Wellspace</a></li>
+                <li class="nav-item"><a class="nav-link" href="my_profile.php">My Profile</a></li>
+            </ul>
+        </div>
+
+        <!-- Login Button -->
+        <div class="nav navbar-nav navbar-right" id="navbarSupportedContent">
+            <ul class="navbar-nav text-uppercase">
+                <?php
+                        if(isset($_SESSION["loginAttempt"])){
+                            if($_SESSION["loginAttempt"] != "Success"){
+                                echo '<li class="nav-item active"><button type="button" class="btn log" data-toggle="modal" data-target="#modal1">Login</button></li>';
+                            }else if($_SESSION["loginAttempt"] == "Success"){
+                                echo '<li class="nav-item active"><button type="button" class="btn log" data-toggle="modal" data-target="#modal1">Logout</button></li>';
+                            }
+                        }else{
+                            echo '<li class="nav-item active"><button type="button" class="btn log" data-toggle="modal" data-target="#modal1">Login</button></li>';
+                        }
+                    ?>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- PHP for joining communities -->
+    <?php include 'php/join.php'; ?>
+
+    <!-- Book Placard Information -->
+    <div class="container placard">
+        <div class="row full_thing">
+
+            <!-- PHP for Retrieving Placard information -->
+            <div class="col-md-4 mt-3 bFull_Plac_Image">
+                <?php
                                 
                                 // Sets placard name as the name of the link
                                 if (isset($_POST["placardName"]))
@@ -97,148 +114,151 @@
                                 echo "<img src=\"$placardImageLink\" alt=\"$placardName\" class=\"img-fluid\">";
                                 echo "<h6 class=\"text-center\">$placardGenre</h6>";
                             ?>
-                    </div>
-                    
-                    <!-- PHP for filling in book placard information -->
-                    <div class="col-md-8 mt-3 full_feature">
-                            <?php
+            </div>
+
+            <!-- PHP for filling in book placard information -->
+            <div class="col-md-8 mt-3 full_feature">
+                <?php
                                 echo "<h3 class=\"mt-3\" \"mb-0\">$placardName</h3>";
                                 echo "<p class=\"text-left full_describe\">$placardBio</p>";
                             ?>
-                        
-                        <!-- Placard Buttons -->
-                        <div class="d-flex flex-row button_row">
-                            
-                            <!-- Button for viewing e-reader -->
-                            <button type="button" class="btn btn-secondary ml-4 mr-3 view_button" ONCLICK="ShowContent()">Click to Play</button>
-                            
-                            <!-- PHP Form for joining a community -->
-                            <form method="post" action="bookplacard.php" id="chatForm">
-                                <div class="form-check">
-                                    <?php
+
+                <!-- Placard Buttons -->
+                <div class="d-flex flex-row button_row">
+
+                    <!-- Button for viewing e-reader -->
+                    <button type="button" class="btn btn-secondary ml-4 mr-3 view_button" ONCLICK="ShowContent()">Click to Play</button>
+
+                    <!-- PHP Form for joining a community -->
+                    <form method="post" action="gamePlacard.php" id="chatForm">
+                        <div class="form-check">
+                            <?php
                                         $placardNoSpace = str_replace(" ", "" , $placardName);
                                     
                                         echo "<input type=\"hidden\" name=\"placardName\" value=\"$placardName\">";
                                         echo "<input type=\"hidden\" name=\"join\" value=\"$placardNoSpace\">";
                                     ?>
-                                    
-                                    <!-- Join Button -->
-                                    <button type="submit" class="btn btn-secondary comm_button">Join the Community!</button>
-                                </div>                        
-                            </form>
+
+                            <!-- Join Button -->
+                            <button type="submit" class="btn btn-secondary comm_button">Join the Community!</button>
                         </div>
-                    </div>
+                    </form>
+
+                    <a href="#board"><button type="button" class="btn btn-secondary ml-4 mr-3 view_button" ONCLICK="ShowAndHide2()">View The Discussion</button></a>
                 </div>
             </div>
-        
-            <!-- PHP for viewing book PDF file -->
-            <div class="container col-sm-12 col-md-8" id="embed" style="display:none">
-                <div class="card">
-                    <div class="card-body text-center">
-                        <?php       
+        </div>
+    </div>
+
+    <!-- PHP for viewing book PDF file -->
+    <div class="container col-sm-12 col-md-8" id="embed" style="display:none">
+        <div class="card">
+            <div class="card-body text-center">
+                <?php       
                             echo "$placardLink";          
                         ?>
-                    </div>
-                </div>
             </div>
-        
-            <!-- Message Board Card -->
-            <div class="container col-sm-12 col-md-8 book_board" id="board">
-                <div class="card card-default">
-            
-                    <!-- Header -->
-                    <div class="card-header text-center">
-                        <span><strong>Message Board</strong></span>
-                    </div>
-                
-                    <!-- PHP for displaying messageboard -->
-                    <div class="card-body">
-                        <?php include 'php/messageboard.php'; ?>
-                    </div>
-                
-                    <!-- Footer -->
-                    <div class="card-footer text-center">
-                        <div class="chatBottom">
-                          <form method="post" action="gamePlacard.php" id="chatForm">
-                            <?php
+        </div>
+    </div>
+
+    <!-- Message Board Card -->
+    <div class="container col-sm-12 col-md-8 book_board" id="board">
+        <div class="card card-default">
+
+            <!-- Header -->
+            <div class="card-header text-center">
+                <span><strong>Message Board</strong></span>
+            </div>
+
+            <!-- PHP for displaying messageboard -->
+            <div class="card-body" style="max-height: 500px; height: auto; overflow: scroll;">
+                <?php include 'php/messageboard.php'; ?>
+            </div>
+
+            <!-- Footer -->
+            <div class="card-footer text-center">
+                <div class="chatBottom">
+                    <form method="post" action="gamePlacard.php" id="chatForm">
+                        <?php
                                 echo "<input type=\"hidden\" name=\"placardName\" value=\"$placardName\">";
                             ?>
-                            <input type="text" name="text" id="text" class="form-control" placeholder="Enter Your Message Here" />
-                            <br>
-                            <input type="submit" class="btn btn-success center-block" value="Send">
-                          </form>
-                       </div>
-                    </div>
-                    <br>
-                    <br>
-                
+                        <input type="text" name="text" id="text" class="form-control" placeholder="Enter Your Message Here" />
+                        <br>
+                        <input type="submit" class="btn btn-success center-block" value="Send">
+                    </form>
                 </div>
             </div>
-        
-        <!-- Login Modal -->
-        <div class="modal" id="modal1" role="dialog">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5>Gather+</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
-                    </div>
+            <br>
+            <br>
+
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal" id="modal1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Gather+</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                </div>
                 <div class="modal-body">
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-4 text-center" id="mod"></div>
-                                <div class="col-md-8">
-                                    <form id="loginForm" method="post" action="my_profile.php">
-                                        <div class="form-group">
-                                            <label for="username">Username</label>
-                                            <input type="text" class="form-control" name="username" id="username" placeholder="Username">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="password">Password</label>
-                                            <input type="password" class="form-control" name="password" id="password" placeholder="Password (Case-Sensitive)">
-                                        </div>
-                                        <button type="submit" class="btn btn-info">Login</button>
-                                        <a href="signup.php" class="btn btn-success" role="button">Create An Account</a>
-                                    </form>
-                                    <br>
-                                    <form id="logout" method="post" action="my_profile.php">
-                                        <input type="hidden" name="logout" value="1">
-                                        <button type="submit" class="btn btn-warning">Logout</button>
-                                    </form>
-                                </div>
+                            <div class="col-md-8">
+                                <form id="loginForm" method="post" action="my_profile.php">
+                                    <div class="form-group">
+                                        <label for="username">Username</label>
+                                        <input type="text" class="form-control" name="username" id="username" placeholder="Username">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Password</label>
+                                        <input type="password" class="form-control" name="password" id="password" placeholder="Password (Case-Sensitive)">
+                                    </div>
+                                    <button type="submit" class="btn btn-info">Login</button>
+                                    <a href="signup.php" class="btn btn-success" role="button">Create An Account</a>
+                                </form>
+                                <br>
+                                <form id="logout" method="post" action="my_profile.php">
+                                    <input type="hidden" name="logout" value="1">
+                                    <button type="submit" class="btn btn-warning">Logout</button>
+                                </form>
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                    </div>     
                 </div>
-            </div>  
+                <div class="modal-footer">
+                </div>
+            </div>
         </div>
-            <br>
-            <br>
-        
-            <!-- FOOTER -->
-            <footer class="footer text-center"> &copy;2020 FunkyTech</footer>
-    
-            <!--button script-->
-            <script>
-                function ShowContent() {
-                    var x = document.getElementById('embed');
-                    if (x.style.display == 'none') {
-                        x.style.display = 'block';
-                    } else {
-                        x.style.display = 'none';
-                    }
-                }  
-            </script>
+    </div>
+    <br>
+    <br>
 
-        <!--BOOTSTRAP SCRIPTS-->
+    <!-- FOOTER -->
+    <footer class="footer text-center"> &copy;2020 FunkyTech</footer>
 
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <!--button script-->
+    <script>
+        function ShowContent() {
+            var x = document.getElementById('embed');
+            if (x.style.display == 'none') {
+                x.style.display = 'block';
+            } else {
+                x.style.display = 'none';
+            }
+        }
+    </script>
 
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <!--BOOTSTRAP SCRIPTS-->
 
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
-    </body>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+</body>
+
 </html>
