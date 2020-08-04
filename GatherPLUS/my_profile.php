@@ -227,7 +227,12 @@
             <!-- Link to the Edit Profile Page -->
             <div class="row">
                 <div class="col-md-3 text-center">
-                    <a class="btn btn-info" href="account_view.php" role="button" id="edit_prof">Edit Profile</a>
+					<?php
+						if (isset($_SESSION["username"]))
+						{
+							echo "<a class=\"btn btn-info\" href=\"account_view.php\" role=\"button\" id=\"edit_prof\">Edit Profile</a>";
+						}
+					?>
                 </div>
             </div>
             
