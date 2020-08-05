@@ -12,18 +12,6 @@
 <html lang="en">
 
 <head>
-   <!-- Global site tag (gtag.js) - Google Analytics -->
-       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-174550610-1"></script>
-       <script>
-           window.dataLayer = window.dataLayer || [];
-
-           function gtag() {
-               dataLayer.push(arguments);
-           }
-           gtag('js', new Date());
-
-           gtag('config', 'UA-174550610-1');
-       </script>
     <meta charset="UTF-8">
 
     <!--FOLLOWING LINE IMPORTANT TO ADD FOR BOOTSTRAP-->
@@ -206,45 +194,109 @@
         </div>
     </div>
 
-    <!-- Login Modal -->
-    <div class="modal" id="modal1" role="dialog">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5>Gather+</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
-                </div>
-                <div class="modal-body">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-4 text-center" id="mod"></div>
-                            <div class="col-md-8">
-                                <form id="loginForm" method="post" action="my_profile.php">
-                                    <div class="form-group">
-                                        <label for="username">Username</label>
-                                        <input type="text" class="form-control" name="username" id="username" placeholder="Username">
+    <!-- Login/Logout Modal -->
+    <?php
+    if(isset($_SESSION["loginAttempt"])){//check to see if loginAttempt is defined
+        if($_SESSION["loginAttempt"] != "Success"){
+            echo '<div class="modal" id="modal1" role="dialog">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5>Gather+</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-4 text-center" id="mod"></div>
+                                    <div class="col-md-8">
+                                        <form id="loginForm" method="post" action="my_profile.php">
+                                            <div class="form-group">
+                                                <label for="username">Username</label>
+                                                <input type="text" class="form-control" name="username" id="username" placeholder="Username">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="password">Password <a href="iforgot.php">(Forgot Password)</a></label>
+                                                <input type="password" class="form-control" name="password" id="password" placeholder="Password (Case-Sensitive)">
+                                            </div>
+                                            <button type="submit" class="btn btn-info">Login</button>
+                                            <a href="signup.php" class="btn btn-success" role="button">Create An Account</a>
+                                        </form>
+                                        <br>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="password">Password</label>
-                                        <input type="password" class="form-control" name="password" id="password" placeholder="Password (Case-Sensitive)">
-                                    </div>
-                                    <button type="submit" class="btn btn-info">Login</button>
-                                    <a href="signup.php" class="btn btn-success" role="button">Create An Account</a>
-                                </form>
-                                <br>
-                                <form id="logout" method="post" action="my_profile.php">
-                                    <input type="hidden" name="logout" value="1">
-                                    <button type="submit" class="btn btn-warning">Logout</button>
-                                </form>
+                                </div>
                             </div>
+                        </div>
+                        <div class="modal-footer">
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
+            </div>';
+        }else if($_SESSION["loginAttempt"] == "Success"){
+            echo '<div class="modal" id="modal1" role="dialog">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5>Gather+</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-4 text-center" id="mod"></div>
+                                    <div class="col-md-8">
+                                        <form id="logout" method="post" action="my_profile.php">
+                                            <input type="hidden" name="logout" value="1">
+                                            <button type="submit" class="btn btn-warning">Logout</button>
+                                        </form>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
+            </div>';
+        }
+    }else{//loginAttempt not defined
+            echo '<div class="modal" id="modal1" role="dialog">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5>Gather+</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-4 text-center" id="mod"></div>
+                                    <div class="col-md-8">
+                                        <form id="loginForm" method="post" action="my_profile.php">
+                                            <div class="form-group">
+                                                <label for="username">Username</label>
+                                                <input type="text" class="form-control" name="username" id="username" placeholder="Username">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="password">Password <a href="iforgot.php">(Forgot Password)</a></label>
+                                                <input type="password" class="form-control" name="password" id="password" placeholder="Password (Case-Sensitive)">
+                                            </div>
+                                            <button type="submit" class="btn btn-info">Login</button>
+                                            <a href="signup.php" class="btn btn-success" role="button">Create An Account</a>
+                                        </form>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                        </div>
+                    </div>
+                </div>
+            </div>';
+    }
+    ?>
     <br>
     <br>
 

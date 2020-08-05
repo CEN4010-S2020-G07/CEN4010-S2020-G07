@@ -1,19 +1,17 @@
+<?php
+        session_start();
+            
+        // Error Handler
+        set_error_handler("errorHandler");
+        
+        function errorHandler()
+        {
+            echo "Error";
+        }
+    ?>
     <!DOCTYPE html>
     <html lang="en">
     <head>
-       <!-- Global site tag (gtag.js) - Google Analytics -->
-       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-174550610-1"></script>
-       <script>
-           window.dataLayer = window.dataLayer || [];
-
-           function gtag() {
-               dataLayer.push(arguments);
-           }
-           gtag('js', new Date());
-
-           gtag('config', 'UA-174550610-1');
-       </script>
-
         <meta charset="UTF-8">
 
         <!--FOLLOWING LINE IMPORTANT TO ADD FOR BOOTSTRAP-->
@@ -62,12 +60,17 @@
             <!-- Login Button -->
             <div class="nav navbar-nav navbar-right" id="navbarSupportedContent">
                 <ul class="navbar-nav text-uppercase">
-                    <li class="nav-item active">
-                        <form id="logout" method="post" action="my_profile.php">
-                            <input type="hidden" name="logout" value="1">
-                            <button type="submit" class="btn log">Logout</button>
-                        </form>
-                    </li>
+                    <?php
+                            if(isset($_SESSION["loginAttempt"])){
+                                if($_SESSION["loginAttempt"] != "Success"){
+                                    echo '<li class="nav-item active"><button type="button" class="btn log" data-toggle="modal" data-target="#modal1">Login</button></li>';
+                                }else if($_SESSION["loginAttempt"] == "Success"){
+                                    echo '<li class="nav-item active"><button type="button" class="btn log" data-toggle="modal" data-target="#modal1">Logout</button></li>';
+                                }
+                            }else{
+                                echo '<li class="nav-item active"><button type="button" class="btn log" data-toggle="modal" data-target="#modal1">Login</button></li>';
+                            }
+                    ?>
                 </ul>
 
             </div>
@@ -75,15 +78,6 @@
 
         <!-- PHP for Welcoming (new) user -->
         <?php
-            session_start();
-            
-            // Error Handler
-            set_error_handler("errorHandler");
-        
-            function errorHandler()
-            {
-                echo "Error";
-            }
             if(isset($_SESSION["loginAttempt"])){
                 if($_SESSION["loginAttempt"] == "Fail"){
                     echo "<h5 class=\"alert alert-danger\">Incorrect username or password</h5>";
@@ -230,8 +224,8 @@
            </div> 
         </div>
         
-        <!-- Login/Logout Modal -->
-        <?php
+    <!-- Login/Logout Modal -->
+    <?php
     if(isset($_SESSION["loginAttempt"])){//check to see if loginAttempt is defined
         if($_SESSION["loginAttempt"] != "Success"){
             echo '<div class="modal" id="modal1" role="dialog">
@@ -252,7 +246,7 @@
                                                 <input type="text" class="form-control" name="username" id="username" placeholder="Username">
                                             </div>
                                             <div class="form-group">
-                                                <label for="password">Password</label>
+                                                <label for="password">Password <a href="iforgot.php">(Forgot Password)</a></label>
                                                 <input type="password" class="form-control" name="password" id="password" placeholder="Password (Case-Sensitive)">
                                             </div>
                                             <button type="submit" class="btn btn-info">Login</button>
@@ -315,7 +309,7 @@
                                                 <input type="text" class="form-control" name="username" id="username" placeholder="Username">
                                             </div>
                                             <div class="form-group">
-                                                <label for="password">Password</label>
+                                                <label for="password">Password <a href="iforgot.php">(Forgot Password)</a></label>
                                                 <input type="password" class="form-control" name="password" id="password" placeholder="Password (Case-Sensitive)">
                                             </div>
                                             <button type="submit" class="btn btn-info">Login</button>

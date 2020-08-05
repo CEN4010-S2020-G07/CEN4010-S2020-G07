@@ -241,7 +241,7 @@
         <br>
         
         
-   <!-- Login/Logout Modal -->
+    <!-- Login/Logout Modal -->
     <?php
     if(isset($_SESSION["loginAttempt"])){//check to see if loginAttempt is defined
         if($_SESSION["loginAttempt"] != "Success"){
@@ -263,7 +263,7 @@
                                                 <input type="text" class="form-control" name="username" id="username" placeholder="Username">
                                             </div>
                                             <div class="form-group">
-                                                <label for="password">Password</label>
+                                                <label for="password">Password <a href="iforgot.php">(Forgot Password)</a></label>
                                                 <input type="password" class="form-control" name="password" id="password" placeholder="Password (Case-Sensitive)">
                                             </div>
                                             <button type="submit" class="btn btn-info">Login</button>
@@ -326,7 +326,7 @@
                                                 <input type="text" class="form-control" name="username" id="username" placeholder="Username">
                                             </div>
                                             <div class="form-group">
-                                                <label for="password">Password</label>
+                                                <label for="password">Password <a href="iforgot.php">(Forgot Password)</a></label>
                                                 <input type="password" class="form-control" name="password" id="password" placeholder="Password (Case-Sensitive)">
                                             </div>
                                             <button type="submit" class="btn btn-info">Login</button>
