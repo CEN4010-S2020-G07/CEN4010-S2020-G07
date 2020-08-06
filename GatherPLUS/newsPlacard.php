@@ -12,18 +12,7 @@
 <html lang="en">
 
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-174550610-1"></script>
-       <script>
-           window.dataLayer = window.dataLayer || [];
 
-           function gtag() {
-               dataLayer.push(arguments);
-           }
-           gtag('js', new Date());
-
-           gtag('config', 'UA-174550610-1');
-       </script>
     <meta charset="UTF-8">
 
     <!--FOLLOWING LINE IMPORTANT TO ADD FOR BOOTSTRAP-->
@@ -214,7 +203,7 @@
                                                 <input type="text" class="form-control" name="username" id="username" placeholder="Username">
                                             </div>
                                             <div class="form-group">
-                                                <label for="password">Password</label>
+                                                <label for="password">Password <a href="iforgot.php">(Forgot Password)</a></label>
                                                 <input type="password" class="form-control" name="password" id="password" placeholder="Password (Case-Sensitive)">
                                             </div>
                                             <button type="submit" class="btn btn-info">Login</button>
@@ -277,7 +266,7 @@
                                                 <input type="text" class="form-control" name="username" id="username" placeholder="Username">
                                             </div>
                                             <div class="form-group">
-                                                <label for="password">Password</label>
+                                                <label for="password">Password <a href="iforgot.php">(Forgot Password)</a></label>
                                                 <input type="password" class="form-control" name="password" id="password" placeholder="Password (Case-Sensitive)">
                                             </div>
                                             <button type="submit" class="btn btn-info">Login</button>
