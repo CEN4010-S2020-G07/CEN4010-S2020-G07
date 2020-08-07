@@ -157,9 +157,9 @@
         </div>
     </div>
 
-    <!-- PHP for viewing book PDF file -->
-    <div class="container col-sm-12 col-md-8" id="embed" style="display:none min-height:500px !important">
-        <div class="card">
+    <!-- PHP for viewing game-->
+    <div class="container col-sm-12 col-md-8" id="embed" style="display:none">
+        <div class="card" style="min-height:600px !important; width:100%">
             <div class="card-body text-center">
                 <?php       
                     echo "$placardLink";          
