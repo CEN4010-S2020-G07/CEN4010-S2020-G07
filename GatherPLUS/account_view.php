@@ -94,13 +94,13 @@
                                         $userImage = $row["userImage"];
                                         $userImage = base64_encode($userImage);
                                     
-                                        echo "<img src=\"data:image/jpg;charset=utf8; base64, $userImage \" width=\"400\" height=\"250\" />";
+                                        echo "<img src=\"data:image/jpg;charset=utf8; base64, $userImage \" class=\"card-img-top img-fluid\" />";
                                     }
                                 
                                     // Displays generic profile picture if user does not have a profile picture
                                     else
                                     {
-                                        echo "<img class=\"card-img-top\" src=\"images/blank.png\" alt=\"Card image\">";
+                                        echo "<img class=\"card-img-top img-fluid\" src=\"images/blank.png\" alt=\"Card image\">";
                                     }
                                 }
                         

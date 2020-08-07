@@ -115,37 +115,44 @@
                                 echo "<h6 class=\"text-center\">$placardGenre</h6>";
                             ?>
             </div>
-
-            <!-- PHP for filling in book placard information -->
-            <div class="col-md-8 mt-3 full_feature pFeature">
+            
+            <!-- PHP for filling in placard information -->
+            <div class="card col-md-8 mt-3 full_feature pFeature">
+            <div class="card-body">
                 <?php
-                                echo "<h3 class=\"mt-3\" \"mb-0\">$placardName</h3>";
+                                echo "<h3 class=\"mt-3 mb-0\">$placardName</h3>";
                                 echo "<p class=\"text-left full_describe\">$placardBio</p>";
                             ?>
-
-                <!-- Placard Buttons -->
-                <div class="d-flex flex-row button_row">
-
-                    <!-- Button for viewing e-reader -->
-                    <button type="button" class="btn btn-secondary ml-4 mr-3 view_button" ONCLICK="ShowContent()">Click to Play</button>
-
-                    <!-- PHP Form for joining a community -->
-                    <form method="post" action="gamePlacard.php" id="chatForm">
-                        <div class="form-check">
-                            <?php
+            </div>
+            
+            <!-- Placard Buttons -->
+             <div class="card-footer placard_footer">
+                   <ul id="bTn_list">
+                       <li class="bTn">
+                           <!-- Button for viewing e-reader -->
+                           <button type="button" class="btn play_button" ONCLICK="ShowContent()">Click to Play</button>
+                       </li>
+                       <!-- PHP Form for joining a community -->
+                       <li class="bTn">
+                           <a href="#board"><button type="button" class="btn view_button" ONCLICK="ShowAndHide2()">View The Discussion</button></a>
+                       </li>
+                       <li class="bTn">
+                           <form method="post" action="gamePlacard.php">
+                               <div class="form-check">
+                                   <?php
                                         $placardNoSpace = str_replace(" ", "" , $placardName);
                                     
                                         echo "<input type=\"hidden\" name=\"placardName\" value=\"$placardName\">";
                                         echo "<input type=\"hidden\" name=\"join\" value=\"$placardNoSpace\">";
                                     ?>
 
-                            <!-- Join Button -->
-                            <button type="submit" class="btn btn-secondary comm_button">Join the Community!</button>
-                        </div>
-                    </form>
-
-                    <a href="#board"><button type="button" class="btn btn-secondary ml-4 mr-3 view_button" ONCLICK="ShowAndHide2()">View The Discussion</button></a>
-                </div>
+                                   <!-- Join Button -->
+                                   <button type="submit" class="btn comm_button">Join the Community!</button>
+                               </div>
+                           </form>
+                       </li>
+                   </ul>            
+             </div>
             </div>
         </div>
     </div>

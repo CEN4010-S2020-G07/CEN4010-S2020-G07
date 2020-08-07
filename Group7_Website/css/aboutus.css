@@ -59,9 +59,11 @@ color: #484a42;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5);
 }
 
+.card-body{
+    height: 150px !important;
+}
+
 #cardstock{
-margin-top:100px;
-padding-top:100px;
 }
 
 img.fade {
